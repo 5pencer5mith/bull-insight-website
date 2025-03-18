@@ -14,8 +14,8 @@ const roboto = Roboto({
 });
 
 export const metadata = {
-  title: "Sperm In-Cyte",
-  description: "A revolutionary approach to bull fertility analysis",
+  title: "Bull Insight",
+  description: "Your Home for a Healthy Herd",
 };
 
 export default function RootLayout({ children }) {
