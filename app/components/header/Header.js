@@ -4,9 +4,14 @@
 import { useState, useEffect } from "react";
 
 // Components
-import { IonIcon } from "@ionic/react";
-import { menuOutline, closeOutline } from "ionicons/icons";
+// import { IonIcon } from "@ionic/react";
+// import { menuOutline, closeOutline } from "ionicons/icons";
 import Link from "next/link";
+
+import { 
+  Menu,
+  X
+} from 'lucide-react'
 
 // Styles
 import styles from "./header.module.css";
@@ -22,13 +27,6 @@ const links = [
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isHydrated, setIsHydrated] = useState(false);
-
-  useEffect(() => {
-    setIsHydrated(true);
-  }, []);
-
-  if (!isHydrated) return null;
 
   const toggleMenu = () => {
     setIsMobileMenuOpen((prev) => {
@@ -38,16 +36,21 @@ export default function Header() {
   };
 
   return (
-    <div className={styles.container}>
-      <div className={styles.logo}>
-        <Link href="/">Bull Insight</Link>
+    <div className="flex flex-end bg-white/75 text-stone-900 h-16 items-center p-4 shadow-lg backdrop-blur-xl backdrop-opacity-60 sticky top-0 z-50">
+      <div className="flex flex-1 items-center text-xl">
+        <Link href="/"><span className=" text-stone-900">Bull</span><span className="font-bold text-blue-700">Insight</span></Link>
       </div>
 
-      <div className={styles.hamburger} onClick={toggleMenu}>
+      <div className="max-md:block max-md:shrink-0 max-md:cursor-pointer md:hidden : " onClick={toggleMenu}>
         {isMobileMenuOpen ? (
-          <IonIcon className="icons" icon={closeOutline} />
+          <div className="text-stone-900">
+            <X size={24} />
+          </div>
         ) : (
-          <IonIcon className="icons" icon={menuOutline} />
+          <div className="text-stone-900">
+            <Menu size={24} />
+          </div>
+          
         )}
       </div>
 

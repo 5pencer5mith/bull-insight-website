@@ -15,14 +15,12 @@
   flex: 1;
   align-items: center;
   font-size: x-large;
-  font-weight: bold;
 }
 
 .hamburger {
   display: block;
   flex-shrink: 0;
   cursor: pointer;
-  font-size: xx-large;
 }
 
 .nav {
