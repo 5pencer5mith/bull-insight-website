@@ -57,6 +57,16 @@ export default function home() {
                 <span className="font-bold text-blue-700">Insights</span>
               </h3>
             </div>
+
+            <div className="pt-4 grid grid-cols-1 gap-8 md:grid-cols-3 md:pt-2 lg:grid-cols-4">
+              <div className="insights-block">
+
+              </div>
+              <div className="insights-block"> hey</div>
+              <div className="insights-block"> hey</div>
+              <div className="insights-block"> hey</div>
+          
+            </div>
           </div>
         </div>
       </div>

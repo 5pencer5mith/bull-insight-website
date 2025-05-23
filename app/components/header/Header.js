@@ -58,7 +58,7 @@ export default function Header() {
             {links.map((link, index) => (
               <Link href={link.href} key={index}>
                 <li
-                  className="inline p-4 rounded-lg hover:bg-blue-700 hover:text-white"
+                  className="inline px-4 py-2.5 rounded-lg hover:bg-blue-700 hover:text-white"
                 >
                   {link.name}
                 </li>
