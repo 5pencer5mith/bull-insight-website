@@ -31,21 +31,31 @@ export default function home() {
       <div className="pt-8 pb-8">
         <div className="w-full bg-white shadow-xl">
           <div className="p-8">
-            <div className="w-full text-center">
-              <h3 className="text-2xl">
-                <span className="font-bold text-blue-700">Our goal</span> is to
-                provide effective resources and information, and to promote best
-                practices that ensure the well-being and health of cattle herds
-                worldwide.
-              </h3>
+            
+            <div className="inline w-full text-center p-4">
+              <div className="md:p-4">
+                <h3 className="text-xl md:text-2xl">
+                  <span className="font-bold text-blue-700">Our goal</span> is
+                  to provide effective resources and information, and to promote
+                  best practices that ensure the well-being and health of cattle
+                  herds worldwide.
+                </h3>
+              </div>
 
-              <div className="w-full flex justify-center text-blue-700 p-12">
-                <HeartPlus size={48} />
+              <div className="hidden md:flex justify-center items-center">
+                <img src="/img/index/cow.svg" alt="silhouette of bull" />
               </div>
             </div>
 
-            <div className="bg-amber-100">
-              <h3 className="text-2xl">Resources for You</h3>
+            <div className="w-full flex justify-center text-blue-700 pb-8 md:hidden">
+              <HeartPlus size={200} />
+            </div>
+
+            <div className="md:p-8">
+              <h3 className="text-xl text-center md:text-2xl">
+                Tools and{" "}
+                <span className="font-bold text-blue-700">Insights</span>
+              </h3>
             </div>
           </div>
         </div>
