@@ -1,17 +1,12 @@
 "use client";
 
-// Hooks and utility
-import { useState, useEffect } from "react";
+// useState is used to determine whether or not the menu or "hamburger" has been clicked to open the mobile menu
+import { useState } from "react";
 
-// Components
-// import { IonIcon } from "@ionic/react";
-// import { menuOutline, closeOutline } from "ionicons/icons";
 import Link from "next/link";
 
+// icons ussed for the hamburger menu
 import { Menu, X } from "lucide-react";
-
-// Styles
-import styles from "./header.module.css";
 
 const links = [
   { name: "Home", href: "/" },
@@ -34,11 +29,12 @@ export default function Header() {
 
   return (
     <>
-      <div className="flex flex-end bg-white/95 text-stone-900 h-16 items-center p-4 backdrop-blur-[20px] backdrop-opacity-75 sticky top-0 z-50">
+      <div className="flex flex-end bg-white text-stone-900 h-16 items-center p-4 sticky top-0 z-50">
         <div className="flex flex-1 items-center text-xl">
           <Link href="/">
-            <span className=" text-stone-900">Bull</span>
+            <span className="">Bull-</span>
             <span className="font-bold text-blue-700">Insight</span>
+            <span className="text-stone-900">.com</span>
           </Link>
         </div>
 
@@ -57,29 +53,33 @@ export default function Header() {
           )}
         </div>
 
-        <div className={`absolute w-full h-84 bg-white/95 right-0 top-16 rounded-bl-lg rounded-br-lg backdrop-blur-[20px] backdrop-opacity-75 shadow-lg transform transition-transform duration-900 ease-in-out md:hidden ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
-          <ul className="">
+        <nav className="hidden md:block">
+          <ul className="p-4">
             {links.map((link, index) => (
-              <li key={index}>
+              <Link href={link.href} key={index}>
+                <li
+                  className="inline p-4 rounded-lg hover:bg-blue-700 hover:text-white"
+                >
+                  {link.name}
+                </li>
+              </Link>
+            ))}
+          </ul>
+        </nav>
+      </div>
+
+      <div
+        className={`fixed z-49 w-full h-84 bg-white/60 rounded-bl-lg rounded-br-lg backdrop-blur-[20px] backdrop-opacity-75 shadow-lg transform transition-transform duration-800 ease-in-out ${isMobileMenuOpen ? "" : "-translate-y-84"}`}
+      >
+        <nav className="md:hidden">
+          <ul className="text-stone-900 text-xl p-2 text-center">
+            {links.map((link, index) => (
+              <li className="p-3" key={index}>
                 <Link href={link.href}>{link.name}</Link>
               </li>
             ))}
           </ul>
-        </div>
-
-        {/* <nav
-        className={`${styles.nav} ${
-          isMobileMenuOpen ? styles.active : ""
-        } ${styles.desktop}`}
-      >
-        <ul className={styles.menuList}>
-          {links.map((link, index) => (
-            <li key={index}>
-              <Link href={link.href}>{link.name}</Link>
-            </li>
-          ))}
-        </ul>
-      </nav> */}
+        </nav>
       </div>
     </>
   );
