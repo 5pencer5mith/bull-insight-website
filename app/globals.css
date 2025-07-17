@@ -2,13 +2,13 @@
 
 @layer base {
   h1 {
-    @apply text-stone-950
+    @apply text-stone-900
   }
 }
 
 @layer components {
   .insights-block {
-    @apply h-64 bg-stone-200/50 rounded-lg p-4 shadow-lg cursor-pointer md:hover:scale-110 md:hover:shadow-2xl
+    @apply h-64 bg-stone-200/50 rounded-lg p-4 shadow-lg cursor-pointer md:border-4 md:border-transparent md:hover:border-4 md:hover:border-blue-700
   }
 }
 
@@ -42,16 +42,6 @@ a:hover {
   text-decoration: none;
 }
 
- 
-h2 {
-  font-size: 30px;
-}
-
-p {
-  font-size: 20px;
-  line-height: 1.5;
-  color: black;
-}
 
 .layoutWrapper {
   padding: 0;
@@ -100,14 +90,6 @@ p {
 @media (max-width: 768px) {
   h1 {
     font-size: 30px;
-  }
-
-  h2 {
-    font-size: 20px;
-  }
-
-  p {
-    font-size: 14px;
   }
 
   .backgroundWrap {

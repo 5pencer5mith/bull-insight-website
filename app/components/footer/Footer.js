@@ -4,59 +4,60 @@
 import { useState, useEffect } from "react";
 
 // Components
-import { IonIcon } from "@ionic/react";
-import { logoFacebook, logoYoutube, logoInstagram } from "ionicons/icons";
 import Link from "next/link";
 
-// Styles
-import styles from "./footer.module.css";
-
 export default function Footer() {
-  const [isHydrated, setIsHydrated] = useState(false);
-
-  useEffect(() => {
-    setIsHydrated(true);
-  }, []);
-
-  if (!isHydrated) return null;
 
   return (
-    <footer className={styles.footer}>
-      <div className={styles.footerLogo}>
-        <Link href="/">Bull Insight</Link>
+    <footer className="bg-stone-100 text-center">
+      <div className="text-xl p-4">
+        <Link href="/">
+          <span className="">Bull-</span>
+          <span className="font-bold text-blue-700">Insight</span>
+          <span className="text-stone-900">.com</span>
+        </Link>
       </div>
 
-      <div className={styles.footerNav}>
-        <Link href="/#about">About Us</Link>
-        <Link href="/#contact">Contact Us</Link>
-        <Link href="/" scroll={false}>
-          Blog
-        </Link>
+      <div className="">
 
-        <div className={styles.socials}>
+        <div>
+          <p className="text-xs">Find us on:</p>
+        </div>
+
+        <div className="flex gap-4 justify-center pb-4">
           <Link
             href="https://www.facebook.com"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <IonIcon className="icons" icon={logoFacebook} />
+            <h6 className="text-xs hover:text-blue-700">
+              Facebook
+            </h6>
           </Link>
           <Link
             href="https://www.youtube.com"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <IonIcon className="icons" icon={logoYoutube} />
+            <h6 className="text-xs hover:text-blue-700">
+              Youtube
+            </h6>
           </Link>
           <Link
             href="https://www.instagram.com"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <IonIcon className="icons" icon={logoInstagram} />
+            <h6 className="text-xs hover:text-blue-700">
+              Instagram
+            </h6>
           </Link>
+        </div>
+
+        <div>
+          <p className="text-xs">© 2025 Bull-Insight.com. All rights reserved.</p>
         </div>
       </div>
     </footer>
   );
-};
+}

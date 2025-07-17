@@ -27,10 +27,10 @@ export default function RootLayout({ children }) {
 
           {/* <div className="spacer"></div> */}
 
-          <div className="content">{children}</div>
+          <div className="">{children}</div>
         </div>
 
-        <div className="footer">
+        <div className="">
           <Footer />
         </div>
       </body>
