@@ -69,7 +69,7 @@ export default function Header() {
       </div>
 
       <div
-        className={`fixed z-49 w-full h-84 bg-white/60 rounded-bl-lg rounded-br-lg backdrop-blur-[20px] backdrop-opacity-75 shadow-lg transform transition-transform duration-800 ease-in-out ${isMobileMenuOpen ? "" : "-translate-y-84"}`}
+        className={`fixed z-49 w-full h-84 bg-white/60 rounded-bl-lg rounded-br-lg backdrop-blur-[20px] backdrop-opacity-75 shadow-lg transform transition-transform duration-800 ease-in-out ${isMobileMenuOpen ? "" : "-translate-y-100"}`}
       >
         <nav className="md:hidden">
           <ul className="text-stone-900 text-xl p-2 text-center">

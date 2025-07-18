@@ -1,8 +1,17 @@
 import PageWrapper from "./components/PageWrapper";
 
 import Link from "next/link";
+import Image from "next/image";
 
-import { Package, Microscope, BookOpen, Rss } from "lucide-react";
+import {
+  Package,
+  Microscope,
+  BookOpen,
+  Rss,
+  Phone,
+  Send,
+  Building2,
+} from "lucide-react";
 
 export default function home() {
   return (
@@ -35,7 +44,7 @@ export default function home() {
           <div className="p-8">
             <div className="inline text-center w-full p-4 md:text-center">
               <div className="md:p-4">
-                <h3 className="text-xl md:text-4xl">
+                <h3 className="text-2xl md:text-4xl">
                   <span className="font-bold text-blue-700">Our goal</span> is
                   to provide effective resources and information, and to promote
                   best practices that ensure the well-being and health of cattle
@@ -49,7 +58,7 @@ export default function home() {
             </div>
 
             <div className="md:pb-4">
-              <h3 className="text-xl text-center md:text-4xl">
+              <h3 className="text-2xl text-center md:text-4xl">
                 Tools and{" "}
                 <span className="font-bold text-blue-700">Insights</span>
               </h3>
@@ -86,7 +95,7 @@ export default function home() {
                       Sperm In-Cyte Technology
                     </h4>
                     <div className="pt-2">
-                      <p className="text-m text-center">
+                      <p className="text-md text-center">
                         Learn about an advanced bull semen analysis tool powered
                         by artificial intelligence.
                       </p>
@@ -102,12 +111,11 @@ export default function home() {
                   </div>
 
                   <div className="relative z-10">
-                    <h4 className="text-center text-xl">
-                      Sperm Morphology
-                    </h4>
+                    <h4 className="text-center text-xl">Sperm Morphology</h4>
                     <div className="pt-2">
-                      <p className="text-m text-center">
-                        Learn about bull sperm morphology and the different effects sperm morphology can have on fertility.
+                      <p className="text-md text-center">
+                        Learn about bull sperm morphology and the different
+                        effects sperm morphology can have on fertility.
                       </p>
                     </div>
                   </div>
@@ -121,17 +129,85 @@ export default function home() {
                   </div>
 
                   <div className="relative z-10">
-                    <h4 className="text-center text-xl">
-                      Blog
-                    </h4>
+                    <h4 className="text-center text-xl">Blog</h4>
                     <div className="pt-2">
-                      <p className="text-m text-center">
+                      <p className="text-md text-center">
                         Keep up with the latest insights! Check out our blog.
                       </p>
                     </div>
                   </div>
                 </div>
               </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="pb-8">
+        <div className="w-full bg-white shadow-xl">
+          <div className="p-8">
+            <div className="md:p-4" id="about">
+              <h3 className="text-center text-2xl md:text-4xl md:text-left">
+                <span className="font-bold text-blue-700">About</span> Us
+              </h3>
+
+              <div className="md:flex">
+                <div className="md:flex-3 md:p-8">
+                  <p className="text-lg md:text-2xl">
+                    Bull-
+                    <span className="font-bold text-blue-700">Insight</span>
+                    .com is transforming cattle breeding through advanced
+                    technology, education, and research. We aim to enhance herd
+                    fertility by providing accurate reproductive insights,
+                    practical knowledge, and cutting-edge tools powered by
+                    artificial intelligence. This project—and the products it
+                    inspires—are developed with expertise and driven by the
+                    lifelong passion of Dr. Glen Jensen, whose commitment to
+                    reproductive science and cattle health guides everything we
+                    do.
+                  </p>
+                </div>
+
+                <div className="pt-4 md:flex-2">
+                  <Image
+                    src="/img/index/cow-lick.jpg"
+                    alt="Cow licking it's own nose."
+                    width={700}
+                    height={400}
+                    className="rounded-lg shadow-lg"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div className="pt-8" id="contact">
+              <h3 className="text-center text-2xl md:text-4xl md:pb-4">
+                <span className="font-bold text-blue-700">Contact</span> Us
+              </h3>
+              <h4 className="text-lg text-center md:text-2xl">
+                We would love to hear from{" "}
+                <span className="font-bold text-blue-700">you</span>!
+              </h4>
+              <div className="md:flex md:justify-center">
+                <div className="md:p-8">
+                  <div className="flex justify-left gap-2 pt-2 pb-2 ">
+                    <Phone className="text-blue-700" />
+                    <a href="tel:4353812539">(435) 381-2539</a>
+                  </div>
+
+                  <div className="flex justify-left gap-2 pt-2 pb-2">
+                    <Send className="text-blue-700" />
+                    <a href="mailto:glen@emeryanimalhealth.com">
+                      glen@emeryanimalhealth.com
+                    </a>
+                  </div>
+
+                  <div className="flex justify-left gap-2 pt-2 pb-2">
+                    <Building2 className="text-blue-700" />
+                    Address Goes Here
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

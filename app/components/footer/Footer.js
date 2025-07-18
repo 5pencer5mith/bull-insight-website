@@ -10,7 +10,7 @@ export default function Footer() {
 
   return (
     <footer className="bg-stone-100 text-center">
-      <div className="text-xl p-4">
+      <div className="text-xl p-6">
         <Link href="/">
           <span className="">Bull-</span>
           <span className="font-bold text-blue-700">Insight</span>
