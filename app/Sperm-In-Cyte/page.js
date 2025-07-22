@@ -1,111 +1,142 @@
 "use client";
 
-// Hooks and Utility
-import { useState, useEffect } from "react";
-
 // Components
+import PageWrapper from "../components/PageWrapper";
 import ProductHero from "../components/hero/productHero/ProductHero";
-import { IonIcon } from "@ionic/react";
-import {
-  searchOutline,
-  cogOutline,
-  trendingUpOutline,
-  cashOutline,
-  hardwareChipOutline,
-  shieldCheckmarkOutline,
-  flashOutline,
-} from "ionicons/icons";
+import Sidekick from "../components/hero/sidekick/Sidekick";
+import Button from "../components/buttons/Button";
+import Link from "next/link";
 
-// Styles
-import styles from "./page.module.css";
+import { Microscope, Plus, Cpu, Cog, FileHeart } from "lucide-react";
 
 export default function SpermIncyte() {
-  const [isHydrated, setIsHydrated] = useState(false); // This is a state variable that is used to determine if the page has been hydrated or not.
-
-  // This useEffect hook is used to set the isHydrated state variable to true once the page has been hydrated.
-  useEffect(() => {
-    setIsHydrated(true);
-  }, []);
-
-  if (!isHydrated) return null;
-
   return (
-    <>
-      <ProductHero />
+    <PageWrapper>
+      <Sidekick pageTitle={"Sperm In-Cyte"} />
 
-      <div className={styles.contentWrapper}>
-        <div className={styles.productIntro}>
-          <h1>
-            An Automated Computer Vision System for Bull Fertility Analysis
-          </h1>
-
-          <div className={styles.colsSplit}>
-            <div className={styles.col1}>
-              <h2>
-                Sperm In-Cyte Identifies Sperm Morphology That Lead To
-                Subfertility And Infertility. This Information Can Keep Herds
-                Healthy And Saves Money.
-              </h2>
+      <div className="flex justify-center items-center pt-8">
+        <div className="w-full bg-white shadow-xl p-4">
+          <div className="relative">
+            <div className="absolute inset-0 flex justify-center items-center">
+              <Microscope className="w-48 h-48 text-blue-100" />
+              <Plus className="w-48 h-48 text-blue-100" />
+              <Cpu className="w-48 h-48 text-blue-100" />
             </div>
 
-            <div className={styles.iconGroup}>
-              <IonIcon className={styles.icons} icon={searchOutline} />
-              <IonIcon className={styles.icons} icon={trendingUpOutline} />
-              <IonIcon className={styles.icons} icon={cashOutline} />
-            </div>
-          </div>
+            <div className="relative md:p-8">
+              <h3 className="text-2xl text-center">
+                Harness the Power of Artificial Intelligence with{" "}
+                <span className="p-1 rounded-lg shadow-xl text-white bg-[linear-gradient(115deg,_#1d4ed8_50%,_#ffffff_50%)]">
+                  Sperm{" "}
+                  <span className="font-bold text-blue-700">
+                    &nbsp; &nbsp;In-Cyte
+                  </span>
+                </span>{" "}
+              </h3>
+              <p className="pt-2">
+                Sperm In-Cyte revolutionizes bull fertility testing by
+                automating semen analysis with advanced computer vision. It
+                captures and analyzes microscopic sperm images with unmatched
+                accuracy—delivering fast, reliable results to support better
+                breeding decisions and long-term herd success.
+              </p>
 
-          <p>
-            Infertility and subfertility in bulls pose significant challenges to
-            the cattle industry, leading to economic losses, inefficiencies, and
-            reduced productivity. Traditional breeding soundness exams
-            (B.B.S.E.) are often manual, imprecise, and costly, making it
-            difficult for cattle producers to accurately assess bull fertility.
-            These outdated methods can miss subtle signs of infertility,
-            resulting in longer calving seasons, lighter weaning weights, and
-            inconsistent herd reproduction. The lack of standardized,
-            high-quality semen evaluations creates a gap in the industry,
-            leaving producers with unreliable results and poor decision-making
-            tools.
-          </p>
+              <hr className="border-t border-stone-900 my-4" />
 
-          <div className={styles.stack}>
-            <div className={styles.col2}>
-              <h2>
-                Using Computer Vision Technology, Sperm In-Cyte Gives You Faster
-                And More Reliable Results Than Traditional Manual Analysis{" "}
-              </h2>
-            </div>
-
-            <div className={styles.iconGroup2}>
-              <IonIcon className={styles.icons} icon={hardwareChipOutline} />
-              <IonIcon className={styles.icons} icon={flashOutline} />
-              <IonIcon className={styles.icons} icon={shieldCheckmarkOutline} />
+              <div className="flex flex-col justify-center items-center text-center">
+                <h3 className="text-2xl">
+                  Sperm <span className="font-bold text-blue-700">In-Cyte</span>{" "}
+                  Is Still In Development: Check Back Here For Updates
+                </h3>
+                <Cog className="w-24 h-24 text-blue-700 animate-spin [animation-duration:6000ms]" />
+              </div>
             </div>
           </div>
-
-          <p>
-            Sperm In-Cyte transforms the way bull fertility is assessed by
-            automating the semen analysis process. Using cutting-edge computer
-            vision technology, our system captures high-resolution microscopic
-            images of sperm and analyzes them with unprecedented precision. By
-            identifying and classifying sperm abnormalities, Sperm In-Cyte
-            delivers fast, accurate, and consistent results that surpass the
-            limitations of traditional manual evaluations. This innovation
-            empowers cattle producers with dependable data, helping them make
-            informed breeding decisions that enhance productivity, improve herd
-            health, and drive long-term economic success.
-          </p>
-        </div>
-
-        <div className={styles.productAnnounce}>
-          <h2>
-            Sperm In-Cyte is currently in development. Check back later for more
-            updates!
-          </h2>
-          <IonIcon className={styles.iconsGear} icon={cogOutline} />
         </div>
       </div>
-    </>
+
+      <div className="pt-8">
+        <div className="w-full bg-white shadow-xl">
+          <div className="p-8 md:flex md:gap-2 justify-center items-center">
+            <div className="md:flex-4">
+              <h3 className="text-2xl text-center">
+                Looking For a{" "}
+                <span className="font-bold text-blue-700">High-Quality</span>{" "}
+                Semen Evaluation?
+              </h3>
+              <p className="pt-2">
+                Make informed breeding decisions with confidence and order a
+                Semen Sample Evaluation Kit. Our Semen Sample Evaluation Kit
+                provides a safe and reliable way to collect and ship semen
+                samples for analysis. The kit includes everything you need to
+                securely package and mail your sample to our lab.{" "}
+              </p>
+            </div>
+
+            <div className="pt-2 md:flex-2">
+              <div className="flex items-center justify-center">
+                <FileHeart className="w-32 h-32 text-blue-700" />
+              </div>
+
+              <Button
+                buttonDest={"/"}
+                buttonText={"Order Now"}
+                buttonStyles={
+                  "bg-blue-700 text-white rounded-lg p-2 text-center md:hover:scale-105"
+                }
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="pt-8 pb-8">
+        <div className="w-full bg-white shadow-xl">
+          <div className="p-8">
+            <div className="text-center pb-4">
+              <h1 className="text-3xl">
+                The <span className="font-bold text-blue-700">Why</span> Behind
+                Sperm In-Cyte
+              </h1>
+            </div>
+            <hr className="border-t border-stone-900 my-4" />
+            <div>
+              <h3 className="text-2xl pt-4">
+                Infertility and Subfertility in Bulls Pose{" "}
+                <span className="font-bold text-blue-700">
+                  Significant Challenges in the Cattle Industry...
+                </span>
+              </h3>
+              <p className="pt-2">
+                Infertility and subfertility lead to economic losses,
+                ineffeciencies, and reduced productivity. Traditional bull
+                breeding soundness exams (B.B.S.E.) are often manual, imprecise,
+                and costly, making it difficult for cattle producers to
+                accurately assess bull fertility. These outdated methods can
+                miss subtle signs of infertility, resulting in longer calving
+                seasons, lighter weaning weights, and inconsistent herd
+                reproduction. The lack of standardized, high-quality semen
+                evaluations creates a gap in the industry, leaving producers
+                with unreliable results and poor decision-making tools.
+              </p>
+
+              <p className="pt-2">
+                Sperm In-Cyte transforms the way bull fertility is assessed by
+                automating the semen analysis process. Using cutting-edge
+                computer vision technology, our system captures high-resolution
+                microscopic images of sperm and analyzes them with unprecedented
+                precision. By identifying and classifying sperm abnormalities,
+                Sperm In-Cyte delivers fast, accurate, and consistent results
+                that surpass the limitations of traditional manual evaluations.
+                This innovation empowers cattle producers with dependable data,
+                helping them make informed breeding decisions that enhance
+                productivity, improve herd health, and drive long-term economic
+                success.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </PageWrapper>
   );
-};
+}

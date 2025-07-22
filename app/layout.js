@@ -25,8 +25,6 @@ export default function RootLayout({ children }) {
         <div>
           <Header />
 
-          {/* <div className="spacer"></div> */}
-
           <div className="">{children}</div>
         </div>
 

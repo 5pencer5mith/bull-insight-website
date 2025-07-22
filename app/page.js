@@ -1,7 +1,7 @@
 import PageWrapper from "./components/PageWrapper";
-
 import Link from "next/link";
 import Image from "next/image";
+import Button from "./components/buttons/Button";
 
 import {
   Package,
@@ -11,6 +11,7 @@ import {
   Phone,
   Send,
   Building2,
+  Heart,
 } from "lucide-react";
 
 export default function home() {
@@ -23,7 +24,7 @@ export default function home() {
             Welcome to Bull-
             <span className="font-bold text-blue-700">Insight</span>.com
           </h1>
-          <h1 className="text-shadow-lg/20 text-white text-9xl md:text-7xl">
+          <h1 className="text-shadow-lg/20 text-white text-3xl md:text-7xl">
             Your Home for a{" "}
             <span className="text-white font-bold md:text-blue-700">
               Healthy
@@ -87,7 +88,7 @@ export default function home() {
               <Link href="/">
                 <div className="relative insights-block">
                   <div className="absolute inset-0 flex justify-center items-center z-0">
-                    <Microscope className="w-48 h-48 text-blue-200" />
+                    <Microscope className="w-48 h-48 text-blue-100" />
                   </div>
 
                   <div className="relative z-10">
@@ -107,7 +108,7 @@ export default function home() {
               <Link href="/">
                 <div className="relative insights-block">
                   <div className="absolute inset-0 flex justify-center items-center z-0">
-                    <BookOpen className="w-48 h-48 text-blue-200" />
+                    <BookOpen className="w-48 h-48 text-blue-100" />
                   </div>
 
                   <div className="relative z-10">
@@ -125,7 +126,7 @@ export default function home() {
               <Link href="/">
                 <div className="relative insights-block">
                   <div className="absolute inset-0 flex justify-center items-center z-0">
-                    <Rss className="w-48 h-48 text-blue-200" />
+                    <Rss className="w-48 h-48 text-blue-100" />
                   </div>
 
                   <div className="relative z-10">
@@ -180,7 +181,7 @@ export default function home() {
               </div>
             </div>
 
-            <div className="pt-8" id="contact">
+            <div className="pt-12" id="contact">
               <h3 className="text-center text-2xl md:text-4xl md:pb-4">
                 <span className="font-bold text-blue-700">Contact</span> Us
               </h3>
@@ -208,6 +209,27 @@ export default function home() {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="pb-8" id="donate">
+        <div className="w-full bg-white shadow-xl p-4 md:p-12">
+          <div className="relative p-8">
+            <div className="absolute inset-0 flex justify-center items-center z-0">
+              <Heart className="w-48 h-48 text-blue-100" />
+            </div>
+
+            <div className="relative z-10">
+              <h3 className="text-2xl text-center md:text-4xl">
+                Support the Cause to Keep Our Herds{" "}
+                <span className="font-bold text-blue-700">Healthy</span>!
+              </h3>
+            </div>
+
+            <div className="relative z-10 text-center p-2">
+              <Button buttonDest={"/"} buttonText={"Donate Now"} buttonStyles={"bg-blue-700 text-white rounded-lg p-2 text-center md:hover:scale-105 md:w-1/4 md:mx-auto"} />
             </div>
           </div>
         </div>

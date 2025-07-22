@@ -88,9 +88,9 @@ a:hover {
 
 
 @media (max-width: 768px) {
-  h1 {
+  /* h1 {
     font-size: 30px;
-  }
+  } */
 
   .backgroundWrap {
     margin: 15px 5px;

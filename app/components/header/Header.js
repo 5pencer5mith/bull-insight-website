@@ -14,7 +14,7 @@ const links = [
   { name: "Morphology", href: "/Morphology" },
   { name: "Resources", href: "/Resources" },
   { name: "Blog", href: "/Blog" },
-  { name: "Store", href: "/Store" },
+  // { name: "Store", href: "/Store" },
 ];
 
 export default function Header() {
@@ -29,14 +29,16 @@ export default function Header() {
 
   return (
     <>
-      <div className="flex flex-end bg-white text-stone-900 h-16 items-center p-4 sticky top-0 z-50">
+      <div className="flex flex-end bg-white text-stone-900 h-16 items-center p-4 sticky top-0 z-50 shadow-sm">
         <div className="flex flex-1 items-center text-xl">
           <Link href="/">
             <span className="">Bull-</span>
             <span className="font-bold text-blue-700">Insight</span>
             <span className="text-stone-900">.com</span>
           </Link>
+        
         </div>
+        
 
         <div
           className="max-md:block max-md:shrink-0 max-md:cursor-pointer md:hidden : "
@@ -57,9 +59,7 @@ export default function Header() {
           <ul className="p-4">
             {links.map((link, index) => (
               <Link href={link.href} key={index}>
-                <li
-                  className="inline px-4 py-2.5 rounded-lg hover:bg-blue-700 hover:text-white"
-                >
+                <li className="inline px-4 py-2.5 rounded-lg hover:bg-blue-700 hover:text-white">
                   {link.name}
                 </li>
               </Link>
@@ -68,14 +68,16 @@ export default function Header() {
         </nav>
       </div>
 
+      {/* <div className="h-1 w-full bg-blue-100 sticky top-16 z-50" /> */}
+
       <div
-        className={`fixed z-49 w-full h-84 bg-white/60 rounded-bl-lg rounded-br-lg backdrop-blur-[20px] backdrop-opacity-75 shadow-lg transform transition-transform duration-800 ease-in-out ${isMobileMenuOpen ? "" : "-translate-y-100"}`}
+        className={`fixed z-49 w-full h-75 bg-white/60 rounded-bl-lg rounded-br-lg backdrop-blur-[20px] backdrop-opacity-75 shadow-lg transform transition-transform duration-700 ease-in-out ${isMobileMenuOpen ? "" : "-translate-y-95"}`}
       >
         <nav className="md:hidden">
           <ul className="text-stone-900 text-xl p-2 text-center">
             {links.map((link, index) => (
               <li className="p-3" key={index}>
-                <Link href={link.href}>{link.name}</Link>
+                <Link href={link.href} onClick={() => setIsMobileMenuOpen(false)}>{link.name}</Link>
               </li>
             ))}
           </ul>
