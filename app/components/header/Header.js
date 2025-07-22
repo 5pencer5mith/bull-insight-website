@@ -1,15 +1,12 @@
 "use client";
 
-// Hooks and utility
-import { useState, useEffect } from "react";
+// useState is used to determine whether or not the menu or "hamburger" has been clicked to open the mobile menu
+import { useState } from "react";
 
-// Components
-import { IonIcon } from "@ionic/react";
-import { menuOutline, closeOutline } from "ionicons/icons";
 import Link from "next/link";
 
-// Styles
-import styles from "./header.module.css";
+// icons ussed for the hamburger menu
+import { Menu, X } from "lucide-react";
 
 const links = [
   { name: "Home", href: "/" },
@@ -17,18 +14,11 @@ const links = [
   { name: "Morphology", href: "/Morphology" },
   { name: "Resources", href: "/Resources" },
   { name: "Blog", href: "/Blog" },
-  { name: "Store", href: "/Store" },
+  // { name: "Store", href: "/Store" },
 ];
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isHydrated, setIsHydrated] = useState(false);
-
-  useEffect(() => {
-    setIsHydrated(true);
-  }, []);
-
-  if (!isHydrated) return null;
 
   const toggleMenu = () => {
     setIsMobileMenuOpen((prev) => {
@@ -38,32 +28,61 @@ export default function Header() {
   };
 
   return (
-    <div className={styles.container}>
-      <div className={styles.logo}>
-        <Link href="/">Bull Insight</Link>
+    <>
+      <div className="flex flex-end bg-white text-stone-900 h-16 items-center p-4 sticky top-0 z-50 shadow-sm">
+        <div className="flex flex-1 items-center text-xl">
+          <Link href="/">
+            <span className="">Bull-</span>
+            <span className="font-bold text-blue-700">Insight</span>
+            <span className="text-stone-900">.com</span>
+          </Link>
+        
+        </div>
+        
+
+        <div
+          className="max-md:block max-md:shrink-0 max-md:cursor-pointer md:hidden : "
+          onClick={toggleMenu}
+        >
+          {isMobileMenuOpen ? (
+            <div className="text-stone-900">
+              <X size={24} />
+            </div>
+          ) : (
+            <div className="text-stone-900">
+              <Menu size={24} />
+            </div>
+          )}
+        </div>
+
+        <nav className="hidden md:block">
+          <ul className="p-4">
+            {links.map((link, index) => (
+              <Link href={link.href} key={index}>
+                <li className="inline px-4 py-2.5 rounded-lg hover:bg-blue-700 hover:text-white">
+                  {link.name}
+                </li>
+              </Link>
+            ))}
+          </ul>
+        </nav>
       </div>
 
-      <div className={styles.hamburger} onClick={toggleMenu}>
-        {isMobileMenuOpen ? (
-          <IonIcon className="icons" icon={closeOutline} />
-        ) : (
-          <IonIcon className="icons" icon={menuOutline} />
-        )}
-      </div>
+      {/* <div className="h-1 w-full bg-blue-100 sticky top-16 z-50" /> */}
 
-      <nav
-        className={`${styles.nav} ${
-          isMobileMenuOpen ? styles.active : ""
-        } ${styles.desktop}`}
+      <div
+        className={`fixed z-49 w-full h-75 bg-white/60 rounded-bl-lg rounded-br-lg backdrop-blur-[20px] backdrop-opacity-75 shadow-lg transform transition-transform duration-700 ease-in-out ${isMobileMenuOpen ? "" : "-translate-y-95"}`}
       >
-        <ul className={styles.menuList}>
-          {links.map((link, index) => (
-            <li key={index}>
-              <Link href={link.href}>{link.name}</Link>
-            </li>
-          ))}
-        </ul>
-      </nav>
-    </div>
+        <nav className="md:hidden">
+          <ul className="text-stone-900 text-xl p-2 text-center">
+            {links.map((link, index) => (
+              <li className="p-3" key={index}>
+                <Link href={link.href} onClick={() => setIsMobileMenuOpen(false)}>{link.name}</Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </div>
+    </>
   );
-};
+}

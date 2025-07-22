@@ -1,376 +1,239 @@
-"use client";
-
-// Hooks and Utility
-import { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
-
-// Components
-import Hero from "./components/hero/Hero";
-import { IonIcon } from "@ionic/react";
-import {
-  warningOutline,
-  bulbOutline,
-  heartOutline,
-  callOutline,
-  mailOpenOutline,
-  locationOutline,
-  hardwareChipOutline,
-} from "ionicons/icons";
-import Button from "./components/buttons/Button";
-import ButtonGroup from "./components/buttons/ButtonGroup";
+import PageWrapper from "./components/PageWrapper";
+import Link from "next/link";
 import Image from "next/image";
+import Button from "./components/buttons/Button";
 
-// Styles
-import styles from "./page.module.css";
+import {
+  Package,
+  Microscope,
+  BookOpen,
+  Rss,
+  Phone,
+  Send,
+  Building2,
+  Heart,
+} from "lucide-react";
 
-export default function Home() {
-  const [isHydrated, setIsHydrated] = useState(false);
-  const router = useRouter();
-
-  useEffect(() => {
-    setIsHydrated(true);
-    const hash = window.location.hash;
-    if (hash) {
-      router.push(hash);
-    }
-  }, [router]);
-  if (!isHydrated) return null;
-
+export default function home() {
   return (
-    <div className={styles.page}>
-      <Hero />
-      <div className="content">
-        <div className={styles.contentWrapper}>
-          <div className={styles.intro}>
-            <div className={styles.introTitle}>
-              <h1>Herd Health Comes First</h1>
+    <PageWrapper>
+      {/* Hero */}
+      <div className="w-full h-screen text-center relative">
+        <div className="absolute p-4 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full bg-white/30 backdrop-blur-sm">
+          <h1 className="hidden md:inline md:text-4xl md:text-white md:text-shadow-lg/20">
+            Welcome to Bull-
+            <span className="font-bold text-blue-700">Insight</span>.com
+          </h1>
+          <h1 className="text-shadow-lg/20 text-white text-3xl md:text-7xl">
+            Your Home for a{" "}
+            <span className="text-white font-bold md:text-blue-700">
+              Healthy
+            </span>{" "}
+            Herd
+          </h1>
+        </div>
+        <img
+          className="object-cover object-[100%_75%] w-full h-full"
+          src="/img/hero/cattle-grazing-mountainside.jpg"
+          alt="cattle grazing in a field"
+        />
+      </div>
+
+      {/* main content */}
+      <div className="pt-8 pb-8">
+        <div className="w-full bg-white shadow-xl">
+          <div className="p-8">
+            <div className="inline text-center w-full p-4 md:text-center">
+              <div className="md:p-4">
+                <h3 className="text-2xl md:text-4xl">
+                  <span className="font-bold text-blue-700">Our goal</span> is
+                  to provide effective resources and information, and to promote
+                  best practices that ensure the well-being and health of cattle
+                  herds worldwide.
+                </h3>
+              </div>
+
+              <div className="flex justify-center items-center">
+                <img src="/img/index/cow.svg" alt="silhouette of bull" />
+              </div>
             </div>
 
-            <div className={styles.colorBox}>
-              <h3>
-                <span>Our goal</span> is to provide effective resources and
-                information, and to promote best practices that ensure the
-                well-being and health of cattle herds worldwide.
+            <div className="md:pb-4">
+              <h3 className="text-2xl text-center md:text-4xl">
+                Tools and{" "}
+                <span className="font-bold text-blue-700">Insights</span>
               </h3>
             </div>
 
-            <div className={styles.introCols}>
-              <div className={styles.introCol1}>
-                <Image
-                  src="/img/index/cow-lick.jpg"
-                  alt="Cow licking its nose"
-                  className={styles.img}
-                  width={700}
-                  height={400}
-                  style={{ borderRadius: "5px" }}
-                />
-              </div>
-
-              <div className={styles.introCol2}>
-                <div className={styles.introCol2Title}>
-                  <h1>Fertility Health</h1>
-                  <IonIcon
-                    className={styles.icons}
-                    icon={heartOutline}
-                    style={{ verticalAlign: "middle" }}
-                  />
-                </div>
-
-                <div className={styles.introContent}>
-                  <p>
-                    Healthy Bull Fertility in cattle breeding impacts
-                    agricultural efficiency, economic viability, and
-                    environmental sustainability. This means an improved
-                    livestock productivity and cost savings for cattle
-                    producers, genetic improvements and increased and prolonged
-                    health for cattle, and more. To help ensure healthy bull
-                    fertility, licensed veterinarians will examine the semen of
-                    the bull and look at things like sperm concentration,
-                    motility, and morphology as part of what is called a B.B.S.E
-                    or Bull Breeding Soundness Exam.
-                  </p>
-
-                  <ButtonGroup
-                    button1Dest="/Resources"
-                    button1Text="Learn More About B.B.S.E."
-                    button2Dest="/Morphology"
-                    button2Text="Learn More About Morphology"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className={styles.incyte}>
-            <div className={styles.title}>
-              <h1>
-                Harness the Power of Artificial Intelligence <span>(AI)</span>{" "}
-                with Sperm In-Cyte
-              </h1>
-              <IonIcon
-                className={styles.icons}
-                icon={hardwareChipOutline}
-                style={{ verticalAlign: "middle" }}
-              />
-            </div>
-
-            <div className={styles.colorBox}>
-              <div className={styles.incyteCols}>
-                <div>
-                  <div className={styles.incyteExplain}>
-                    <h2>What Is Sperm In-Cyte?</h2>
-                    <p>
-                      Using advanced computer vision and machine learning
-                      algorithms, Sperm In-Cyte provides a precise and efficient
-                      semen analysis to aid veterinarians and cattle producers
-                      in determining bull fertility health.
-                    </p>
+            <div className="pt-4 grid grid-cols-1 gap-8 md:grid-cols-3 md:pt-2 lg:grid-cols-4">
+              <Link href="/Sample-Analysis">
+                <div className="relative insights-block">
+                  <div className="absolute inset-0 flex justify-center items-center z-0">
+                    <Package className="w-48 h-48 text-blue-200" />
                   </div>
 
-                  <div>
-                    <h2>How Does It Work?</h2>
-                    <p>
-                      Using image data taken from a microscope, Sperm In-Cyte
-                      analyzes a bull semen sample and detects and identifies
-                      any sperm morphology in the given sample.
-                    </p>
+                  <div className="relative z-10">
+                    <h4 className="text-xl text-center">Sample Analysis</h4>
+                    <div className="pt-2">
+                      <p className="text-md text-center">
+                        Order a sample analysis kit, collect a semen sample from
+                        your bull, and send it back to us for a complete and
+                        accurate analysis.
+                      </p>
+                    </div>
                   </div>
                 </div>
+              </Link>
 
-                <div className={styles.incyteImg}>
-                  <Image
-                    src="/img/index/cow-lick.jpg"
-                    alt="Cow licking its nose"
-                    className={styles.img}
-                    width={700}
-                    height={400}
-                    style={{ borderRadius: "5px" }}
-                  />
+              <Link href="/">
+                <div className="relative insights-block">
+                  <div className="absolute inset-0 flex justify-center items-center z-0">
+                    <Microscope className="w-48 h-48 text-blue-100" />
+                  </div>
+
+                  <div className="relative z-10">
+                    <h4 className="text-center text-xl">
+                      Sperm In-Cyte Technology
+                    </h4>
+                    <div className="pt-2">
+                      <p className="text-md text-center">
+                        Learn about an advanced bull semen analysis tool powered
+                        by artificial intelligence.
+                      </p>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
+              </Link>
 
-            <Button
-              buttonDest="/Sperm-In-Cyte"
-              buttonText="Learn More About Sperm In-Cyte"
-            />
-          </div>
+              <Link href="/">
+                <div className="relative insights-block">
+                  <div className="absolute inset-0 flex justify-center items-center z-0">
+                    <BookOpen className="w-48 h-48 text-blue-100" />
+                  </div>
 
-          <div className={styles.aboutUs} id="about">
-            <h1>About Us</h1>
-
-            <div className={styles.colorBox}>
-              <div className={styles.cols}>
-                <div className={styles.col1}>
-                  <h2>We Are Bull Insight</h2>
-                  <p>
-                    Bull Insight is transforming cattle breeding through
-                    advanced technology, education, and research.{" "}
-                    <strong>Our mission</strong> is to enhance herd fertility by
-                    providing accurate reproductive insights, practical
-                    knowledge, and advanced tools that harness the power of
-                    artificial intelligence.
-                  </p>
-                  <p>
-                    Developed by Dr. Glen Jensen, Sperm In-Cyte uses
-                    cutting-edge computer vision to deliver precise semen
-                    evaluations, surpassing manual methods. Beyond technology,
-                    we provide essential expertise on bull breeding soundness
-                    evaluations (BBSE), sperm morphology, and reproductive
-                    health.
-                  </p>
-                  <p>
-                    By bridging science and industry, Bull Insight empowers
-                    cattle producers with the tools to make informed breeding
-                    decisions and drive long-term success.
-                  </p>
-                  {/* <p>
-                    Founded by Dr. Glen Jensen, Sperm In-Cyte is an innovative
-                    veterinary technology designed for enhancing cattle herd
-                    reproductive efficiency through advanced semen analysis.
-                    Below you'll find a more in-depth explianation of the
-                    importance of bull fertility, the issues our current
-                    agriculture systems are facing, and more about the techology
-                    that can help solve those issues. It is{" "}
-                    <strong>Our Mission</strong> to revolutionize the cattle
-                    breeding industry by providing accurate, dependable, and
-                    high-quality semen evaluations that surpass the limitations
-                    of manual evaluation by leveraging advanced computer vision
-                    algorithms to guarantee precise and consistent results,
-                    empowering cattle producers to make informed breeding
-                    decisions.
-                  </p> */}
+                  <div className="relative z-10">
+                    <h4 className="text-center text-xl">Sperm Morphology</h4>
+                    <div className="pt-2">
+                      <p className="text-md text-center">
+                        Learn about bull sperm morphology and the different
+                        effects sperm morphology can have on fertility.
+                      </p>
+                    </div>
+                  </div>
                 </div>
+              </Link>
 
-                <div className={styles.col2}>
-                  <Image
-                    src="/img/index/mother-and-calf.jpg"
-                    alt="Mother cow nursing her calf."
-                    className={styles.img}
-                    width={700}
-                    height={400}
-                    style={{ borderRadius: "5px" }}
-                  />
+              <Link href="/">
+                <div className="relative insights-block">
+                  <div className="absolute inset-0 flex justify-center items-center z-0">
+                    <Rss className="w-48 h-48 text-blue-100" />
+                  </div>
+
+                  <div className="relative z-10">
+                    <h4 className="text-center text-xl">Blog</h4>
+                    <div className="pt-2">
+                      <p className="text-md text-center">
+                        Keep up with the latest insights! Check out our blog.
+                      </p>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-
-            {/* <div className={styles.summ}>
-              <div>
-                <div className={styles.title}>
-                  <IonIcon
-                    className={styles.icons}
-                    icon={heartOutline}
-                    style={{ verticalAlign: "middle" }}
-                  />
-                  <h1>Healthy Bull Fertility Is Everything</h1>
-                </div>
-
-                <p>
-                  Healthy Bull Fertility in cattle breeding impacts agricultural
-                  efficiency, economic viability, and environmental
-                  sustainability. This means an improved livestock productivity
-                  and cost savings for cattle producers, genetic improvements
-                  and increased and prolonged health for cattle, and more. To
-                  help ensure healthy bull fertility, licensed veterinarians
-                  will examine the semen of the bull and look at things like
-                  sperm concentration, motility, and morphology as part of what
-                  is called a B.B.S.E or Bull Breeding Soundness Exam.
-                </p>
-
-                <ButtonGroup
-                  button1Dest="/Resources"
-                  button1Text="Learn More About B.B.S.E."
-                  button2Dest="/Morphology"
-                  button2Text="Learn More About Morphology"
-                />
-              </div>
-
-              <div className={styles.problem}>
-                <div className={styles.title}>
-                  <IonIcon
-                    className={styles.icons}
-                    icon={warningOutline}
-                    style={{ verticalAlign: "middle" }}
-                  />
-                  <h1>The Problem</h1>
-                </div>
-
-                <p>
-                  Infertility and subfertility in bulls are significant issues
-                  in the cattle industry, leading to economic losses and
-                  inefficiencies. It is estimated that sub-fertility can cost
-                  producers thousands of dollars each year. Traditional bull
-                  breeding soundness exams (B.B.S.E.) are often imprecise,
-                  time-consuming, and costly. These manual evaluations can miss
-                  sub-fertile bulls due to their cursory nature, leading to
-                  drawn-out calving seasons, lighter weaning weights, and
-                  overall herd reproductive inefficiencies. The lack of
-                  standardized, high-quality semen evaluations creates a gap
-                  where seedstock producers often opt for cheaper, less thorough
-                  exams, which benefits their sales but leaves buyers with
-                  unreliable results.
-                </p>
-              </div>
-
-              <div className={styles.solution}>
-                <div className={styles.title}>
-                  <IonIcon
-                    className={styles.icons}
-                    icon={bulbOutline}
-                    style={{ verticalAlign: "middle" }}
-                  />
-                  <h1>Our Solution</h1>
-                </div>
-
-                <p>
-                  Sperm In-Cyte automates the semen analysis process. Our system
-                  captures microscopic images of sperm samples and uses advanced
-                  computer vision to identify and classify sperm abnormalities
-                  with high precision. This technology streamlines the
-                  evaluation process, making it faster and more cost-effective.
-                </p>
-
-                <Button
-                  buttonDest="/Sperm-In-Cyte"
-                  buttonText="Learn More About Sperm In-Cyte"
-                />
-              </div>
-            </div> */}
-          </div>
-
-          <div className={styles.donate}>
-            <div className={styles.colorBox}>
-              <h1>
-                Support the Cause<span> - Keep Our Herds Healthy</span>
-              </h1>
-              <p>
-                Bull Insight is dedicated to advancing cattle breeding through
-                technology, research, and education. Your support helps us
-                continue providing valuable insights and resources to producers
-                everywhere.
-              </p>
-              <h2>
-                Join us in promoting healthier, more productive herds. Every
-                contribution keeps this initiative going.
-              </h2>
-
-              <Button
-                buttonDest="/"
-                buttonText="Donate Now"
-              />
-            </div>
-          </div>
-
-          <div className={styles.contactUs} id="contact">
-            <h1>Contact Us</h1>
-
-            <div className={styles.info}>
-              <h2>Let's Talk, We're Here To Help!</h2>
-
-              <p>
-                <IonIcon
-                  className={styles.icons}
-                  icon={callOutline}
-                  style={{
-                    color: "#005999",
-                    fontSize: "50px",
-                    verticalAlign: "middle",
-                  }}
-                />
-                <a href="tel:4353812539">(435) 381-2539</a>
-              </p>
-
-              <p>
-                <IonIcon
-                  className={styles.icons}
-                  icon={mailOpenOutline}
-                  style={{
-                    color: "#005999",
-                    fontSize: "50px",
-                    verticalAlign: "middle",
-                  }}
-                />
-                <a href="mailto:glen@emeryanimalhealth.com">
-                  glen@emeryanimalhealth.com
-                </a>
-              </p>
-
-              <p>
-                <IonIcon
-                  className={styles.icons}
-                  icon={locationOutline}
-                  style={{
-                    color: "#005999",
-                    fontSize: "50px",
-                    verticalAlign: "middle",
-                  }}
-                />
-                Address Goes Here
-              </p>
+              </Link>
             </div>
           </div>
         </div>
       </div>
-    </div>
+
+      <div className="pb-8">
+        <div className="w-full bg-white shadow-xl">
+          <div className="p-8">
+            <div className="md:p-4" id="about">
+              <h3 className="text-center text-2xl md:text-4xl md:text-left">
+                <span className="font-bold text-blue-700">About</span> Us
+              </h3>
+
+              <div className="md:flex">
+                <div className="md:flex-3 md:p-8">
+                  <p className="text-lg md:text-2xl">
+                    Bull-
+                    <span className="font-bold text-blue-700">Insight</span>
+                    .com is transforming cattle breeding through advanced
+                    technology, education, and research. We aim to enhance herd
+                    fertility by providing accurate reproductive insights,
+                    practical knowledge, and cutting-edge tools powered by
+                    artificial intelligence. This project—and the products it
+                    inspires—are developed with expertise and driven by the
+                    lifelong passion of Dr. Glen Jensen, whose commitment to
+                    reproductive science and cattle health guides everything we
+                    do.
+                  </p>
+                </div>
+
+                <div className="pt-4 md:flex-2">
+                  <Image
+                    src="/img/index/cow-lick.jpg"
+                    alt="Cow licking it's own nose."
+                    width={700}
+                    height={400}
+                    className="rounded-lg shadow-lg"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div className="pt-12" id="contact">
+              <h3 className="text-center text-2xl md:text-4xl md:pb-4">
+                <span className="font-bold text-blue-700">Contact</span> Us
+              </h3>
+              <h4 className="text-lg text-center md:text-2xl">
+                We would love to hear from{" "}
+                <span className="font-bold text-blue-700">you</span>!
+              </h4>
+              <div className="md:flex md:justify-center">
+                <div className="md:p-8">
+                  <div className="flex justify-left gap-2 pt-2 pb-2 ">
+                    <Phone className="text-blue-700" />
+                    <a href="tel:4353812539">(435) 381-2539</a>
+                  </div>
+
+                  <div className="flex justify-left gap-2 pt-2 pb-2">
+                    <Send className="text-blue-700" />
+                    <a href="mailto:glen@emeryanimalhealth.com">
+                      glen@emeryanimalhealth.com
+                    </a>
+                  </div>
+
+                  <div className="flex justify-left gap-2 pt-2 pb-2">
+                    <Building2 className="text-blue-700" />
+                    Address Goes Here
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="pb-8" id="donate">
+        <div className="w-full bg-white shadow-xl p-4 md:p-12">
+          <div className="relative p-8">
+            <div className="absolute inset-0 flex justify-center items-center z-0">
+              <Heart className="w-48 h-48 text-blue-100" />
+            </div>
+
+            <div className="relative z-10">
+              <h3 className="text-2xl text-center md:text-4xl">
+                Support the Cause to Keep Our Herds{" "}
+                <span className="font-bold text-blue-700">Healthy</span>!
+              </h3>
+            </div>
+
+            <div className="relative z-10 text-center p-2">
+              <Button buttonDest={"/"} buttonText={"Donate Now"} buttonStyles={"bg-blue-700 text-white rounded-lg p-2 text-center md:hover:scale-105 md:w-1/4 md:mx-auto"} />
+            </div>
+          </div>
+        </div>
+      </div>
+    </PageWrapper>
   );
 }
