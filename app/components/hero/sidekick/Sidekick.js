@@ -7,9 +7,19 @@ export default function Sidekick({ pageTitle, subTitle }) {
   const firstWord = pageTitle.split(" ")[0];
   const secondWord = pageTitle.split(" ")[1];
   return (
-    <div className="w-full bg-white shadow-xl">
+    <div className="relative w-full shadow-xl">
+
+      <div className="">
+        <Image
+        src="/img/hero/meadow.jpg"
+        alt="Background"
+        fill
+        className="object-cover opacity-30" // You can adjust the opacity
+        priority
+      />
+      </div>
       
-      <div className="h-20 text-2xl flex flex-col justify-center items-center md:text-3xl">
+      <div className="relative z-10 h-20 text-2xl flex flex-col justify-center items-center md:text-3xl">
         <h1 className="">
           {firstWord}{" "}
           <span className="font-bold text-blue-700">{secondWord}</span>
