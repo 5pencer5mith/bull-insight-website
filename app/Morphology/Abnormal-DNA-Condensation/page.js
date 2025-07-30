@@ -2,9 +2,6 @@
 import Image from "next/image";
 import Slider from "../../components/slider/Slider";
 
-// Styles
-import styles from "../page.module.css";
-
 // Images used for the slider
 const images = [
   {
@@ -66,91 +63,95 @@ export default function AbnormalCondensation() {
 
       <div>{/* Slider */}</div>
 
-        <article className="pt-4">
-          <section>
-            <h4 className="font-bold text-xl md:text-2xl">Description</h4>
+      <article className="pt-4">
+        <section>
+          <h4 className="font-bold text-xl md:text-2xl">Description</h4>
 
-            <p>
-              Abnormal DNA condensation is characterized by incomplete chromatin
-              packaging, where histones are not fully replaced by protamines
-              during spermiogenesis. This leads to less stable DNA and increased
-              susceptibility to denaturation.
-            </p>
-          </section>
+          <p>
+            Abnormal DNA condensation is characterized by incomplete chromatin
+            packaging, where histones are not fully replaced by protamines
+            during spermiogenesis. This leads to less stable DNA and increased
+            susceptibility to denaturation.
+          </p>
+        </section>
 
-          <section className="pt-4">
-            <h4 className="font-bold text-xl md:text-2xl">Potential Effects on Fertility</h4>
+        <section className="pt-4">
+          <h4 className="font-bold text-xl md:text-2xl">
+            Potential Effects on Fertility
+          </h4>
 
-            <p>
-              Abnormal DNA condensation is a significant factor in reduced
-              fertility. Sperm with this defect show increased levels of DNA
-              fragmentation and poor chromatin integrity, leading to decreased
-              fertilization rates and embryo development. Bulls with more than
-              20% of sperm showing abnormal DNA condensation are generally
-              considered subfertile or infertile​​​​​​.
-            </p>
-          </section>
+          <p>
+            Abnormal DNA condensation is a significant factor in reduced
+            fertility. Sperm with this defect show increased levels of DNA
+            fragmentation and poor chromatin integrity, leading to decreased
+            fertilization rates and embryo development. Bulls with more than 20%
+            of sperm showing abnormal DNA condensation are generally considered
+            subfertile or infertile​​​​​​.
+          </p>
+        </section>
 
-          <section className="pt-4">
-            <h4 className="font-bold text-xl md:text-2xl">Days from Insult to Identificaiton</h4>
+        <section className="pt-4">
+          <h4 className="font-bold text-xl md:text-2xl">
+            Days from Insult to Identificaiton
+          </h4>
 
-            <p>
-              This defect can be identified approximately 20-30 days following a
-              stress event or other insult that affects spermatogenesis​​.
-            </p>
-          </section>
+          <p>
+            This defect can be identified approximately 20-30 days following a
+            stress event or other insult that affects spermatogenesis​​.
+          </p>
+        </section>
 
-          <section className="pt-4">
-            <h4 className="font-bold text-xl md:text-2xl">Causes</h4>
+        <section className="pt-4">
+          <h4 className="font-bold text-xl md:text-2xl">Causes</h4>
 
-            <p>Possible causes include:</p>
+          <p>Possible causes include:</p>
 
-            <ul>
-              <li>
-                <strong>Genetic Factors:</strong> Some bulls may have a
-                hereditary predisposition to this defect
-              </li>
-              <li>
-                <strong>Environmental Stress:</strong> Heat stress, nutritional
-                deficiencies, and illness
-              </li>
-              <li>
-                <strong>Hormonal Imbalance:</strong> Disruptions in hormonal
-                regulation of the testes can lead to abnormal DNA condensation
-              </li>
-            </ul>
-          </section>
+          <ul>
+            <li>
+              <strong>Genetic Factors:</strong> Some bulls may have a hereditary
+              predisposition to this defect
+            </li>
+            <li>
+              <strong>Environmental Stress:</strong> Heat stress, nutritional
+              deficiencies, and illness
+            </li>
+            <li>
+              <strong>Hormonal Imbalance:</strong> Disruptions in hormonal
+              regulation of the testes can lead to abnormal DNA condensation
+            </li>
+          </ul>
+        </section>
 
-          <section className="pt-4">
-            <h4 className="font-bold text-xl md:text-2xl ">Other Important Data</h4>
+        <section className="pt-4">
+          <h4 className="font-bold text-xl md:text-2xl ">
+            Other Important Data
+          </h4>
 
-            <p>
-              Abnormal DNA condensation cannot be detected by light microscopy
-              with routine staining techniques. It can be identified using
-              specialized methods such as the sperm chromatin structure assay
-              (SCSA) and Feulgen staining. The Feulgen method correlates well
-              with SCSA and allows for detailed examination of chromatin
-              integrity under high magnification​​​​.
-            </p>
-          </section>
+          <p>
+            Abnormal DNA condensation cannot be detected by light microscopy
+            with routine staining techniques. It can be identified using
+            specialized methods such as the sperm chromatin structure assay
+            (SCSA) and Feulgen staining. The Feulgen method correlates well with
+            SCSA and allows for detailed examination of chromatin integrity
+            under high magnification​​​​.
+          </p>
+        </section>
 
-          <section className="pt-4">
-            <h4 className="font-bold text-xl md:text-2xl">Case Studies</h4>
+        <section className="pt-4">
+          <h4 className="font-bold text-xl md:text-2xl">Case Studies</h4>
 
-            <h5>
-              Case Study: Impact of Abnormal DNA Condensation on Fertility
-            </h5>
+          <h5 className="font-bold">Case Study: Impact of Abnormal DNA Condensation on Fertility</h5>
 
-            <p>
-              A study involving bulls with varying levels of abnormal DNA
-              condensation (2-75%) demonstrated a clear correlation between
-              increased levels of this defect and reduced fertility. In one
-              case, a bull with 100% abnormal chromatin condensation showed
-              complete infertility, highlighting the severe impact of this
-              defect on reproductive success​​​​.
-            </p>
-          </section>
-        </article>
+          <p>
+            A study involving bulls with varying levels of abnormal DNA
+            condensation (2-75%) demonstrated a clear correlation between
+            increased levels of this defect and reduced fertility. In one case,
+            a bull with 100% abnormal chromatin condensation showed complete
+            infertility, highlighting the severe impact of this defect on
+            reproductive success​​​​.
+          </p>
+        </section>
+      </article>
     </div>
   );
 }

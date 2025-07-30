@@ -51,26 +51,24 @@ const images = [
 
 export default function DagDefect() {
   return (
-    <div className={styles.contentWrapper}>
-      <div className={styles.titleContainer}>
-        <h1 className={styles.title}>
-          Dag Defect
-          <Image
-            src="/img/morphology/DagDefect/Dag.png"
-            alt="Dag Defect Sperm Morphology inline image"
-            width={150}
-            height={150}
-          />
-        </h1>
+    <div>
+      <div className="flex justify-center items-center text-center">
+        <h3 className="text-2xl md:text-4xl">Dag Defect</h3>
+        <Image
+          src="/img/morphology/DagDefect/Dag.png"
+          alt="Dag defect morphology example"
+          width={75}
+          height={75}
+        />
       </div>
 
-      <div className={styles.sliderContainer}>
-        <Slider imageData={images} />
-      </div>
+      <hr className="text-blue-700 border-t-2" />
 
-      <article>
+      <div>{/* Slider */}</div>
+
+      <article className="pt-4">
         <section>
-          <h2>Description</h2>
+          <h4 className="font-bold text-xl md:text-2xl">Description</h4>
 
           <p>
             The Dag defect, also known as the Dag-like defect, is characterized
@@ -80,8 +78,10 @@ export default function DagDefect() {
           </p>
         </section>
 
-        <section>
-          <h2>Potential Effects on Fertility</h2>
+        <section className="pt-4">
+          <h4 className="font-bold text-xl md:text-2xl">
+            Potential Effects on Fertility
+          </h4>
 
           <p>
             The Dag defect can significantly impair fertility when present in
@@ -93,8 +93,10 @@ export default function DagDefect() {
           </p>
         </section>
 
-        <section>
-          <h2>Days from Insult to Identificaiton</h2>
+        <section className="pt-4">
+          <h4 className="font-bold text-xl md:text-2xl">
+            Days from Insult to Identificaiton
+          </h4>
 
           <p>
             Dag defects can appear shortly after stress events or disturbances
@@ -103,8 +105,8 @@ export default function DagDefect() {
           </p>
         </section>
 
-        <section>
-          <h2>Causes</h2>
+        <section className="pt-4">
+          <h4 className="font-bold text-xl md:text-2xl">Causes</h4>
 
           <p>Possible causes include:</p>
 
@@ -123,8 +125,10 @@ export default function DagDefect() {
           </ul>
         </section>
 
-        <section>
-          <h2>Other Important Data</h2>
+        <section className="pt-4">
+          <h4 className="font-bold text-xl md:text-2xl ">
+            Other Important Data
+          </h4>
 
           <p>
             The Dag defect is a serious concern when present in high numbers
@@ -135,10 +139,12 @@ export default function DagDefect() {
           </p>
         </section>
 
-        <section>
-          <h2>Case Studies</h2>
+        <section className="pt-4">
+          <h4 className="font-bold text-xl md:text-2xl">Case Studies</h4>
 
-          <h3>Case Study: Impact of Dag Defect on Fertility</h3>
+          <h5 className="font-bold ">
+            Case Study: Impact of Dag Defect on Fertility
+          </h5>
 
           <p>
             A study involving bulls with high levels of the Dag defect (greater

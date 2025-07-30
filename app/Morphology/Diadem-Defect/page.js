@@ -14,26 +14,19 @@ import styles from "../page.module.css";
 
 export default function DiademDefect() {
   return (
-    <div className={styles.contentWrapper}>
-      <div className={styles.titleContainer}>
-        <h1 className={styles.title}>
-          Diadem Defect
-          {/* <Image
-                        src='/morphology/'
-                        alt=''
-                        width={150}
-                        height={150}
-                    /> */}
-        </h1>
+    <div>
+      <div className="flex justify-center items-center text-center">
+        <h3 className="text-2xl md:text-4xl">Diadem Defect</h3>
+        {/* <Image src="" alt="" width={75} height={75} /> */}
       </div>
 
-      <div className={styles.sliderContainer}>
-        {/* <Slider imageData={images} /> */}
-      </div>
+      <hr className="text-blue-700 border-t-2" />
 
-      <article>
+      <div>{/* Slider */}</div>
+
+      <article className="pt-4">
         <section>
-          <h2>Description</h2>
+          <h4 className="font-bold text-xl md:text-2xl">Description</h4>
 
           <p>
             Diadem defects, also known as diadem vacuoles, are characterized by
@@ -44,8 +37,10 @@ export default function DiademDefect() {
           </p>
         </section>
 
-        <section>
-          <h2>Potential Effects on Fertility</h2>
+        <section className="pt-4">
+          <h4 className="font-bold text-xl md:text-2xl">
+            Potential Effects on Fertility
+          </h4>
 
           <p>
             Diadem defects can significantly impact fertility. Bulls with more
@@ -56,8 +51,10 @@ export default function DiademDefect() {
           </p>
         </section>
 
-        <section>
-          <h2>Days from Insult to Identificaiton</h2>
+        <section className="pt-4">
+          <h4 className="font-bold text-xl md:text-2xl">
+            Days from Insult to Identificaiton
+          </h4>
 
           <p>
             Diadem defects can appear approximately 20 days following a stress
@@ -65,8 +62,8 @@ export default function DiademDefect() {
           </p>
         </section>
 
-        <section>
-          <h2>Causes</h2>
+        <section className="pt-4">
+          <h4 className="font-bold text-xl md:text-2xl">Causes</h4>
 
           <p>Possible causes include:</p>
 
@@ -86,8 +83,10 @@ export default function DiademDefect() {
           </ul>
         </section>
 
-        <section>
-          <h2>Other Important Data</h2>
+        <section className="pt-4">
+          <h4 className="font-bold text-xl md:text-2xl ">
+            Other Important Data
+          </h4>
 
           <p>
             Diadem defects are more commonly observed in some breeds and are
@@ -98,10 +97,12 @@ export default function DiademDefect() {
           </p>
         </section>
 
-        <section>
-          <h2>Case Studies</h2>
+        <section className="pt-4">
+          <h4 className="font-bold text-xl md:text-2xl">Case Studies</h4>
 
-          <h3>Case Study: Impact of Diadem Defects on Fertility</h3>
+          <h5 className="font-bold ">
+            Case Study: Impact of Diadem Defects on Fertility
+          </h5>
 
           <p>
             A case study involving a Simmental bull with high numbers of diadem
