@@ -127,7 +127,7 @@ export default function SubNav() {
     <div>
       <div className="text-center pb-2">
         <h5 className="text-xl">
-          Browse By <span className="text-blue-700 font-bold">Category</span>:
+          Browse by <span className="text-blue-700 font-bold">Category</span>:
         </h5>
       </div>
       <div>
@@ -145,7 +145,7 @@ export default function SubNav() {
             {categoryList.map((item, index) => (
               <li
                 key={index}
-                className={`${pathname === item.link ? "underline text-blue-700" : ""}`}
+                className={`${pathname === item.link ? "underline decoration-blue-700" : ""}`}
               >
                 <div className="p-1 text-stone-900 hover:curser-pointer md:text-left md:hover:underline md:hover:decoration-blue-700">
                   <Link href={item.link}>{item.category}</Link>
@@ -154,6 +154,31 @@ export default function SubNav() {
             ))}
           </ul>
         </div>
+      </div>
+
+      <div className="hidden md:block">
+        <div className="text-center pt-4">
+          <h5 className="text-xl">
+            Browse by <span className="text-blue-700 font-bold">Abnormality</span>:
+          </h5>
+        </div>
+
+        <div className="text-center">
+          <ul>
+            {allAbnormalities.map((item, index) => (
+              <li
+                key={index}
+                className={`${pathname === item.link ? "underline decoration-blue-700" : ""}`}
+              >
+                <div className="p-1 text-stone-900 hover:curser-pointer md:text-left md:hover:underline md:hover:decoration-blue-700">
+                  <Link href={item.link}>{item.name}</Link>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-// Sidekick component: A thin banner used on most pages
+// Sidekick component: A thin banner used on most pages. Displays page title
 // Components
 import Image from "next/image";
 
@@ -14,7 +14,7 @@ export default function Sidekick({ pageTitle, subTitle }) {
         src="/img/hero/meadow.jpg"
         alt="Background"
         fill
-        className="object-cover opacity-30" // You can adjust the opacity
+        className="object-cover opacity-30"
         priority
       />
       </div>

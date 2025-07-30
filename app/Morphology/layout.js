@@ -4,7 +4,7 @@ import Sidekick from "../components/hero/sidekick/Sidekick";
 import Switch from "../components/Switch";
 export default function MorphologyLayout({ children }) {
   return (
-    <div className="container">
+    <div className="">
       <div className="pb-8">
         <div className="pb-8">
           <Sidekick pageTitle="Sperm Morphology" subTitle="Abnormalities" />
@@ -16,7 +16,7 @@ export default function MorphologyLayout({ children }) {
               <MorphNav />
             </div>
 
-            <div className="ab-content">
+            <div className="md:pl-8 md:flex-3/4">
               <main>{children}</main>
             </div>
           </div>
