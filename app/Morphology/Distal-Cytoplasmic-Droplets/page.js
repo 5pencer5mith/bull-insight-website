@@ -14,26 +14,24 @@ import styles from "../page.module.css";
 
 export default function DistalCytoplasmicDroplet() {
   return (
-    <div className={styles.contentWrapper}>
-      <div className={styles.titleContainer}>
-        <h1 className={styles.title}>
-          Distal Cytoplasmic Droplets
-          <Image
-            src="/img/morphology/DistalCytoplasmicDroplet/Cytoplasmic Droplet.png"
-            alt="Distal Cytoplasmic Droplets Sperm Morphology inline image"
-            width={150}
-            height={150}
-          />
-        </h1>
+    <div>
+      <div className="flex justify-center items-center text-center">
+        <h3 className="text-2xl md:text-4xl">Distal Cytoplasmic Droplets</h3>
+        <Image
+          src="/img/morphology/DistalCytoplasmicDroplet/Cytoplasmic Droplet.png"
+          alt="Distal cytoplasmic droplets example"
+          width={75}
+          height={75}
+        />
       </div>
 
-      <div className={styles.sliderContainer}>
-        {/* <Slider imageData={images} /> */}
-      </div>
+      <hr className="text-blue-700 border-t-2" />
 
-      <article>
+      <div>{/* Slider */}</div>
+
+      <article className="pt-4">
         <section>
-          <h2>Description</h2>
+          <h4 className="font-bold text-xl md:text-2xl">Description</h4>
 
           <p>
             Distal cytoplasmic droplets are remnants found at the distal end of
@@ -42,8 +40,10 @@ export default function DistalCytoplasmicDroplet() {
           </p>
         </section>
 
-        <section>
-          <h2>Potential Effects on Fertility</h2>
+        <section className="pt-4">
+          <h4 className="font-bold text-xl md:text-2xl">
+            Potential Effects on Fertility
+          </h4>
 
           <p>
             Recent studies have shown that distal cytoplasmic droplets are not
@@ -55,8 +55,10 @@ export default function DistalCytoplasmicDroplet() {
           </p>
         </section>
 
-        <section>
-          <h2>Days from Insult to Identificaiton</h2>
+        <section className="pt-4">
+          <h4 className="font-bold text-xl md:text-2xl">
+            Days from Insult to Identificaiton
+          </h4>
 
           <p>
             Distal droplets can be observed 7-10 days after a stress event,
@@ -65,8 +67,8 @@ export default function DistalCytoplasmicDroplet() {
           </p>
         </section>
 
-        <section>
-          <h2>Causes</h2>
+        <section className="pt-4">
+          <h4 className="font-bold text-xl md:text-2xl">Causes</h4>
 
           <p>Possible causes include:</p>
 
@@ -85,8 +87,10 @@ export default function DistalCytoplasmicDroplet() {
           </ul>
         </section>
 
-        <section>
-          <h2>Other Important Data</h2>
+        <section className="pt-4">
+          <h4 className="font-bold text-xl md:text-2xl ">
+            Other Important Data
+          </h4>
 
           <p>
             The presence of distal cytoplasmic droplets may indicate that the
@@ -96,8 +100,10 @@ export default function DistalCytoplasmicDroplet() {
           </p>
         </section>
 
-        <section>
-          <h2>Case Studies</h2>
+        <section className="pt-4">
+          <h4 className="font-bold text-xl md:text-2xl">Case Studies</h4>
+
+          <h5 className="font-bold "></h5>
 
           <p>
             Case studies highlight that bulls with high numbers of distal

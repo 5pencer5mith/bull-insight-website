@@ -51,26 +51,24 @@ const images = [
 
 export default function LargeVacuoles() {
   return (
-    <div className={styles.contentWrapper}>
-      <div className={styles.titleContainer}>
-        <h1 className={styles.title}>
-          Large Vacuoles
-          <Image
-            src="/img/morphology/LargeVacuoles/Vacuoles.png"
-            alt="Large Vacuoles Sperm Morphology inline image"
-            width={150}
-            height={150}
-          />
-        </h1>
+    <div>
+      <div className="flex justify-center items-center text-center">
+        <h3 className="text-2xl md:text-4xl">Large Vacuoles</h3>
+        <Image
+          src="/img/morphology/LargeVacuoles/Vacuoles.png"
+          alt="Large vacuoles sperm morphology example"
+          width={75}
+          height={75}
+        />
       </div>
 
-      <div className={styles.sliderContainer}>
-        <Slider imageData={images} />
-      </div>
+      <hr className="text-blue-700 border-t-2" />
 
-      <article>
+      <div>{/* Slider */}</div>
+
+      <article className="pt-4">
         <section>
-          <h2>Description</h2>
+          <h4 className="font-bold text-xl md:text-2xl">Description</h4>
 
           <p>
             Large vacuoles, also known as confluent vacuoles, appear as large,
@@ -80,8 +78,10 @@ export default function LargeVacuoles() {
           </p>
         </section>
 
-        <section>
-          <h2>Potential Effects on Fertility</h2>
+        <section className="pt-4">
+          <h4 className="font-bold text-xl md:text-2xl">
+            Potential Effects on Fertility
+          </h4>
 
           <p>
             Large vacuoles are considered an uncompensable defect and can
@@ -92,8 +92,10 @@ export default function LargeVacuoles() {
           </p>
         </section>
 
-        <section>
-          <h2>Days from Insult to Identificaiton</h2>
+        <section className="pt-4">
+          <h4 className="font-bold text-xl md:text-2xl">
+            Days from Insult to Identificaiton
+          </h4>
 
           <p>
             Large vacuoles can appear 30 days after a stress event such as
@@ -101,11 +103,10 @@ export default function LargeVacuoles() {
           </p>
         </section>
 
-        <section>
-          <h3>Causes</h3>
+        <section className="pt-4">
+          <h4 className="font-bold text-xl md:text-2xl">Causes</h4>
 
           <p>Possible causes include:</p>
-
           <ul>
             <li>
               <strong>Environmental Stress:</strong> Extreme temperatures or
@@ -122,8 +123,10 @@ export default function LargeVacuoles() {
           </ul>
         </section>
 
-        <section>
-          <h2>Other Important Data</h2>
+        <section className="pt-4">
+          <h4 className="font-bold text-xl md:text-2xl ">
+            Other Important Data
+          </h4>
 
           <p>
             Large vacuoles are more commonly observed in Bos indicus cross bulls
@@ -132,10 +135,12 @@ export default function LargeVacuoles() {
           </p>
         </section>
 
-        <section>
-          <h2>Case Studies</h2>
+        <section className="pt-4">
+          <h4 className="font-bold text-xl md:text-2xl">Case Studies</h4>
 
-          <h3>Case Study: Impact of Large Vacuoles on Fertility</h3>
+          <h5 className="font-bold ">
+            Case Study: Impact of Large Vacuoles on Fertility
+          </h5>
 
           <p>
             A study involving a bull with 62% vacuolated nuclei, including 7%

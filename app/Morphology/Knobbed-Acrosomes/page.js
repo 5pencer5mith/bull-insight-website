@@ -51,26 +51,24 @@ const images = [
 
 export default function KnobbedAcrosomes() {
   return (
-    <div className={styles.contentWrapper}>
-      <div className={styles.titleContainer}>
-        <h1 className={styles.title}>
-          Knobbed Acrosomes
-          <Image
-            src="/img/morphology/KnobbedAcrosome/Ruffled.png"
-            alt="Knobbed Acrosomes Sperm Morphology inline image"
-            width={150}
-            height={150}
-          />
-        </h1>
+    <div>
+      <div className="flex justify-center items-center text-center">
+        <h3 className="text-2xl md:text-4xl">Knobbed Acrosomes</h3>
+        <Image
+          src="/img/morphology/KnobbedAcrosome/Ruffled.png"
+          alt="Knobbed acrosomes sperm morphology example"
+          width={75}
+          height={75}
+        />
       </div>
 
-      <div className={styles.sliderContainer}>
-        <Slider imageData={images} />
-      </div>
+      <hr className="text-blue-700 border-t-2" />
 
-      <article>
+      <div>{/* Slider */}</div>
+
+      <article className="pt-4">
         <section>
-          <h2>Description</h2>
+          <h4 className="font-bold text-xl md:text-2xl">Description</h4>
 
           <p>
             Knobbed acrosomes are characterized by abnormal flattening, beading,
@@ -79,8 +77,10 @@ export default function KnobbedAcrosomes() {
           </p>
         </section>
 
-        <section>
-          <h2>Potential Effects on Fertility</h2>
+        <section className="pt-4">
+          <h4 className="font-bold text-xl md:text-2xl">
+            Potential Effects on Fertility
+          </h4>
 
           <p>
             Knobbed acrosomes can significantly impact fertility. The beaded
@@ -106,8 +106,10 @@ export default function KnobbedAcrosomes() {
           </ul>
         </section>
 
-        <section>
-          <h2>Days from Insult to Identificaiton</h2>
+        <section className="pt-4">
+          <h4 className="font-bold text-xl md:text-2xl">
+            Days from Insult to Identificaiton
+          </h4>
 
           <p>
             Knobbed acrosomes can appear approximately 30 days following a
@@ -115,11 +117,10 @@ export default function KnobbedAcrosomes() {
           </p>
         </section>
 
-        <section>
-          <h2>Causes</h2>
+        <section className="pt-4">
+          <h4 className="font-bold text-xl md:text-2xl">Causes</h4>
 
           <p>Possible causes include:</p>
-
           <ul>
             <li>
               <strong>Genetic Factors:</strong> Hereditary via an autosomal
@@ -132,8 +133,10 @@ export default function KnobbedAcrosomes() {
           </ul>
         </section>
 
-        <section>
-          <h2>Other Important Data</h2>
+        <section className="pt-4">
+          <h4 className="font-bold text-xl md:text-2xl ">
+            Other Important Data
+          </h4>
 
           <p>
             Knobbed acrosomes are considered an uncompensable defect in most
@@ -144,12 +147,15 @@ export default function KnobbedAcrosomes() {
           </p>
         </section>
 
-        <section>
-          <h2>Case Studies</h2>
+        <section className="pt-4">
+          <h4 className="font-bold text-xl md:text-2xl">Case Studies</h4>
 
-          <h3>Case Study: Impact of Knobbed Acrosomes on Fertility</h3>
+          <h5 className="font-bold ">
+            Case Study: Impact of Knobbed Acrosomes on Fertility
+          </h5>
 
           <p>
+            {" "}
             A study involving bulls with high percentages of knobbed acrosomes
             (65-85%) in single sire natural mating showed pregnancy rates
             ranging from 61-85%. Another study using frozen semen from these

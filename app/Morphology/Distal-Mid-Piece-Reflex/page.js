@@ -51,26 +51,24 @@ const images = [
 
 export default function DistalMidpeiceReflex() {
   return (
-    <div className={styles.contentWrapper}>
-      <div className={styles.titleContainer}>
-        <h1 className={styles.title}>
-          Distal Midpiece Reflex
-          <Image
-            src="/img/morphology/DistalMidPieceReflex/Distal midpiece reflex.png"
-            alt="Distal Midpiece Reflex Sperm Morphology inline image"
-            width={150}
-            height={150}
-          />
-        </h1>
+    <div>
+      <div className="flex justify-center items-center text-center">
+        <h3 className="text-2xl md:text-4xl">Distal Midpiece Reflex</h3>
+        <Image
+          src="/img/morphology/DistalMidPieceReflex/Distal midpiece reflex.png"
+          alt="Distal midpiece reflex example"
+          width={75}
+          height={75}
+        />
       </div>
 
-      <div className={styles.sliderContainer}>
-        <Slider imageData={images} />
-      </div>
+      <hr className="text-blue-700 border-t-2" />
 
-      <article>
+      <div>{/* Slider */}</div>
+
+      <article className="pt-4">
         <section>
-          <h2>Description</h2>
+          <h4 className="font-bold text-xl md:text-2xl">Description</h4>
 
           <p>
             Distal mid-piece reflex (DMR) is characterized by a sharp hairpin
@@ -79,8 +77,10 @@ export default function DistalMidpeiceReflex() {
           </p>
         </section>
 
-        <section>
-          <h2>Potential Effects on Fertility</h2>
+        <section className="pt-4">
+          <h4 className="font-bold text-xl md:text-2xl">
+            Potential Effects on Fertility
+          </h4>
 
           <p>
             Distal mid-piece reflex is considered a compensable defect as the
@@ -92,8 +92,10 @@ export default function DistalMidpeiceReflex() {
           </p>
         </section>
 
-        <section>
-          <h2>Days from Insult to Identificaiton</h2>
+        <section className="pt-4">
+          <h4 className="font-bold text-xl md:text-2xl">
+            Days from Insult to Identificaiton
+          </h4>
 
           <p>
             Distal mid-piece reflex can appear 4-11 days after a stress event
@@ -102,11 +104,10 @@ export default function DistalMidpeiceReflex() {
           </p>
         </section>
 
-        <section>
-          <h2>Causes</h2>
+        <section className="pt-4">
+          <h4 className="font-bold text-xl md:text-2xl">Causes</h4>
 
           <p>Possible causes include:</p>
-
           <ul>
             <li>
               <strong>Environmental Stress:</strong> Heat stress, cold shock, or
@@ -123,8 +124,10 @@ export default function DistalMidpeiceReflex() {
           </ul>
         </section>
 
-        <section>
-          <h2>Other Important Data</h2>
+        <section className="pt-4">
+          <h4 className="font-bold text-xl md:text-2xl ">
+            Other Important Data
+          </h4>
 
           <p>
             Distal mid-piece reflex is often transient and may fluctuate in
@@ -133,16 +136,18 @@ export default function DistalMidpeiceReflex() {
           </p>
         </section>
 
-        <section>
-          <h2>Case Studies</h2>
+        <section className="pt-4">
+          <h4 className="font-bold text-xl md:text-2xl">Case Studies</h4>
 
-          <h3>Case Study: Impact of Distal Mid-Piece Reflex on Fertility</h3>
+          <h5 className="font-bold ">
+            Case Study: Impact of Distal Mid-Piece Reflex on Fertility
+          </h5>
 
           <p>
             A study involving bulls with high levels of distal mid-piece reflex
             (greater than 30%) demonstrated reduced fertility. However, in bulls
             with up to 25% of this defect, fertility was not significantly
-            impacted, emphasizing the compensable nature of this abnormality
+            impacted, emphasizing the compensable nature of this abnormality.
           </p>
         </section>
       </article>

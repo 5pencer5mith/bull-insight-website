@@ -51,26 +51,24 @@ const images = [
 
 export default function LooseAndDetachedHeads() {
   return (
-    <div className={styles.contentWrapper}>
-      <div className={styles.titleContainer}>
-        <h1 className={styles.title}>
-          Loose and Detached Heads
-          <Image
-            src="/img/morphology/DetachedHeads/Detached.png"
-            alt="Loose and Detached Heads Sperm Morphology inline image"
-            width={150}
-            height={150}
-          />
-        </h1>
+    <div>
+      <div className="flex justify-center items-center text-center">
+        <h3 className="text-2xl md:text-4xl">Loose and Detached Heads</h3>
+        <Image
+          src="/img/morphology/DetachedHeads/Detached.png"
+          alt="Loose and Detached Heads Sperm Morphology example"
+          width={75}
+          height={75}
+        />
       </div>
 
-      <div className={styles.sliderContainer}>
-        <Slider imageData={images} />
-      </div>
+      <hr className="text-blue-700 border-t-2" />
 
-      <article>
+      <div>{/* Slider */}</div>
+
+      <article className="pt-4">
         <section>
-          <h2>Description</h2>
+          <h4 className="font-bold text-xl md:text-2xl">Description</h4>
 
           <p>
             Loose or detached heads are characterized by the separation of the
@@ -80,8 +78,10 @@ export default function LooseAndDetachedHeads() {
           </p>
         </section>
 
-        <section>
-          <h2>Potential Effects on Fertility</h2>
+        <section className="pt-4">
+          <h4 className="font-bold text-xl md:text-2xl">
+            Potential Effects on Fertility
+          </h4>
 
           <p>
             Loose or detached heads are generally considered a compensable
@@ -95,8 +95,10 @@ export default function LooseAndDetachedHeads() {
           </p>
         </section>
 
-        <section>
-          <h2>Days from Insult to Identificaiton</h2>
+        <section className="pt-4">
+          <h4 className="font-bold text-xl md:text-2xl">
+            Days from Insult to Identificaiton
+          </h4>
 
           <p>
             Detached heads can appear shortly after stress events or as a result
@@ -105,11 +107,10 @@ export default function LooseAndDetachedHeads() {
           </p>
         </section>
 
-        <section>
-          <h2>Causes</h2>
+        <section className="pt-4">
+          <h4 className="font-bold text-xl md:text-2xl">Causes</h4>
 
           <p>Possible causes include:</p>
-
           <ul>
             <li>
               <strong>Testicular Degeneration or Hypoplasia:</strong> Leading to
@@ -129,8 +130,10 @@ export default function LooseAndDetachedHeads() {
           </ul>
         </section>
 
-        <section>
-          <h2>Other Important Data</h2>
+        <section className="pt-4">
+          <h4 className="font-bold text-xl md:text-2xl ">
+            Other Important Data
+          </h4>
 
           <p>
             This defect is compensable, meaning that increasing the total sperm
@@ -140,10 +143,12 @@ export default function LooseAndDetachedHeads() {
           </p>
         </section>
 
-        <section>
-          <h2>Case Studies</h2>
+        <section className="pt-4">
+          <h4 className="font-bold text-xl md:text-2xl">Case Studies</h4>
 
-          <h3>Case Study: Impact of Detached Heads on Fertility</h3>
+          <h5 className="font-bold ">
+            Case Study: Impact of Detached Heads on Fertility
+          </h5>
 
           <p>
             A study involving a bull with a high percentage of detached heads

@@ -46,26 +46,24 @@ const images = [
 
 export default function DoubleForms() {
   return (
-    <div className={styles.contentWrapper}>
-      <div className={styles.titleContainer}>
-        <h1 className={styles.title}>
-          Double Forms
-          <Image
-            src="/img/morphology/DoubleForm/Double Form.png"
-            alt="Double Forms Sperm Morphology inline image"
-            width={150}
-            height={150}
-          />
-        </h1>
+    <div>
+      <div className="flex justify-center items-center text-center">
+        <h3 className="text-2xl md:text-4xl">Double Forms</h3>
+        <Image
+          src="/img/morphology/DoubleForm/Double Form.png"
+          alt="Double forms example"
+          width={75}
+          height={75}
+        />
       </div>
 
-      <div className={styles.sliderContainer}>
-        <Slider imageData={images} />
-      </div>
+      <hr className="text-blue-700 border-t-2" />
 
-      <article>
+      <div>{/* Slider */}</div>
+
+      <article className="pt-4">
         <section>
-          <h2>Description</h2>
+          <h4 className="font-bold text-xl md:text-2xl">Description</h4>
 
           <p>
             Double forms are characterized by sperm with two heads, two tails,
@@ -74,8 +72,10 @@ export default function DoubleForms() {
           </p>
         </section>
 
-        <section>
-          <h2>Potential Effects on Fertility</h2>
+        <section className="pt-4">
+          <h4 className="font-bold text-xl md:text-2xl">
+            Potential Effects on Fertility
+          </h4>
 
           <p>
             Double forms are a serious defect and significantly impair
@@ -86,8 +86,10 @@ export default function DoubleForms() {
           </p>
         </section>
 
-        <section>
-          <h2>Days from Insult to Identificaiton</h2>
+        <section className="pt-4">
+          <h4 className="font-bold text-xl md:text-2xl">
+            Days from Insult to Identificaiton
+          </h4>
 
           <p>
             Double forms can appear approximately 20-30 days following a severe
@@ -95,11 +97,10 @@ export default function DoubleForms() {
           </p>
         </section>
 
-        <section>
-          <h2>Causes</h2>
+        <section className="pt-4">
+          <h4 className="font-bold text-xl md:text-2xl">Causes</h4>
 
           <p>Possible causes include:</p>
-
           <ul>
             <li>
               <strong>Genetic Factors:</strong> Some bulls may have a hereditary
@@ -116,8 +117,10 @@ export default function DoubleForms() {
           </ul>
         </section>
 
-        <section>
-          <h2>Other Important Data</h2>
+        <section className="pt-4">
+          <h4 className="font-bold text-xl md:text-2xl ">
+            Other Important Data
+          </h4>
 
           <p>
             Double forms are indicative of a severe disturbance in
@@ -127,10 +130,12 @@ export default function DoubleForms() {
           </p>
         </section>
 
-        <section>
-          <h2>Case Studies</h2>
+        <section className="pt-4">
+          <h4 className="font-bold text-xl md:text-2xl">Case Studies</h4>
 
-          <h3>Case Study: Impact of Double Forms on Fertility</h3>
+          <h5 className="font-bold ">
+            Case Study: Impact of Double Forms on Fertility
+          </h5>
 
           <p>
             A case study involving a bull with high percentages of double forms
