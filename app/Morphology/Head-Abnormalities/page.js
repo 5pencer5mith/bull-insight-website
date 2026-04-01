@@ -53,10 +53,9 @@ export default function HeadAbnormalities() {
               <h3>Learn More About Pyriform Heads</h3>
 
               <IonIcon
-                className={styles.icons}
+                className={` text-blue-700`}
                 icon={arrowForwardOutline}
                 style={{
-                  color: "#005999",
                   fontSize: "30px",
                   verticalAlign: "middle",
                 }}
@@ -82,10 +81,9 @@ export default function HeadAbnormalities() {
               <h3>Learn More About Small Nuclear Vacuoles</h3>
 
               <IonIcon
-                className={styles.icons}
+                className={` text-blue-700`}
                 icon={arrowForwardOutline}
                 style={{
-                  color: "#005999",
                   fontSize: "30px",
                   verticalAlign: "middle",
                 }}
@@ -107,10 +105,9 @@ export default function HeadAbnormalities() {
               <h3>Learn More About Small Apical Vacuoles</h3>
 
               <IonIcon
-                className={styles.icons}
+                className={` text-blue-700`}
                 icon={arrowForwardOutline}
                 style={{
-                  color: "#005999",
                   fontSize: "30px",
                   verticalAlign: "middle",
                 }}
@@ -132,10 +129,9 @@ export default function HeadAbnormalities() {
               <h3>Learn More About Large Vacuoles</h3>
 
               <IonIcon
-                className={styles.icons}
+                className={` text-blue-700`}
                 icon={arrowForwardOutline}
                 style={{
-                  color: "#005999",
                   fontSize: "30px",
                   verticalAlign: "middle",
                 }}
@@ -159,10 +155,9 @@ export default function HeadAbnormalities() {
               <h3>Learn More About Diadem Defect</h3>
 
               <IonIcon
-                className={styles.icons}
+                className={` text-blue-700`}
                 icon={arrowForwardOutline}
                 style={{
-                  color: "#005999",
                   fontSize: "30px",
                   verticalAlign: "middle",
                 }}
@@ -197,10 +192,9 @@ export default function HeadAbnormalities() {
               <h3>Learn More About Swollen Acrosomes</h3>
 
               <IonIcon
-                className={styles.icons}
+                className={` text-blue-700`}
                 icon={arrowForwardOutline}
                 style={{
-                  color: "#005999",
                   fontSize: "30px",
                   verticalAlign: "middle",
                 }}
@@ -222,10 +216,9 @@ export default function HeadAbnormalities() {
               <h3>Learn More About Knobbed Acrosomes</h3>
 
               <IonIcon
-                className={styles.icons}
+                className={` text-blue-700`}
                 icon={arrowForwardOutline}
                 style={{
-                  color: "#005999",
                   fontSize: "30px",
                   verticalAlign: "middle",
                 }}
@@ -273,10 +266,9 @@ export default function HeadAbnormalities() {
               <h3>Learn More About Loose and Detached Heads</h3>
 
               <IonIcon
-                className={styles.icons}
+                className={` text-blue-700`}
                 icon={arrowForwardOutline}
                 style={{
-                  color: "#005999",
                   fontSize: "30px",
                   verticalAlign: "middle",
                 }}

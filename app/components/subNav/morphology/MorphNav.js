@@ -9,8 +9,10 @@ import Link from "next/link";
 import { IonIcon } from "@ionic/react";
 import { chevronDownOutline, chevronForwardOutline } from "ionicons/icons";
 
-// Styles
-import styles from "./morphNav.module.css";
+const listWrapperClass = "max-[768px]:text-center";
+const listUlClass = "list-none";
+const listLiClass = "mb-2 hover:origin-center hover:scale-105";
+const listLinkBaseClass = "no-underline text-sm";
 
 const theriogenology = [
   {
@@ -145,73 +147,104 @@ export default function SubNav() {
   };
 
   return (
-    <div className={styles.container}>
-      <div className={styles.wrap}>
-        <div className={styles.morphMenuButton} onClick={toggleMorphMenu}>
-          <h4>Morphology Menu</h4>
+    <div className="border-r border-solid border-[#ccc]">
+      <div className="pr-[10px]">
+        <div
+          className="hidden max-[768px]:flex max-[768px]:cursor-pointer max-[768px]:flex-row max-[768px]:content-center max-[768px]:justify-center"
+          onClick={toggleMorphMenu}
+        >
+          <h4 className="hidden max-[768px]:flex max-[768px]:text-blue-700">
+            Morphology Menu
+          </h4>
           {isMorphMenuOpen ? (
             <IonIcon
-              className={styles.menuIcon}
+              className="hidden max-[768px]:flex max-[768px]:text-xl max-[768px]:text-blue-700 align-middle"
               icon={chevronDownOutline}
-              style={{ verticalAlign: "middle" }}
             />
           ) : (
             <IonIcon
-              className={styles.menuIcon}
+              className="hidden max-[768px]:flex max-[768px]:text-xl max-[768px]:text-blue-700 align-middle"
               icon={chevronForwardOutline}
-              style={{ verticalAlign: "middle" }}
             />
           )}
         </div>
         <div
-          className={`${styles.morphMenu} ${
-            isMorphMenuOpen ? styles.active : ""
-          }`}
+          className={`block ${isMorphMenuOpen ? "max-[768px]:block" : "max-[768px]:hidden"}`}
         >
-          <h1>By Category:</h1>
-          <div className={styles.viewChange}>
-            <p>Change View</p>
-            <div className={styles.buttons}>
+          <h1 className="mb-[10px] text-xl text-stone-900 max-[768px]:text-center">
+            By <span className="text-blue-700 font-bold">Category</span>:
+          </h1>
+          <div className="mb-[25px] rounded-[5px] bg-white p-[10px] border-solid border-blue-700 border-2">
+            <p className="m-0 p-0 pb-[5px] text-center text-xs text-stone-900">
+              Change <span className="text-blue-700 font-bold">View</span>
+            </p>
+            <div className="flex justify-center gap-x-4">
               <div
                 onClick={handleTheriogenologyClick}
-                className={activeCategory ? "" : styles.activeButton}
+                className={
+                  activeCategory ? "" : "border-b-2 border-solid border-blue-700"
+                }
               >
-                <h5>Society for Theriogenology</h5>
+                <h5 className="cursor-pointer text-center text-xs text-stone-900">
+                  Society for Theriogenology
+                </h5>
               </div>
               <div
                 onClick={handleBullcheckClick}
-                className={!activeCategory ? "" : styles.activeButton}
+                className={
+                  !activeCategory ? "" : "border-b-2 border-solid border-blue-700"
+                }
               >
-                <h5>Astralian BULLCHECK</h5>
+                <h5 className="cursor-pointer text-center text-xs text-stone-900">
+                  Astralian BULLCHECK
+                </h5>
               </div>
             </div>
           </div>
-          <div className={styles.list}>
-            <ul>
+          <div className={listWrapperClass}>
+            <ul className={listUlClass}>
               {list.map((item, index) => (
                 <li
                   key={index}
-                  className={pathname === item.link ? styles.activeItem : ""}
+                  className={`${listLiClass} ${
+                    pathname === item.link
+                      ? "text-blue-700 font-bold"
+                      : ""
+                  }`}
                 >
-                  <div className={styles.listItem}>
-                    <Link href={item.link}>{item.category}</Link>
+                  <div>
+                    <Link
+                      href={item.link}
+                      className={`${listLinkBaseClass} ${pathname === item.link ? "text-white" : "text-blue-700"}`}
+                    >
+                      {item.category}
+                    </Link>
                   </div>
                 </li>
               ))}
             </ul>
           </div>
 
-          <div className={styles.abList}>
-            <div className={styles.list}>
-              <h1>By Morphology:</h1>
-              <ul>
+          <div className="block pt-5 max-[768px]:hidden">
+            <div className={listWrapperClass}>
+              <h1 className="mb-[10px] text-xl text-stone-900">By <span className="text-blue-700 font-bold">Morphology</span>:</h1>
+              <ul className={listUlClass}>
                 {allAbnormalities.map((item, index) => (
                   <li
                     key={index}
-                    className={pathname === item.link ? styles.activeItem : ""}
+                    className={`${listLiClass} ${
+                      pathname === item.link
+                        ? "text-blue-700 font-bold"
+                        : ""
+                    }`}
                   >
-                    <div className={styles.listItem}>
-                      <Link href={item.link}>{item.name}</Link>
+                    <div>
+                      <Link
+                        href={item.link}
+                        className={`${listLinkBaseClass} ${pathname === item.link ? "text-white" : "text-blue-700"}`}
+                      >
+                        {item.name}
+                      </Link>
                     </div>
                   </li>
                 ))}
@@ -222,4 +255,4 @@ export default function SubNav() {
       </div>
     </div>
   );
-};
+}

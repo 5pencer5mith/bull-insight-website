@@ -43,10 +43,9 @@ export default function SwollenAcrosomesSummary() {
               <h3>Learn More About Swollen Acrosomes</h3>
 
               <IonIcon
-                className={styles.icons}
+                className={` text-blue-700`}
                 icon={arrowForwardOutline}
                 style={{
-                  color: "#005999",
                   fontSize: "30px",
                   verticalAlign: "middle",
                 }}

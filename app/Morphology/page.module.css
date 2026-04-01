@@ -23,10 +23,10 @@
 
 .contentWrapper p,
 .contentWrapper li {
-    font-size: 20px;
-    line-height: 2rem;
-    color: black;
-    margin-bottom: 10px;
+  font-size: 20px;
+  line-height: 2rem;
+  color: black;
+  margin-bottom: 10px;
 }
 
 .contentWrapper p {
@@ -62,7 +62,6 @@
 .mobile {
   display: none;
 }
-
 
 @media (max-width: 768px) {
   .contentWrapper h1 {

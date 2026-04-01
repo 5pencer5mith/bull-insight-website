@@ -47,10 +47,9 @@ export default function NormalSperm() {
               <h3>Learn More About Distal Cytoplasmic Droplets</h3>
 
               <IonIcon
-                className={styles.icons}
+                className={` text-blue-700`}
                 icon={arrowForwardOutline}
                 style={{
-                  color: "#005999",
                   fontSize: "30px",
                   verticalAlign: "middle",
                 }}
@@ -76,10 +75,9 @@ export default function NormalSperm() {
             <div className={styles.learnMore}>
               <h3>Learn More About Segmental Aplasia</h3>
               <IonIcon
-                className={styles.icons}
+                className={` text-blue-700`}
                 icon={arrowForwardOutline}
                 style={{
-                  color: "#005999",
                   fontSize: "30px",
                   verticalAlign: "middle",
                 }}

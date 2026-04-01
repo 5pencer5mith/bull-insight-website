@@ -47,10 +47,9 @@ export default function VacuolesAndTeratoid() {
               <h3>Learn More About Small Apical Vacuoles</h3>
 
               <IonIcon
-                className={styles.icons}
+                className={` text-blue-700`}
                 icon={arrowForwardOutline}
                 style={{
-                  color: "#005999",
                   fontSize: "30px",
                   verticalAlign: "middle",
                 }}
@@ -72,10 +71,9 @@ export default function VacuolesAndTeratoid() {
               <h3>Learn More About Large Vacuoles</h3>
 
               <IonIcon
-                className={styles.icons}
+                className={` text-blue-700`}
                 icon={arrowForwardOutline}
                 style={{
-                  color: "#005999",
                   fontSize: "30px",
                   verticalAlign: "middle",
                 }}
@@ -97,10 +95,9 @@ export default function VacuolesAndTeratoid() {
               <h3>Learn More About Diadem Defects</h3>
 
               <IonIcon
-                className={styles.icons}
+                className={` text-blue-700`}
                 icon={arrowForwardOutline}
                 style={{
-                  color: "#005999",
                   fontSize: "30px",
                   verticalAlign: "middle",
                 }}
@@ -126,10 +123,9 @@ export default function VacuolesAndTeratoid() {
               <h3>Learn More About Teratoid Heads</h3>
 
               <IonIcon
-                className={styles.icons}
+                className={` text-blue-700`}
                 icon={arrowForwardOutline}
                 style={{
-                  color: "#005999",
                   fontSize: "30px",
                   verticalAlign: "middle",
                 }}

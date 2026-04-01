@@ -46,10 +46,9 @@ export default function PyriformHeadsSummary() {
               <h3>Learn More About Pyriform Heads</h3>
 
               <IonIcon
-                className={styles.icons}
+                className={` text-blue-700`}
                 icon={arrowForwardOutline}
                 style={{
-                  color: "#005999",
                   fontSize: "30px",
                   verticalAlign: "middle",
                 }}

@@ -49,10 +49,9 @@ export default function ProximalCytoDropletsSummary() {
               <h3>Learn More About Proximal Cytoplasmic Droplets</h3>
 
               <IonIcon
-                className={styles.icons}
+                className={` text-blue-700`}
                 icon={arrowForwardOutline}
                 style={{
-                  color: "#005999",
                   fontSize: "30px",
                   verticalAlign: "middle",
                 }}

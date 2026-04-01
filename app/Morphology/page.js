@@ -4,7 +4,7 @@ import styles from "./page.module.css";
 export default function Morphology() {
   return (
     <div className={styles.contentWrapper}>
-      <h1>Welcome To The Sperm Morphology Hub</h1>
+      <h1>Welcome to the Sperm Morphology Hub</h1>
 
       <div className={styles.desktop}>
         <p>

@@ -44,10 +44,9 @@ export default function MidpieceAbnormalities() {
               <h3>Learn More About Dag Defect</h3>
 
               <IonIcon
-                className={styles.icons}
+                className={` text-blue-700`}
                 icon={arrowForwardOutline}
                 style={{
-                  color: "#005999",
                   fontSize: "30px",
                   verticalAlign: "middle",
                 }}
@@ -80,10 +79,9 @@ export default function MidpieceAbnormalities() {
               <h3>Learn More About Segmental Mitochondrial Aplasia</h3>
 
               <IonIcon
-                className={styles.icons}
+                className={` text-blue-700`}
                 icon={arrowForwardOutline}
                 style={{
-                  color: "#005999",
                   fontSize: "30px",
                   verticalAlign: "middle",
                 }}
@@ -108,10 +106,9 @@ export default function MidpieceAbnormalities() {
               <h3>Learn More About Proximal Droplets</h3>
 
               <IonIcon
-                className={styles.icons}
+                className={` text-blue-700`}
                 icon={arrowForwardOutline}
                 style={{
-                  color: "#005999",
                   fontSize: "30px",
                   verticalAlign: "middle",
                 }}
@@ -135,10 +132,9 @@ export default function MidpieceAbnormalities() {
               <h3>Learn More About Distal Midpiece Reflex</h3>
 
               <IonIcon
-                className={styles.icons}
+                className={` text-blue-700`}
                 icon={arrowForwardOutline}
                 style={{
-                  color: "#005999",
                   fontSize: "30px",
                   verticalAlign: "middle",
                 }}
@@ -181,10 +177,9 @@ export default function MidpieceAbnormalities() {
               <h3>Learn More About Pseudodroplets</h3>
 
               <IonIcon
-                className={styles.icons}
+                className={` text-blue-700`}
                 icon={arrowForwardOutline}
                 style={{
-                  color: "#005999",
                   fontSize: "30px",
                   verticalAlign: "middle",
                 }}

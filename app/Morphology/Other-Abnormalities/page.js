@@ -38,10 +38,9 @@ export default function OtherAbnormalities() {
               <h3>Learn More About Teratoid Sperm</h3>
 
               <IonIcon
-                className={styles.icons}
+                className={` text-blue-700`}
                 icon={arrowForwardOutline}
                 style={{
-                  color: "#005999",
                   fontSize: "30px",
                   verticalAlign: "middle",
                 }}
