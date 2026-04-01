@@ -2,8 +2,18 @@
 import Image from "next/image";
 import Slider from "../../components/slider/Slider";
 
-// Styles
-import styles from "../page.module.css";
+import {
+  morphologyP,
+  morphologyH1WithMedia,
+  morphologyH2,
+  morphologyH3,
+  morphologyArticle,
+  morphologySection,
+  morphologyUl,
+  morphologyLi,
+  titleContainer,
+  sliderContainer,
+} from "../morphologyTailwind";
 
 // Images for the slider
 const images = [
@@ -51,9 +61,9 @@ const images = [
 
 export default function DagDefect() {
   return (
-    <div className={styles.contentWrapper}>
-      <div className={styles.titleContainer}>
-        <h1 className={styles.title}>
+    <div>
+      <div className={titleContainer}>
+        <h1 className={morphologyH1WithMedia}>
           Dag Defect
           <Image
             src="/img/morphology/DagDefect/Dag.png"
@@ -64,15 +74,15 @@ export default function DagDefect() {
         </h1>
       </div>
 
-      <div className={styles.sliderContainer}>
+      <div className={sliderContainer}>
         <Slider imageData={images} />
       </div>
 
-      <article>
-        <section>
-          <h2>Description</h2>
+      <article className={morphologyArticle}>
+        <section className={morphologySection}>
+          <h2 className={morphologyH2}>Description</h2>
 
-          <p>
+          <p className={morphologyP}>
             The Dag defect, also known as the Dag-like defect, is characterized
             by a sharp bend in the midpiece and tail of the sperm, often
             resulting in a coiled appearance. This defect can reflect
@@ -80,10 +90,10 @@ export default function DagDefect() {
           </p>
         </section>
 
-        <section>
-          <h2>Potential Effects on Fertility</h2>
+        <section className={morphologySection}>
+          <h2 className={morphologyH2}>Potential Effects on Fertility</h2>
 
-          <p>
+          <p className={morphologyP}>
             The Dag defect can significantly impair fertility when present in
             large numbers. While it is a compensable trait, meaning affected
             sperm are not forwardly motile and thus less likely to reach the
@@ -93,40 +103,40 @@ export default function DagDefect() {
           </p>
         </section>
 
-        <section>
-          <h2>Days from Insult to Identificaiton</h2>
+        <section className={morphologySection}>
+          <h2 className={morphologyH2}>Days from Insult to Identificaiton</h2>
 
-          <p>
+          <p className={morphologyP}>
             Dag defects can appear shortly after stress events or disturbances
             in spermatogenesis, typically observable within 20-30 days following
             the initial insult​​​​.
           </p>
         </section>
 
-        <section>
-          <h2>Causes</h2>
+        <section className={morphologySection}>
+          <h2 className={morphologyH2}>Causes</h2>
 
-          <p>Possible causes include:</p>
+          <p className={morphologyP}>Possible causes include:</p>
 
-          <ul>
-            <li>
+          <ul className={morphologyUl}>
+            <li className={morphologyLi}>
               <strong>Genetic Factors:</strong> The dag defect can be inheritied
             </li>
-            <li>
+            <li className={morphologyLi}>
               <strong>Environmental Stress:</strong> Such as heat stress or
               nutritional deficiences
             </li>
-            <li>
+            <li className={morphologyLi}>
               <strong>Disturbances in Spermatogenesis:</strong> Distruption
               during sperm developtment and maturation
             </li>
           </ul>
         </section>
 
-        <section>
-          <h2>Other Important Data</h2>
+        <section className={morphologySection}>
+          <h2 className={morphologyH2}>Other Important Data</h2>
 
-          <p>
+          <p className={morphologyP}>
             The Dag defect is a serious concern when present in high numbers
             (greater than 50%), as it indicates significant impairment in the
             reproductive capability of the bull. It is essential to monitor and
@@ -135,12 +145,12 @@ export default function DagDefect() {
           </p>
         </section>
 
-        <section>
-          <h2>Case Studies</h2>
+        <section className={morphologySection}>
+          <h2 className={morphologyH2}>Case Studies</h2>
 
-          <h3>Case Study: Impact of Dag Defect on Fertility</h3>
+          <h3 className={morphologyH3}>Case Study: Impact of Dag Defect on Fertility</h3>
 
-          <p>
+          <p className={morphologyP}>
             A study involving bulls with high levels of the Dag defect (greater
             than 50%) showed a significant reduction in pregnancy rates. This
             highlights the importance of identifying and managing this defect to

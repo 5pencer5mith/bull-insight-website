@@ -2,8 +2,18 @@
 import Image from "next/image";
 import Slider from "../../components/slider/Slider";
 
-// Styles
-import styles from "../page.module.css";
+import {
+  morphologyP,
+  morphologyH1WithMedia,
+  morphologyH2,
+  morphologyH3,
+  morphologyArticle,
+  morphologySection,
+  morphologyUl,
+  morphologyLi,
+  titleContainer,
+  sliderContainer,
+} from "../morphologyTailwind";
 
 // Images for the slider
 const images = [
@@ -51,9 +61,9 @@ const images = [
 
 export default function LargeVacuoles() {
   return (
-    <div className={styles.contentWrapper}>
-      <div className={styles.titleContainer}>
-        <h1 className={styles.title}>
+    <div>
+      <div className={titleContainer}>
+        <h1 className={morphologyH1WithMedia}>
           Large Vacuoles
           <Image
             src="/img/morphology/LargeVacuoles/Vacuoles.png"
@@ -64,15 +74,15 @@ export default function LargeVacuoles() {
         </h1>
       </div>
 
-      <div className={styles.sliderContainer}>
+      <div className={sliderContainer}>
         <Slider imageData={images} />
       </div>
 
-      <article>
-        <section>
-          <h2>Description</h2>
+      <article className={morphologyArticle}>
+        <section className={morphologySection}>
+          <h2 className={morphologyH2}>Description</h2>
 
-          <p>
+          <p className={morphologyP}>
             Large vacuoles, also known as confluent vacuoles, appear as large,
             crater-like inclusions on the sperm head. These vacuoles can vary in
             size, sometimes appearing as a ‘bite’ missing from the side of the
@@ -80,10 +90,10 @@ export default function LargeVacuoles() {
           </p>
         </section>
 
-        <section>
-          <h2>Potential Effects on Fertility</h2>
+        <section className={morphologySection}>
+          <h2 className={morphologyH2}>Potential Effects on Fertility</h2>
 
-          <p>
+          <p className={morphologyP}>
             Large vacuoles are considered an uncompensable defect and can
             significantly reduce fertility. Studies have shown that bulls with
             more than 20% of sperm affected by large vacuoles exhibit reduced
@@ -92,52 +102,52 @@ export default function LargeVacuoles() {
           </p>
         </section>
 
-        <section>
-          <h2>Days from Insult to Identificaiton</h2>
+        <section className={morphologySection}>
+          <h2 className={morphologyH2}>Days from Insult to Identificaiton</h2>
 
-          <p>
+          <p className={morphologyP}>
             Large vacuoles can appear 30 days after a stress event such as
             ruminal acidosis or 20 days following dexamethasone treatment​​​​.
           </p>
         </section>
 
-        <section>
-          <h3>Causes</h3>
+        <section className={morphologySection}>
+          <h3 className={morphologyH3}>Causes</h3>
 
-          <p>Possible causes include:</p>
+          <p className={morphologyP}>Possible causes include:</p>
 
-          <ul>
-            <li>
+          <ul className={morphologyUl}>
+            <li className={morphologyLi}>
               <strong>Environmental Stress:</strong> Extreme temperatures or
               stress events
             </li>
-            <li>
+            <li className={morphologyLi}>
               <strong>Genetic Predisposition:</strong> Some bulls may have a
               hereditary tendency to develop vacuoles
             </li>
-            <li>
+            <li className={morphologyLi}>
               <strong>Hormonal Imbalance:</strong> Disruptions in the hormonal
               environment of the testis may lead to vacuole formation
             </li>
           </ul>
         </section>
 
-        <section>
-          <h2>Other Important Data</h2>
+        <section className={morphologySection}>
+          <h2 className={morphologyH2}>Other Important Data</h2>
 
-          <p>
+          <p className={morphologyP}>
             Large vacuoles are more commonly observed in Bos indicus cross bulls
             than in Bos taurus breeds. This abnormality can be transient, with
             fluctuations in prevalence between ejaculates​​.
           </p>
         </section>
 
-        <section>
-          <h2>Case Studies</h2>
+        <section className={morphologySection}>
+          <h2 className={morphologyH2}>Case Studies</h2>
 
-          <h3>Case Study: Impact of Large Vacuoles on Fertility</h3>
+          <h3 className={morphologyH3}>Case Study: Impact of Large Vacuoles on Fertility</h3>
 
-          <p>
+          <p className={morphologyP}>
             A study involving a bull with 62% vacuolated nuclei, including 7%
             large confluent vacuoles, demonstrated severe infertility. These
             findings highlight the significant impact of large vacuoles on

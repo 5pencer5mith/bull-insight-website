@@ -2,8 +2,18 @@
 import Image from "next/image";
 import Slider from "../../components/slider/Slider";
 
-// Styles
-import styles from "../page.module.css";
+import {
+  morphologyP,
+  morphologyH1WithMedia,
+  morphologyH2,
+  morphologyH3,
+  morphologyArticle,
+  morphologySection,
+  morphologyUl,
+  morphologyLi,
+  titleContainer,
+  sliderContainer,
+} from "../morphologyTailwind";
 
 // Images for the slider
 const images = [
@@ -51,9 +61,9 @@ const images = [
 
 export default function TeratoidSperm() {
   return (
-    <div className={styles.contentWrapper}>
-      <div className={styles.titleContainer}>
-        <h1 className={styles.title}>
+    <div>
+      <div className={titleContainer}>
+        <h1 className={morphologyH1WithMedia}>
           Teratoid Sperm
           <Image
             src="/img/morphology/TeratoidSperm/Teratoid.png"
@@ -64,15 +74,15 @@ export default function TeratoidSperm() {
         </h1>
       </div>
 
-      <div className={styles.sliderContainer}>
+      <div className={sliderContainer}>
         <Slider imageData={images} />
       </div>
 
-      <article>
-        <section>
-          <h2>Description</h2>
+      <article className={morphologyArticle}>
+        <section className={morphologySection}>
+          <h2 className={morphologyH2}>Description</h2>
 
-          <p>
+          <p className={morphologyP}>
             Teratoid sperm are grossly abnormal in structure, often barely
             recognizable as sperm cells. The sperm nucleus can vary from normal
             to grossly misshapen and may be vacuolated. The tail is often coiled
@@ -80,10 +90,10 @@ export default function TeratoidSperm() {
           </p>
         </section>
 
-        <section>
-          <h2>Potential Effects on Fertility</h2>
+        <section className={morphologySection}>
+          <h2 className={morphologyH2}>Potential Effects on Fertility</h2>
 
-          <p>
+          <p className={morphologyP}>
             Teratoid sperm are indicative of severe disturbances in
             spermatogenesis and spermiogenesis. They often occur at very low
             levels in the spermiogram (1%). However, when present at higher
@@ -93,41 +103,41 @@ export default function TeratoidSperm() {
           </p>
         </section>
 
-        <section>
-          <h2>Days from Insult to Identificaiton</h2>
+        <section className={morphologySection}>
+          <h2 className={morphologyH2}>Days from Insult to Identificaiton</h2>
 
-          <p>
+          <p className={morphologyP}>
             Teratoid sperm can appear shortly after severe stress or genetic
             disturbances affecting spermatogenesis. They are often observed in
             the spermiogram 20-30 days after the initial insult​.
           </p>
         </section>
 
-        <section>
-          <h2>Causes</h2>
+        <section className={morphologySection}>
+          <h2 className={morphologyH2}>Causes</h2>
 
-          <p>Possible causes include:</p>
+          <p className={morphologyP}>Possible causes include:</p>
 
-          <ul>
-            <li>
+          <ul className={morphologyUl}>
+            <li className={morphologyLi}>
               <strong>Genetic Factors:</strong> Some bulls may have a genetic
               predisposition to this abnormality.
             </li>
-            <li>
+            <li className={morphologyLi}>
               <strong>Severe Environmental Stress:</strong> Such as heat stress
               or nutritional deficiencies.
             </li>
-            <li>
+            <li className={morphologyLi}>
               <strong>Disturbances in Spermatogenesis: </strong> Severe
               disruption in the process of sperm cell development
             </li>
           </ul>
         </section>
 
-        <section>
-          <h2>Other Important Data</h2>
+        <section className={morphologySection}>
+          <h2 className={morphologyH2}>Other Important Data</h2>
 
-          <p>
+          <p className={morphologyP}>
             Teratoid sperm are rarely seen in high numbers, but their presence
             indicates a poor prognosis for fertility. They are considered an
             uncompensable defect as they are unable to fertilize ova due to
@@ -135,12 +145,12 @@ export default function TeratoidSperm() {
           </p>
         </section>
 
-        <section>
-          <h2>Case Studies</h2>
+        <section className={morphologySection}>
+          <h2 className={morphologyH2}>Case Studies</h2>
 
-          <h3>Case Study: Impact of Teratoid Sperm on Fertility</h3>
+          <h3 className={morphologyH3}>Case Study: Impact of Teratoid Sperm on Fertility</h3>
 
-          <p>
+          <p className={morphologyP}>
             A case study involving a bull with a high percentage of teratoid
             sperm demonstrated severe infertility. The study highlighted the
             significant impact of teratoid sperm on overall fertility,

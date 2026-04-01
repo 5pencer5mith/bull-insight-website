@@ -11,13 +11,7 @@ export default function ResourcesLayout({ children }) {
         />
       </div>
 
-      <div className="backgroundWrap">
-        <div className="constructionWrapper">
-          <div className="resource-content">
-            <main>{children}</main>
-          </div>
-        </div>
-      </div>
+      <main className="w-full">{children}</main>
     </div>
   );
 }

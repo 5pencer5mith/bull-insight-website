@@ -1,7 +1,7 @@
 // Components
 import Sidekick from "../components/hero/sidekick/Sidekick";
 
-export default function ResourcesLayout({ children }) {
+export default function StoreLayout({ children }) {
   return (
     <div className="layoutWrapper">
       <div className="sidekick">

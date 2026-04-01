@@ -1,4 +1,5 @@
 "use client";
+
 // Hooks
 import { useState, useEffect } from "react";
 
@@ -7,8 +8,16 @@ import { IonIcon } from "@ionic/react";
 import { arrowForwardOutline } from "ionicons/icons";
 import Link from "next/link";
 
-// Styles
-import styles from "./page.module.css";
+import {
+  morphologyAbCardP,
+  morphologyH1,
+  morphologyH2,
+  morphologyP,
+  morphologySectionBlock,
+  iconLearnMore,
+  learnMoreRow,
+  learnMoreTitle,
+} from "../morphologyTailwind";
 
 export default function KnobbedAcrosomesSummary() {
   const [isHydrated, setIsHydrated] = useState(false);
@@ -20,38 +29,35 @@ export default function KnobbedAcrosomesSummary() {
   if (!isHydrated) return null;
 
   return (
-    <div className={styles.contentWrapper}>
-      <h1>Knobbed Acrosomes (KA)</h1>
+    <div>
+      <h1 className={morphologyH1}>Knobbed Acrosomes (KA)</h1>
 
-      <p>
+      <p className={morphologyP}>
         Knobbed acrosomes may have a genetic origin and present as bulbous
         structures on the sperm head, which can impede the acrosomal reaction
         needed for fertilization.{" "}
       </p>
 
-      <p>
+      <p className={morphologyP}>
         <strong>Fertility Impact: </strong>This defect is non-compensable as it
         affects chromatin integrity and may impact embryo viability​.
       </p>
 
-      <div className={styles.section}>
-        <h2>Knobbed Acrosomes</h2>
+      <div className={morphologySectionBlock}>
+        <h2 className={morphologyH2}>Knobbed Acrosomes</h2>
 
         <Link href="/Morphology/Knobbed-Acrosomes">
-          <div className={styles.abButton}>
-            <p> Thickened or misshapen acrosomes, potentially genetic.</p>
+          <div>
+            <p className={morphologyAbCardP}>
+              Thickened or misshapen acrosomes, potentially genetic.
+            </p>
 
-            <div className={styles.learnMore}>
-              <h3>Learn More About Knobbed Acrosomes</h3>
+            <div className={learnMoreRow}>
+              <h3 className={learnMoreTitle}>
+                Learn More About Knobbed Acrosomes
+              </h3>
 
-              <IonIcon
-                className={` text-blue-700`}
-                icon={arrowForwardOutline}
-                style={{
-                  fontSize: "30px",
-                  verticalAlign: "middle",
-                }}
-              />
+              <IonIcon className={iconLearnMore} icon={arrowForwardOutline} />
             </div>
           </div>
         </Link>

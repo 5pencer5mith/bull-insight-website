@@ -8,8 +8,16 @@ import { IonIcon } from "@ionic/react";
 import { arrowForwardOutline } from "ionicons/icons";
 import Link from "next/link";
 
-// Styles
-import styles from "./page.module.css";
+import {
+  morphologyAbCardP,
+  morphologyH1,
+  morphologyH2,
+  morphologyP,
+  morphologySectionBlock,
+  iconLearnMore,
+  learnMoreRow,
+  learnMoreTitle,
+} from "../morphologyTailwind";
 
 export default function HeadAndTailDefects() {
   const [isHydrated, setIsHydrated] = useState(false);
@@ -21,84 +29,75 @@ export default function HeadAndTailDefects() {
   if (!isHydrated) return null;
 
   return (
-    <div className={styles.contentWrapper}>
-      <h1>Head and Tail Defects (HT)</h1>
+    <div>
+      <h1 className={morphologyH1}>Head and Tail Defects (HT)</h1>
 
-      <p>
+      <p className={morphologyP}>
         This category encompasses abnormalities that often impede the sperm's
         physical structure and motility, limiting the sperm's ability to reach
         the egg.
       </p>
 
-      <p>
+      <p className={morphologyP}>
         <strong>Fertility Impact: </strong>Typically, compensable since these
         defects prevent sperm from reaching the egg​​.
       </p>
 
-      <div className={styles.section}>
-        <h2>Detached or Loose Heads</h2>
+      <div className={morphologySectionBlock}>
+        <h2 className={morphologyH2}>Detached or Loose Heads</h2>
 
         <Link href="/Morphology/Loose-and-Detached-Heads">
-          <div className={styles.abButton}>
-            <p>Heads detached from tails, often due to stress.</p>
+          <div>
+            <p className={morphologyAbCardP}>
+              Heads detached from tails, often due to stress.
+            </p>
 
-            <div className={styles.learnMore}>
-              <h3>Learn More About Detached or Loose Heads</h3>
+            <div className={learnMoreRow}>
+              <h3 className={learnMoreTitle}>
+                Learn More About Detached or Loose Heads
+              </h3>
 
-              <IonIcon
-                className={` text-blue-700`}
-                icon={arrowForwardOutline}
-                style={{
-                  fontSize: "30px",
-                  verticalAlign: "middle",
-                }}
-              />
+              <IonIcon className={iconLearnMore} icon={arrowForwardOutline} />
             </div>
           </div>
         </Link>
 
-        <h2>Decapitated Head</h2>
+        <h2 className={morphologyH2}>Decapitated Head</h2>
 
         <Link href="/Morphology/Decapitated-Head">
-          <div className={styles.abButton}>
-            <p>Complete separation of the head and tail.</p>
+          <div>
+            <p className={morphologyAbCardP}>
+              Complete separation of the head and tail.
+            </p>
 
-            <div className={styles.learnMore}>
-              <h3>Learn More About Decapitated Heads</h3>
+            <div className={learnMoreRow}>
+              <h3 className={learnMoreTitle}>
+                Learn More About Decapitated Heads
+              </h3>
 
-              <IonIcon
-                className={` text-blue-700`}
-                icon={arrowForwardOutline}
-                style={{
-                  fontSize: "30px",
-                  verticalAlign: "middle",
-                }}
-              />
+              <IonIcon className={iconLearnMore} icon={arrowForwardOutline} />
             </div>
           </div>
         </Link>
 
-        <h2>Reflex/Bent Prinicpal Pieces</h2>
+        <h2 className={morphologyH2}>Reflex/Bent Prinicpal Pieces</h2>
 
-        <p>Bending at the principal piece that impedes movement.</p>
+        <p className={morphologyP}>
+          Bending at the principal piece that impedes movement.
+        </p>
 
-        <h2>Coiled Tails</h2>
+        <h2 className={morphologyH2}>Coiled Tails</h2>
 
         <Link href="/Morphology/Coiled-Tail">
-          <div className={styles.abButton}>
-            <p>Tails curled into coils, significantly reducing motility.</p>
+          <div>
+            <p className={morphologyAbCardP}>
+              Tails curled into coils, significantly reducing motility.
+            </p>
 
-            <div className={styles.learnMore}>
-              <h3>Learn More About Decapitated Heads</h3>
+            <div className={learnMoreRow}>
+              <h3 className={learnMoreTitle}>Learn More About Coiled Tail</h3>
 
-              <IonIcon
-                className={` text-blue-700`}
-                icon={arrowForwardOutline}
-                style={{
-                  fontSize: "30px",
-                  verticalAlign: "middle",
-                }}
-              />
+              <IonIcon className={iconLearnMore} icon={arrowForwardOutline} />
             </div>
           </div>
         </Link>

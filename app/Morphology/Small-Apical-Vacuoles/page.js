@@ -2,8 +2,18 @@
 // import Image from 'next/image';
 import Slider from "../../components/slider/Slider";
 
-// Styles
-import styles from "../page.module.css";
+import {
+  morphologyP,
+  morphologyH1WithMedia,
+  morphologyH2,
+  morphologyH3,
+  morphologyArticle,
+  morphologySection,
+  morphologyUl,
+  morphologyLi,
+  titleContainer,
+  sliderContainer,
+} from "../morphologyTailwind";
 
 // Images for the slider
 const images = [
@@ -51,9 +61,9 @@ const images = [
 
 export default function SmallApicalVacuoles() {
   return (
-    <div className={styles.contentWrapper}>
-      <div className={styles.titleContainer}>
-        <h1 className={styles.title}>
+    <div>
+      <div className={titleContainer}>
+        <h1 className={morphologyH1WithMedia}>
           Small Apical Vacuoles
           {/* <Image
                         src='/morphology/'
@@ -64,15 +74,15 @@ export default function SmallApicalVacuoles() {
         </h1>
       </div>
 
-      <div className={styles.sliderContainer}>
+      <div className={sliderContainer}>
         <Slider imageData={images} />
       </div>
 
-      <article>
-        <section>
-          <h2>Description</h2>
+      <article className={morphologyArticle}>
+        <section className={morphologySection}>
+          <h2 className={morphologyH2}>Description</h2>
 
-          <p>
+          <p className={morphologyP}>
             Small apical vacuoles appear as small, clear inclusions located at
             the apical region of the sperm head. These vacuoles are often
             associated with other defects, such as the diadem defect, or may
@@ -80,10 +90,10 @@ export default function SmallApicalVacuoles() {
           </p>
         </section>
 
-        <section>
-          <h2>Potential Effects on Fertility</h2>
+        <section className={morphologySection}>
+          <h2 className={morphologyH2}>Potential Effects on Fertility</h2>
 
-          <p>
+          <p className={morphologyP}>
             Small apical vacuoles can negatively impact fertility. Ejaculates
             with high numbers of apical vacuoles (greater than 20%) have reduced
             conception rates. In an IVF study, no sperm with these vacuoles were
@@ -92,41 +102,41 @@ export default function SmallApicalVacuoles() {
           </p>
         </section>
 
-        <section>
-          <h2>Days from Insult to Identificaiton</h2>
+        <section className={morphologySection}>
+          <h2 className={morphologyH2}>Days from Insult to Identificaiton</h2>
 
-          <p>
+          <p className={morphologyP}>
             Small apical vacuoles can appear shortly after stress events, such
             as heat stress or nutritional deficiencies. They are often transient
             and may vary between ejaculates​​​​.
           </p>
         </section>
 
-        <section>
-          <h2>Causes</h2>
+        <section className={morphologySection}>
+          <h2 className={morphologyH2}>Causes</h2>
 
-          <p>Possible causes include:</p>
+          <p className={morphologyP}>Possible causes include:</p>
 
-          <ul>
-            <li>
+          <ul className={morphologyUl}>
+            <li className={morphologyLi}>
               <strong>Genetic Predisposition:</strong> Some bulls may have a
               hereditary tendency to develop vacuoles
             </li>
-            <li>
+            <li className={morphologyLi}>
               <strong>Nutritional Factors:</strong> High concentrate rations and
               other dietary imbalances
             </li>
-            <li>
+            <li className={morphologyLi}>
               <strong>Environmental Stress:</strong> Extreme temperatures or
               stress events
             </li>
           </ul>
         </section>
 
-        <section>
-          <h2>Other Important Data</h2>
+        <section className={morphologySection}>
+          <h2 className={morphologyH2}>Other Important Data</h2>
 
-          <p>
+          <p className={morphologyP}>
             Small apical vacuoles are more commonly observed in some breeds and
             may fluctuate in prevalence between ejaculates. These vacuoles can
             be challenging to see on standard eosin-nigrosin smears and are more
@@ -134,12 +144,12 @@ export default function SmallApicalVacuoles() {
           </p>
         </section>
 
-        <section>
-          <h2>Case Studies</h2>
+        <section className={morphologySection}>
+          <h2 className={morphologyH2}>Case Studies</h2>
 
-          <h3>Case Study: Impact of Small Apical Vacuoles on Fertility</h3>
+          <h3 className={morphologyH3}>Case Study: Impact of Small Apical Vacuoles on Fertility</h3>
 
-          <p>
+          <p className={morphologyP}>
             A study involving a bull with a high number of small apical vacuoles
             showed reduced fertility rates. This emphasizes the importance of
             detecting and managing this defect to maintain optimal

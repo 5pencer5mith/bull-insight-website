@@ -2,8 +2,18 @@
 import Image from "next/image";
 import Slider from "../../components/slider/Slider";
 
-// Styles
-import styles from "../page.module.css";
+import {
+  morphologyP,
+  morphologyH1WithMedia,
+  morphologyH2,
+  morphologyH3,
+  morphologyArticle,
+  morphologySection,
+  morphologyUl,
+  morphologyLi,
+  titleContainer,
+  sliderContainer,
+} from "../morphologyTailwind";
 
 // Images for the slider
 const images = [
@@ -51,9 +61,9 @@ const images = [
 
 export default function SegmentalAplasia() {
   return (
-    <div className={styles.contentWrapper}>
-      <div className={styles.titleContainer}>
-        <h1 className={styles.title}>
+    <div>
+      <div className={titleContainer}>
+        <h1 className={morphologyH1WithMedia}>
           Segmental Aplasia of the Mitochondrial Sheath
           <Image
             src="/img/morphology/MitochondrialSheath/Sheath Defects.png"
@@ -64,15 +74,15 @@ export default function SegmentalAplasia() {
         </h1>
       </div>
 
-      <div className={styles.sliderContainer}>
+      <div className={sliderContainer}>
         <Slider imageData={images} />
       </div>
 
-      <article>
-        <section>
-          <h2>Description</h2>
+      <article className={morphologyArticle}>
+        <section className={morphologySection}>
+          <h2 className={morphologyH2}>Description</h2>
 
-          <p>
+          <p className={morphologyP}>
             Segmental aplasia of the mitochondrial sheath is characterized by
             gaps or missing segments in the mitochondrial sheath of the sperm’s
             midpiece. This can lead to a fractured appearance of the mid-piece
@@ -80,10 +90,10 @@ export default function SegmentalAplasia() {
           </p>
         </section>
 
-        <section>
-          <h2>Potential Effects on Fertility</h2>
+        <section className={morphologySection}>
+          <h2 className={morphologyH2}>Potential Effects on Fertility</h2>
 
-          <p>
+          <p className={morphologyP}>
             While segmental aplasia of the mitochondrial sheath can appear
             severe, it often has little to no effect on fertility. Bulls with up
             to 90% of sperm affected by this defect have been reported to
@@ -94,41 +104,41 @@ export default function SegmentalAplasia() {
           </p>
         </section>
 
-        <section>
-          <h2>Days from Insult to Identificaiton</h2>
+        <section className={morphologySection}>
+          <h2 className={morphologyH2}>Days from Insult to Identificaiton</h2>
 
-          <p>
+          <p className={morphologyP}>
             This defect can be transient or permanent. If the defect is observed
             in two tests conducted ten weeks apart, it suggests a permanent
             condition​​​​.
           </p>
         </section>
 
-        <section>
-          <h2>Causes</h2>
+        <section className={morphologySection}>
+          <h2 className={morphologyH2}>Causes</h2>
 
-          <p>Possible causes include:</p>
+          <p className={morphologyP}>Possible causes include:</p>
 
-          <ul>
-            <li>
+          <ul className={morphologyUl}>
+            <li className={morphologyLi}>
               <strong>Genetic Predisposition:</strong> Some bulls may have a
               hereditary tendency to develop this defect
             </li>
-            <li>
+            <li className={morphologyLi}>
               <strong>Nutritional Factors:</strong> High levels of gossypol in
               the diet or dietary imbalances
             </li>
-            <li>
+            <li className={morphologyLi}>
               <strong>Viral Infections:</strong> Conditions such as Bovine
               Ephemeral Fever have been linked to this defect
             </li>
           </ul>
         </section>
 
-        <section>
-          <h2>Other Important Data</h2>
+        <section className={morphologySection}>
+          <h2 className={morphologyH2}>Other Important Data</h2>
 
-          <p>
+          <p className={morphologyP}>
             This defect is similar to the pseudo-droplet, where thickening of
             the mid-piece is observed. Under light microscopy, the defect may be
             confused with a broken neck appearance. It is essential to
@@ -138,12 +148,12 @@ export default function SegmentalAplasia() {
           </p>
         </section>
 
-        <section>
-          <h2>Case Studies</h2>
+        <section className={morphologySection}>
+          <h2 className={morphologyH2}>Case Studies</h2>
 
-          <h3>Case Study: Impact of Segmental Aplasia on Fertility</h3>
+          <h3 className={morphologyH3}>Case Study: Impact of Segmental Aplasia on Fertility</h3>
 
-          <p>
+          <p className={morphologyP}>
             A case study involving a bull with 90% of sperm showing segmental
             aplasia of the mitochondrial sheath maintained normal fertility over
             three breeding seasons, highlighting the minimal impact of this

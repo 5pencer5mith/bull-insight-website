@@ -8,8 +8,16 @@ import { IonIcon } from "@ionic/react";
 import { arrowForwardOutline } from "ionicons/icons";
 import Link from "next/link";
 
-// Styles
-import styles from "./page.module.css";
+import {
+  morphologyAbCardP,
+  morphologyH1,
+  morphologyH2,
+  morphologyP,
+  morphologySectionBlock,
+  iconLearnMore,
+  learnMoreRow,
+  learnMoreTitle,
+} from "../morphologyTailwind";
 
 export default function PyriformHeadsSummary() {
   const [isHydrated, setIsHydrated] = useState(false);
@@ -21,38 +29,35 @@ export default function PyriformHeadsSummary() {
   if (!isHydrated) return null;
 
   return (
-    <div className={styles.contentWrapper}>
-      <h1>Pyriform Heads (PY)</h1>
+    <div>
+      <h1 className={morphologyH1}>Pyriform Heads (PY)</h1>
 
-      <p>
+      <p className={morphologyP}>
         Pyriform heads indicate oxidative damage during spermiogenesis and are
         associated with genetic and environmental factors affecting chromatin
         integrity.
       </p>
 
-      <p>
+      <p className={morphologyP}>
         <strong>Fertility Impact: </strong>This defect is non-compensable as it
         affects chromatin integrity and may impact embryo viability​.
       </p>
 
-      <div className={styles.section}>
-        <h2>Pyriform Heads</h2>
+      <div className={morphologySectionBlock}>
+        <h2 className={morphologyH2}>Pyriform Heads</h2>
 
         <Link href="/Morphology/Pyriform-Heads">
-          <div className={styles.abButton}>
-            <p>Pear-shaped head defects, often linked to oxidative stress.</p>
+          <div>
+            <p className={morphologyAbCardP}>
+              Pear-shaped head defects, often linked to oxidative stress.
+            </p>
 
-            <div className={styles.learnMore}>
-              <h3>Learn More About Pyriform Heads</h3>
+            <div className={learnMoreRow}>
+              <h3 className={learnMoreTitle}>
+                Learn More About Pyriform Heads
+              </h3>
 
-              <IonIcon
-                className={` text-blue-700`}
-                icon={arrowForwardOutline}
-                style={{
-                  fontSize: "30px",
-                  verticalAlign: "middle",
-                }}
-              />
+              <IonIcon className={iconLearnMore} icon={arrowForwardOutline} />
             </div>
           </div>
         </Link>

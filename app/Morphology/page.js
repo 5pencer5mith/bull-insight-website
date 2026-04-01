@@ -1,25 +1,29 @@
-// Styles
-import styles from "./page.module.css";
+import {
+  morphologyH1,
+  morphologyH2,
+  morphologyP as pClass,
+} from "./morphologyTailwind";
 
 export default function Morphology() {
   return (
-    <div className={styles.contentWrapper}>
-      <h1>Welcome to the Sperm Morphology Hub</h1>
+    <div>
+      <h1 className={morphologyH1}>
+        Welcome to the Sperm <span className="text-blue-700 font-bold">Morphology</span> Hub
+      </h1>
 
-      <div className={styles.desktop}>
-        <p>
+      <div className="max-[768px]:hidden">
+        <p className={pClass}>
           Using the menu on the left, select from two categorical views: Bull
           Sperm Morphology Anatomical Categorization using Society for
           Theriogenology Standards or the Australian BULLCHECK System (learn
-          more below). Select a category from the menu on the left to learn more
-          about specific morphology within that category. You may also choose to
+          more below). You may also choose to
           select a specific sperm abnormality to learn about by selecting from
           the Abnormalities menu also found on the left.
         </p>
       </div>
 
-      <div className={styles.mobile}>
-        <p>
+      <div className="hidden max-[768px]:block">
+        <p className={pClass}>
           Using the menu above, select from two categorical views: Bull Sperm
           Morphology Anatomical Categorization using Society for Theriogenology
           Standards or the Australian BULLCHECK System (learn more below).
@@ -28,11 +32,11 @@ export default function Morphology() {
         </p>
       </div>
 
-      <h2>Society for Theriogenology Standard</h2>
+      <h2 className={morphologyH2}>Society for Theriogenology Standard</h2>
 
-      <p>
+      <p className={pClass}>
         The Society for Theriogenology system uses a very simplistic dichotomous
-        system. Where 70% normal sperm morphology is needed for a Satisfactory
+        system. Where 70% normal sperm morphology is needed for a satisfactory
         classification. A more differentiated approach to spermiogram analysis
         moves beyond anatomical categories to provide a deeper understanding of
         how specific sperm abnormalities can influence a bull's fertility,
@@ -48,9 +52,9 @@ export default function Morphology() {
         selection pressures.
       </p>
 
-      <h2>Australian BULLCHECK System</h2>
+      <h2 className={morphologyH2}>Australian BULLCHECK System</h2>
 
-      <p>
+      <p className={pClass}>
         This structured system allows for consistent interpretation across labs
         and enables practitioners to focus on the specific implications of
         abnormalities on fertility. It also facilitates more targeted management

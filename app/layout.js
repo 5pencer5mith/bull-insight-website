@@ -21,14 +21,14 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${roboto.className} container`}>
-        <div>
+      <body className={`${roboto.className} container min-h-screen`}>
+        <div className="shrink-0">
           <Header />
-
-          <div className="">{children}</div>
         </div>
 
-        <div className="">
+        <div className="flex w-full flex-1 flex-col">{children}</div>
+
+        <div className="shrink-0">
           <Footer />
         </div>
       </body>

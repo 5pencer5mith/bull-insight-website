@@ -2,8 +2,18 @@
 import Image from "next/image";
 import Slider from "../../components/slider/Slider";
 
-// Styles
-import styles from "../page.module.css";
+import {
+  morphologyP,
+  morphologyH1WithMedia,
+  morphologyH2,
+  morphologyH3,
+  morphologyArticle,
+  morphologySection,
+  morphologyUl,
+  morphologyLi,
+  titleContainer,
+  sliderContainer,
+} from "../morphologyTailwind";
 
 // Images for the slider
 const images = [
@@ -51,9 +61,9 @@ const images = [
 
 export default function DistalMidpeiceReflex() {
   return (
-    <div className={styles.contentWrapper}>
-      <div className={styles.titleContainer}>
-        <h1 className={styles.title}>
+    <div>
+      <div className={titleContainer}>
+        <h1 className={morphologyH1WithMedia}>
           Distal Midpiece Reflex
           <Image
             src="/img/morphology/DistalMidPieceReflex/Distal midpiece reflex.png"
@@ -64,25 +74,25 @@ export default function DistalMidpeiceReflex() {
         </h1>
       </div>
 
-      <div className={styles.sliderContainer}>
+      <div className={sliderContainer}>
         <Slider imageData={images} />
       </div>
 
-      <article>
-        <section>
-          <h2>Description</h2>
+      <article className={morphologyArticle}>
+        <section className={morphologySection}>
+          <h2 className={morphologyH2}>Description</h2>
 
-          <p>
+          <p className={morphologyP}>
             Distal mid-piece reflex (DMR) is characterized by a sharp hairpin
             bend in the distal mid-piece of the sperm. This defect is often
             accompanied by a cytoplasmic droplet at the bend.
           </p>
         </section>
 
-        <section>
-          <h2>Potential Effects on Fertility</h2>
+        <section className={morphologySection}>
+          <h2 className={morphologyH2}>Potential Effects on Fertility</h2>
 
-          <p>
+          <p className={morphologyP}>
             Distal mid-piece reflex is considered a compensable defect as the
             affected sperm display reverse motility and are unable to penetrate
             the zona pellucida. Up to 30% of this defect in an ejaculate is
@@ -92,53 +102,53 @@ export default function DistalMidpeiceReflex() {
           </p>
         </section>
 
-        <section>
-          <h2>Days from Insult to Identificaiton</h2>
+        <section className={morphologySection}>
+          <h2 className={morphologyH2}>Days from Insult to Identificaiton</h2>
 
-          <p>
+          <p className={morphologyP}>
             Distal mid-piece reflex can appear 4-11 days after a stress event
             such as dexamethasone treatment or within 16 days after an acidotic
             event​​​​.
           </p>
         </section>
 
-        <section>
-          <h2>Causes</h2>
+        <section className={morphologySection}>
+          <h2 className={morphologyH2}>Causes</h2>
 
-          <p>Possible causes include:</p>
+          <p className={morphologyP}>Possible causes include:</p>
 
-          <ul>
-            <li>
+          <ul className={morphologyUl}>
+            <li className={morphologyLi}>
               <strong>Environmental Stress:</strong> Heat stress, cold shock, or
               other stress events
             </li>
-            <li>
+            <li className={morphologyLi}>
               <strong>Hypotonic Solutions:</strong> Prolonged contact with
               hypotonic solutions such as Nigrosin-Eosin stain
             </li>
-            <li>
+            <li className={morphologyLi}>
               <strong>Genetic Predisposition:</strong> Some bulls have a
               hereditary predisposition to this defect
             </li>
           </ul>
         </section>
 
-        <section>
-          <h2>Other Important Data</h2>
+        <section className={morphologySection}>
+          <h2 className={morphologyH2}>Other Important Data</h2>
 
-          <p>
+          <p className={morphologyP}>
             Distal mid-piece reflex is often transient and may fluctuate in
             prevalence between ejaculates. It is the most common tail defect
             seen in bull ejaculates and is usually of epididymal origin​​​​.
           </p>
         </section>
 
-        <section>
-          <h2>Case Studies</h2>
+        <section className={morphologySection}>
+          <h2 className={morphologyH2}>Case Studies</h2>
 
-          <h3>Case Study: Impact of Distal Mid-Piece Reflex on Fertility</h3>
+          <h3 className={morphologyH3}>Case Study: Impact of Distal Mid-Piece Reflex on Fertility</h3>
 
-          <p>
+          <p className={morphologyP}>
             A study involving bulls with high levels of distal mid-piece reflex
             (greater than 30%) demonstrated reduced fertility. However, in bulls
             with up to 25% of this defect, fertility was not significantly

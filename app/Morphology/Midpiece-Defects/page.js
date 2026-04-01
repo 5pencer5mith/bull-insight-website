@@ -8,8 +8,16 @@ import { IonIcon } from "@ionic/react";
 import { arrowForwardOutline } from "ionicons/icons";
 import Link from "next/link";
 
-// Styles
-import styles from "./page.module.css";
+import {
+  morphologyAbCardP,
+  morphologyH1,
+  morphologyH2,
+  morphologyP,
+  morphologySectionBlock,
+  iconLearnMore,
+  learnMoreRow,
+  learnMoreTitle,
+} from "../morphologyTailwind";
 
 export default function MidpieceDefects() {
   const [isHydrated, setIsHydrated] = useState(false);
@@ -21,70 +29,60 @@ export default function MidpieceDefects() {
   if (!isHydrated) return null;
 
   return (
-    <div className={styles.contentWrapper}>
-      <h1>Midpiece Defects (MP)</h1>
+    <div>
+      <h1 className={morphologyH1}>Midpiece Defects (MP)</h1>
 
-      <p>
+      <p className={morphologyP}>
         Midpiece abnormalities generally affect sperm motility and energy
         production, reducing the sperm's capacity to reach the oocyte, although
         these defects are often compensable in higher sperm concentrations.
       </p>
 
-      <p>
+      <p className={morphologyP}>
         <strong>Fertility Impact: </strong>These are compensable defects as
         increased sperm numbers can overcome their motility impairments​​.
       </p>
 
-      <div className={styles.section}>
-        <h2>Distal Midpiece Reflex (DMR)</h2>
+      <div className={morphologySectionBlock}>
+        <h2 className={morphologyH2}>Distal Midpiece Reflex (DMR)</h2>
 
         <Link href="/Morphology/Distal-Mid-Piece-Reflex">
-          <div className={styles.abButton}>
-            <p>A bend in the distal midpiece.</p>
+          <div>
+            <p className={morphologyAbCardP}>A bend in the distal midpiece.</p>
 
-            <div className={styles.learnMore}>
-              <h3>Learn More About Distal Midpiece Reflex</h3>
+            <div className={learnMoreRow}>
+              <h3 className={learnMoreTitle}>
+                Learn More About Distal Midpiece Reflex
+              </h3>
 
-              <IonIcon
-                className={` text-blue-700`}
-                icon={arrowForwardOutline}
-                style={{
-                  fontSize: "30px",
-                  verticalAlign: "middle",
-                }}
-              />
+              <IonIcon className={iconLearnMore} icon={arrowForwardOutline} />
             </div>
           </div>
         </Link>
 
-        <h2>Dag Defect</h2>
+        <h2 className={morphologyH2}>Dag Defect</h2>
 
         <Link href="/Morphology/Dag-Defect">
-          <div className={styles.abButton}>
-            <p>Characterized by a coiled midpiece, impacting motility.</p>
+          <div>
+            <p className={morphologyAbCardP}>
+              Characterized by a coiled midpiece, impacting motility.
+            </p>
 
-            <div className={styles.learnMore}>
-              <h3>Learn More About Dag Defect</h3>
+            <div className={learnMoreRow}>
+              <h3 className={learnMoreTitle}>Learn More About Dag Defect</h3>
 
-              <IonIcon
-                className={` text-blue-700`}
-                icon={arrowForwardOutline}
-                style={{
-                  fontSize: "30px",
-                  verticalAlign: "middle",
-                }}
-              />
+              <IonIcon className={iconLearnMore} icon={arrowForwardOutline} />
             </div>
           </div>
         </Link>
 
-        <h2>Stump Tails</h2>
+        <h2 className={morphologyH2}>Stump Tails</h2>
 
-        <p>Short or absent principal pieces.</p>
+        <p className={morphologyP}>Short or absent principal pieces.</p>
 
-        <h2>Multiple (Accessory) Tails</h2>
+        <h2 className={morphologyH2}>Multiple (Accessory) Tails</h2>
 
-        <p>Presence of extra tail structures.</p>
+        <p className={morphologyP}>Presence of extra tail structures.</p>
       </div>
     </div>
   );

@@ -2,8 +2,18 @@
 import Image from "next/image";
 import Slider from "../../components/slider/Slider";
 
-// Styles
-import styles from "../page.module.css";
+import {
+  morphologyP,
+  morphologyH1WithMedia,
+  morphologyH2,
+  morphologyH3,
+  morphologyArticle,
+  morphologySection,
+  morphologyUl,
+  morphologyLi,
+  titleContainer,
+  sliderContainer,
+} from "../morphologyTailwind";
 
 // Images used for the slider
 const images = [
@@ -51,9 +61,9 @@ const images = [
 
 export default function AbnormalCondensation() {
   return (
-    <div className={styles.contentWrapper}>
-      <div className={styles.titleContainer}>
-        <h1 className={styles.title}>
+    <div>
+      <div className={titleContainer}>
+        <h1 className={morphologyH1WithMedia}>
           Abnormal DNA Condensation
           <Image
             src="/img/morphology/AbnormalCondensation/DNA chromitin condensation.png"
@@ -64,15 +74,15 @@ export default function AbnormalCondensation() {
         </h1>
       </div>
 
-      <div className={styles.sliderContainer}>
+      <div className={sliderContainer}>
         <Slider imageData={images} />
       </div>
 
-      <article>
-        <section>
-          <h2>Description</h2>
+      <article className={morphologyArticle}>
+        <section className={morphologySection}>
+          <h2 className={morphologyH2}>Description</h2>
 
-          <p>
+          <p className={morphologyP}>
             Abnormal DNA condensation is characterized by incomplete chromatin
             packaging, where histones are not fully replaced by protamines
             during spermiogenesis. This leads to less stable DNA and increased
@@ -80,10 +90,10 @@ export default function AbnormalCondensation() {
           </p>
         </section>
 
-        <section>
-          <h2>Potential Effects on Fertility</h2>
+        <section className={morphologySection}>
+          <h2 className={morphologyH2}>Potential Effects on Fertility</h2>
 
-          <p>
+          <p className={morphologyP}>
             Abnormal DNA condensation is a significant factor in reduced
             fertility. Sperm with this defect show increased levels of DNA
             fragmentation and poor chromatin integrity, leading to decreased
@@ -93,40 +103,40 @@ export default function AbnormalCondensation() {
           </p>
         </section>
 
-        <section>
-          <h2>Days from Insult to Identificaiton</h2>
+        <section className={morphologySection}>
+          <h2 className={morphologyH2}>Days from Insult to Identificaiton</h2>
 
-          <p>
+          <p className={morphologyP}>
             This defect can be identified approximately 20-30 days following a
             stress event or other insult that affects spermatogenesis​​.
           </p>
         </section>
 
-        <section>
-          <h2>Causes</h2>
+        <section className={morphologySection}>
+          <h2 className={morphologyH2}>Causes</h2>
 
-          <p>Possible causes include:</p>
+          <p className={morphologyP}>Possible causes include:</p>
 
-          <ul>
-            <li>
+          <ul className={morphologyUl}>
+            <li className={morphologyLi}>
               <strong>Genetic Factors:</strong> Some bulls may have a hereditary
               predisposition to this defect
             </li>
-            <li>
+            <li className={morphologyLi}>
               <strong>Environmental Stress:</strong> Heat stress, nutritional
               deficiencies, and illness
             </li>
-            <li>
+            <li className={morphologyLi}>
               <strong>Hormonal Imbalance:</strong> Disruptions in hormonal
               regulation of the testes can lead to abnormal DNA condensation
             </li>
           </ul>
         </section>
 
-        <section>
-          <h2>Other Important Data</h2>
+        <section className={morphologySection}>
+          <h2 className={morphologyH2}>Other Important Data</h2>
 
-          <p>
+          <p className={morphologyP}>
             Abnormal DNA condensation cannot be detected by light microscopy
             with routine staining techniques. It can be identified using
             specialized methods such as the sperm chromatin structure assay
@@ -136,12 +146,12 @@ export default function AbnormalCondensation() {
           </p>
         </section>
 
-        <section>
-          <h2>Case Studies</h2>
+        <section className={morphologySection}>
+          <h2 className={morphologyH2}>Case Studies</h2>
 
-          <h3>Case Study: Impact of Abnormal DNA Condensation on Fertility</h3>
+          <h3 className={morphologyH3}>Case Study: Impact of Abnormal DNA Condensation on Fertility</h3>
 
-          <p>
+          <p className={morphologyP}>
             A study involving bulls with varying levels of abnormal DNA
             condensation (2-75%) demonstrated a clear correlation between
             increased levels of this defect and reduced fertility. In one case,

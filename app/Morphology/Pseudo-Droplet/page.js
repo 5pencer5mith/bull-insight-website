@@ -2,8 +2,18 @@
 import Image from "next/image";
 import Slider from "../../components/slider/Slider";
 
-// Styles
-import styles from "../page.module.css";
+import {
+  morphologyP,
+  morphologyH1WithMedia,
+  morphologyH2,
+  morphologyH3,
+  morphologyArticle,
+  morphologySection,
+  morphologyUl,
+  morphologyLi,
+  titleContainer,
+  sliderContainer,
+} from "../morphologyTailwind";
 
 // Images for the slider
 const images = [
@@ -51,9 +61,9 @@ const images = [
 
 export default function PseudoDroplets() {
   return (
-    <div className={styles.contentWrapper}>
-      <div className={styles.titleContainer}>
-        <h1 className={styles.title}>
+    <div>
+      <div className={titleContainer}>
+        <h1 className={morphologyH1WithMedia}>
           Pseudo Droplets
           <Image
             src="/img/morphology/PseudoDroplets/Pseudo Droplet.png"
@@ -64,15 +74,15 @@ export default function PseudoDroplets() {
         </h1>
       </div>
 
-      <div className={styles.sliderContainer}>
+      <div className={sliderContainer}>
         <Slider imageData={images} />
       </div>
 
-      <article>
-        <section>
-          <h2>Description</h2>
+      <article className={morphologyArticle}>
+        <section className={morphologySection}>
+          <h2 className={morphologyH2}>Description</h2>
 
-          <p>
+          <p className={morphologyP}>
             Pseudo-droplets are characterized by a thickening of the mid-piece,
             often associated with a bend or fracture. This defect mimics a
             cytoplasmic droplet but is located within the mitochondrial sheath.
@@ -80,10 +90,10 @@ export default function PseudoDroplets() {
           </p>
         </section>
 
-        <section>
-          <h2>Potential Effects on Fertility</h2>
+        <section className={morphologySection}>
+          <h2 className={morphologyH2}>Potential Effects on Fertility</h2>
 
-          <p>
+          <p className={morphologyP}>
             Pseudo-droplets have little to no effect on fertility. Bulls with up
             to 90% of sperm affected by pseudo-droplets have been reported to
             maintain normal fertility over multiple breeding seasons. This
@@ -92,10 +102,10 @@ export default function PseudoDroplets() {
           </p>
         </section>
 
-        <section>
-          <h2>Days from Insult to Identificaiton</h2>
+        <section className={morphologySection}>
+          <h2 className={morphologyH2}>Days from Insult to Identificaiton</h2>
 
-          <p>
+          <p className={morphologyP}>
             Pseudo-droplets can be observed shortly after stress events or
             nutritional imbalances. They can be transient or permanent; if the
             defect persists in two tests conducted ten weeks apart, it is
@@ -103,31 +113,31 @@ export default function PseudoDroplets() {
           </p>
         </section>
 
-        <section>
-          <h2>Causes</h2>
+        <section className={morphologySection}>
+          <h2 className={morphologyH2}>Causes</h2>
 
-          <p>Possible causes include:</p>
+          <p className={morphologyP}>Possible causes include:</p>
 
-          <ul>
-            <li>
+          <ul className={morphologyUl}>
+            <li className={morphologyLi}>
               <strong>Nutritional Factors:</strong> High levels of gossypol in
               the diet
             </li>
-            <li>
+            <li className={morphologyLi}>
               <strong>Viral Infections:</strong> Conditions such as Bovine
               Ephemeral Fever
             </li>
-            <li>
+            <li className={morphologyLi}>
               <strong>Genetic Predisposition:</strong> Some bulls may have a
               hereditary tendency to develop this defect
             </li>
           </ul>
         </section>
 
-        <section>
-          <h2>Other Important Data</h2>
+        <section className={morphologySection}>
+          <h2 className={morphologyH2}>Other Important Data</h2>
 
-          <p>
+          <p className={morphologyP}>
             Pseudo-droplets are often confused with true cytoplasmic droplets.
             However, under transmission electron microscopy (TEM),
             pseudo-droplets reveal an accumulation of dense granules within the
@@ -136,12 +146,12 @@ export default function PseudoDroplets() {
           </p>
         </section>
 
-        <section>
-          <h2>Case Studies</h2>
+        <section className={morphologySection}>
+          <h2 className={morphologyH2}>Case Studies</h2>
 
-          <h3>Case Study: Impact of Pseudo-Droplets on Fertility</h3>
+          <h3 className={morphologyH3}>Case Study: Impact of Pseudo-Droplets on Fertility</h3>
 
-          <p>
+          <p className={morphologyP}>
             A study involving a bull with 90% of sperm showing pseudodroplets
             maintained normal fertility over three breeding seasons, indicating
             the minimal impact of this defect on fertility​​​​.

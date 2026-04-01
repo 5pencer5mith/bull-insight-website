@@ -5,8 +5,8 @@ export default function BlogLayout({ children }) {
     <div className="layoutWrapper">
       <div className="sidekick">
         <Sidekick
-          pageTitle="Sperm In-Cyte Blog"
-          subTitle="Stay Up To Date With Sperm-Incyte"
+          pageTitle="Insight Blog"
+          subTitle="Get the Latest Insights Here!"
         />
       </div>
 

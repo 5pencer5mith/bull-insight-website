@@ -46,7 +46,7 @@ export default function home() {
             <div className="inline text-center w-full p-4 md:text-center">
               <div className="md:p-4">
                 <h3 className="text-2xl md:text-4xl">
-                  <span className="font-bold text-blue-700">Our goal</span> is
+                  Our <span className="font-bold text-blue-700">goal</span> is
                   to provide effective resources and information, and to promote
                   best practices that ensure the well-being and health of cattle
                   herds worldwide.
@@ -73,7 +73,7 @@ export default function home() {
                   </div>
 
                   <div className="relative z-10">
-                    <h4 className="text-xl text-center">Sample Analysis</h4>
+                    <h4 className="text-xl text-center font-bold">Sample Analysis</h4>
                     <div className="pt-2">
                       <p className="text-md text-center">
                         Order a sample analysis kit, collect a semen sample from
@@ -88,11 +88,11 @@ export default function home() {
               <Link href="/">
                 <div className="relative insights-block">
                   <div className="absolute inset-0 flex justify-center items-center z-0">
-                    <Microscope className="w-48 h-48 text-blue-100" />
+                    <Microscope className="w-48 h-48 text-blue-200" />
                   </div>
 
                   <div className="relative z-10">
-                    <h4 className="text-center text-xl">
+                    <h4 className="text-center text-xl font-bold">
                       Sperm In-Cyte Technology
                     </h4>
                     <div className="pt-2">
@@ -108,11 +108,11 @@ export default function home() {
               <Link href="/">
                 <div className="relative insights-block">
                   <div className="absolute inset-0 flex justify-center items-center z-0">
-                    <BookOpen className="w-48 h-48 text-blue-100" />
+                    <BookOpen className="w-48 h-48 text-blue-200" />
                   </div>
 
                   <div className="relative z-10">
-                    <h4 className="text-center text-xl">Sperm Morphology</h4>
+                    <h4 className="text-center text-xl font-bold ">Sperm Morphology</h4>
                     <div className="pt-2">
                       <p className="text-md text-center">
                         Learn about bull sperm morphology and the different
@@ -126,11 +126,11 @@ export default function home() {
               <Link href="/">
                 <div className="relative insights-block">
                   <div className="absolute inset-0 flex justify-center items-center z-0">
-                    <Rss className="w-48 h-48 text-blue-100" />
+                    <Rss className="w-48 h-48 text-blue-200" />
                   </div>
 
                   <div className="relative z-10">
-                    <h4 className="text-center text-xl">Blog</h4>
+                    <h4 className="text-center text-xl font-bold">Blog</h4>
                     <div className="pt-2">
                       <p className="text-md text-center">
                         Keep up with the latest insights! Check out our blog.
@@ -149,7 +149,7 @@ export default function home() {
           <div className="p-8">
             <div className="md:p-4" id="about">
               <h3 className="text-center text-2xl md:text-4xl md:text-left">
-                <span className="font-bold text-blue-700">About</span> Us
+              About <span className="font-bold text-blue-700">Us</span>
               </h3>
 
               <div className="md:flex">
@@ -183,7 +183,7 @@ export default function home() {
 
             <div className="pt-12" id="contact">
               <h3 className="text-center text-2xl md:text-4xl md:pb-4">
-                <span className="font-bold text-blue-700">Contact</span> Us
+                Contact <span className="font-bold text-blue-700">Us</span>
               </h3>
               <h4 className="text-lg text-center md:text-2xl">
                 We would love to hear from{" "}

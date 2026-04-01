@@ -2,8 +2,18 @@
 // import Image from 'next/image';
 // import Slider from '@/app/components/slider/Slider'
 
-// Styles
-import styles from "../page.module.css";
+import {
+  morphologyP,
+  morphologyH1WithMedia,
+  morphologyH2,
+  morphologyH3,
+  morphologyArticle,
+  morphologySection,
+  morphologyUl,
+  morphologyLi,
+  titleContainer,
+  sliderContainer,
+} from "../morphologyTailwind";
 
 // Images for the slider
 // const images = [
@@ -13,9 +23,9 @@ import styles from "../page.module.css";
 
 export default function SwollenAcrosomes() {
   return (
-    <div className={styles.contentWrapper}>
-      <div className={styles.titleContainer}>
-        <h1 className={styles.title}>
+    <div>
+      <div className={titleContainer}>
+        <h1 className={morphologyH1WithMedia}>
           Swollen Acrosomes
           {/* <Image
                         src='/morphology/'
@@ -26,17 +36,17 @@ export default function SwollenAcrosomes() {
         </h1>
       </div>
 
-      {/* <div className={styles.sliderContainer}>
+      {/* <div className={sliderContainer}>
 
                 <Slider imageData={images} />
 
             </div> */}
 
-      <article>
-        <section>
-          <h2>Description</h2>
+      <article className={morphologyArticle}>
+        <section className={morphologySection}>
+          <h2 className={morphologyH2}>Description</h2>
 
-          <p>
+          <p className={morphologyP}>
             Swollen acrosomes, also known as ruffled acrosomes, are
             characterized by the abnormal enlargement and lifting of the
             acrosome from the sperm head. This condition often results in the
@@ -45,10 +55,10 @@ export default function SwollenAcrosomes() {
           </p>
         </section>
 
-        <section>
-          <h2>Potential Effects on Fertility</h2>
+        <section className={morphologySection}>
+          <h2 className={morphologyH2}>Potential Effects on Fertility</h2>
 
-          <p>
+          <p className={morphologyP}>
             Swollen acrosomes can negatively impact fertility. The swelling and
             subsequent sloughing of the acrosome mimic the capacitation process,
             rendering the sperm incapable of binding to and penetrating the
@@ -58,45 +68,45 @@ export default function SwollenAcrosomes() {
           </p>
         </section>
 
-        <section>
-          <h2>Days from Insult to Identificaiton</h2>
+        <section className={morphologySection}>
+          <h2 className={morphologyH2}>Days from Insult to Identificaiton</h2>
 
-          <p>
+          <p className={morphologyP}>
             Swollen acrosomes can appear shortly after stress events or as a
             result of sperm aging. They are often observed in older sperm or
             sperm that have accumulated due to infrequent ejaculation​​.
           </p>
         </section>
 
-        <section>
-          <h2>Causes</h2>
+        <section className={morphologySection}>
+          <h2 className={morphologyH2}>Causes</h2>
 
-          <p>Possible causes include:</p>
+          <p className={morphologyP}>Possible causes include:</p>
 
-          <ul>
-            <li>
+          <ul className={morphologyUl}>
+            <li className={morphologyLi}>
               <strong>Aging of Sperm:</strong> Prolonged storage in the
               epididymis can lead to acrosomal swelling
             </li>
-            <li>
+            <li className={morphologyLi}>
               <strong>Rusty Load Syndrome:</strong> Accumulation of sperm in the
               epididymis over time
             </li>
-            <li>
+            <li className={morphologyLi}>
               <strong>Environmental Stress:</strong> Heat stress and physical
               exertion
             </li>
-            <li>
+            <li className={morphologyLi}>
               <strong>Handling Errors:</strong> Improper semen handling or
               processing can also contribute to this condition
             </li>
           </ul>
         </section>
 
-        <section>
-          <h2>Other Important Data</h2>
+        <section className={morphologySection}>
+          <h2 className={morphologyH2}>Other Important Data</h2>
 
-          <p>
+          <p className={morphologyP}>
             Swollen acrosomes are often seen in conjunction with other head
             abnormalities, such as knobbed acrosomes, because the latter can
             cause premature initiation of the acrosome reaction. In such cases,
@@ -105,12 +115,12 @@ export default function SwollenAcrosomes() {
           </p>
         </section>
 
-        <section>
-          <h2>Case Studies</h2>
+        <section className={morphologySection}>
+          <h2 className={morphologyH2}>Case Studies</h2>
 
-          <h3>Case Study: Impact of Swollen Acrosomes on Fertility</h3>
+          <h3 className={morphologyH3}>Case Study: Impact of Swollen Acrosomes on Fertility</h3>
 
-          <p>
+          <p className={morphologyP}>
             A study involving bulls with high levels of swollen acrosomes showed
             significantly lower fertility rates. In cases where swollen
             acrosomes were present in conjunction with other defects, such as

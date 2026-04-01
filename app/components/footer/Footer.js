@@ -55,7 +55,7 @@ export default function Footer() {
         </div>
 
         <div>
-          <p className="text-xs">© 2025 Bull-Insight.com. All rights reserved.</p>
+          <p className="text-xs">© 2026 Bull-Insight.com. All rights reserved.</p>
         </div>
       </div>
     </footer>

@@ -2,8 +2,18 @@
 import Image from "next/image";
 import Slider from "../../components/slider/Slider";
 
-// Styles
-import styles from "../page.module.css";
+import {
+  morphologyP,
+  morphologyH1WithMedia,
+  morphologyH2,
+  morphologyH3,
+  morphologyArticle,
+  morphologySection,
+  morphologyUl,
+  morphologyLi,
+  titleContainer,
+  sliderContainer,
+} from "../morphologyTailwind";
 
 // Images for the slider
 const images = [
@@ -46,9 +56,9 @@ const images = [
 
 export default function DoubleForms() {
   return (
-    <div className={styles.contentWrapper}>
-      <div className={styles.titleContainer}>
-        <h1 className={styles.title}>
+    <div>
+      <div className={titleContainer}>
+        <h1 className={morphologyH1WithMedia}>
           Double Forms
           <Image
             src="/img/morphology/DoubleForm/Double Form.png"
@@ -59,25 +69,25 @@ export default function DoubleForms() {
         </h1>
       </div>
 
-      <div className={styles.sliderContainer}>
+      <div className={sliderContainer}>
         <Slider imageData={images} />
       </div>
 
-      <article>
-        <section>
-          <h2>Description</h2>
+      <article className={morphologyArticle}>
+        <section className={morphologySection}>
+          <h2 className={morphologyH2}>Description</h2>
 
-          <p>
+          <p className={morphologyP}>
             Double forms are characterized by sperm with two heads, two tails,
             or both. These forms can include multinuclear sperm or
             multiflagellar sperm, resulting in a multilamellar appearance.
           </p>
         </section>
 
-        <section>
-          <h2>Potential Effects on Fertility</h2>
+        <section className={morphologySection}>
+          <h2 className={morphologyH2}>Potential Effects on Fertility</h2>
 
-          <p>
+          <p className={morphologyP}>
             Double forms are a serious defect and significantly impair
             fertility. They are considered an uncompensable defect because the
             affected sperm are usually non-functional. High levels of double
@@ -86,40 +96,40 @@ export default function DoubleForms() {
           </p>
         </section>
 
-        <section>
-          <h2>Days from Insult to Identificaiton</h2>
+        <section className={morphologySection}>
+          <h2 className={morphologyH2}>Days from Insult to Identificaiton</h2>
 
-          <p>
+          <p className={morphologyP}>
             Double forms can appear approximately 20-30 days following a severe
             stress event or genetic disturbance affecting spermatogenesis​​​​.
           </p>
         </section>
 
-        <section>
-          <h2>Causes</h2>
+        <section className={morphologySection}>
+          <h2 className={morphologyH2}>Causes</h2>
 
-          <p>Possible causes include:</p>
+          <p className={morphologyP}>Possible causes include:</p>
 
-          <ul>
-            <li>
+          <ul className={morphologyUl}>
+            <li className={morphologyLi}>
               <strong>Genetic Factors:</strong> Some bulls may have a hereditary
               predisposition to develop this defect
             </li>
-            <li>
+            <li className={morphologyLi}>
               <strong>Severe Environmental Stress:</strong> Heat stress, cold
               shock, or other significant stressors
             </li>
-            <li>
+            <li className={morphologyLi}>
               <strong>Disturbances in Spermatogenesis:</strong> Severe
               disruptions during sperm development and maturation
             </li>
           </ul>
         </section>
 
-        <section>
-          <h2>Other Important Data</h2>
+        <section className={morphologySection}>
+          <h2 className={morphologyH2}>Other Important Data</h2>
 
-          <p>
+          <p className={morphologyP}>
             Double forms are indicative of a severe disturbance in
             spermatogenesis and are often seen in conjunction with other serious
             sperm defects. These sperm are generally non-functional and unable
@@ -127,12 +137,12 @@ export default function DoubleForms() {
           </p>
         </section>
 
-        <section>
-          <h2>Case Studies</h2>
+        <section className={morphologySection}>
+          <h2 className={morphologyH2}>Case Studies</h2>
 
-          <h3>Case Study: Impact of Double Forms on Fertility</h3>
+          <h3 className={morphologyH3}>Case Study: Impact of Double Forms on Fertility</h3>
 
-          <p>
+          <p className={morphologyP}>
             A case study involving a bull with high percentages of double forms
             (greater than 10%) showed severe infertility. The presence of these
             defects highlighted the critical impact on overall fertility and the

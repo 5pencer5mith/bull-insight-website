@@ -2,8 +2,18 @@
 import Image from "next/image";
 import Slider from "../../components/slider/Slider";
 
-// Styles
-import styles from "../page.module.css";
+import {
+  morphologyP,
+  morphologyH1WithMedia,
+  morphologyH2,
+  morphologyH3,
+  morphologyArticle,
+  morphologySection,
+  morphologyUl,
+  morphologyLi,
+  titleContainer,
+  sliderContainer,
+} from "../morphologyTailwind";
 
 // Images for slider
 const images = [
@@ -51,9 +61,9 @@ const images = [
 
 export default function KnobbedAcrosomes() {
   return (
-    <div className={styles.contentWrapper}>
-      <div className={styles.titleContainer}>
-        <h1 className={styles.title}>
+    <div>
+      <div className={titleContainer}>
+        <h1 className={morphologyH1WithMedia}>
           Knobbed Acrosomes
           <Image
             src="/img/morphology/KnobbedAcrosome/Ruffled.png"
@@ -64,25 +74,25 @@ export default function KnobbedAcrosomes() {
         </h1>
       </div>
 
-      <div className={styles.sliderContainer}>
+      <div className={sliderContainer}>
         <Slider imageData={images} />
       </div>
 
-      <article>
-        <section>
-          <h2>Description</h2>
+      <article className={morphologyArticle}>
+        <section className={morphologySection}>
+          <h2 className={morphologyH2}>Description</h2>
 
-          <p>
+          <p className={morphologyP}>
             Knobbed acrosomes are characterized by abnormal flattening, beading,
             or indentation at the apex of the acrosome. This defect can be
             heritable or arise following environmental stress events.
           </p>
         </section>
 
-        <section>
-          <h2>Potential Effects on Fertility</h2>
+        <section className={morphologySection}>
+          <h2 className={morphologyH2}>Potential Effects on Fertility</h2>
 
-          <p>
+          <p className={morphologyP}>
             Knobbed acrosomes can significantly impact fertility. The beaded
             form, inherited by an autosomal recessive gene, is often associated
             with sterility and usually occurs as a high percentage of the
@@ -90,12 +100,12 @@ export default function KnobbedAcrosomes() {
             fertility:
           </p>
 
-          <ul>
-            <li>
+          <ul className={morphologyUl}>
+            <li className={morphologyLi}>
               <strong>Beaded Form:</strong> Frequently leads to sterility when
               present in high percentages
             </li>
-            <li>
+            <li className={morphologyLi}>
               <strong>Indented or Flattened Form:</strong>Can achieve
               near-normal fertility in non-competitive matings if the percentage
               of affected sperm is below 25%. However, in competitive mating
@@ -106,36 +116,36 @@ export default function KnobbedAcrosomes() {
           </ul>
         </section>
 
-        <section>
-          <h2>Days from Insult to Identificaiton</h2>
+        <section className={morphologySection}>
+          <h2 className={morphologyH2}>Days from Insult to Identificaiton</h2>
 
-          <p>
+          <p className={morphologyP}>
             Knobbed acrosomes can appear approximately 30 days following a
             stress event such as a single acidotic event​​.
           </p>
         </section>
 
-        <section>
-          <h2>Causes</h2>
+        <section className={morphologySection}>
+          <h2 className={morphologyH2}>Causes</h2>
 
-          <p>Possible causes include:</p>
+          <p className={morphologyP}>Possible causes include:</p>
 
-          <ul>
-            <li>
+          <ul className={morphologyUl}>
+            <li className={morphologyLi}>
               <strong>Genetic Factors:</strong> Hereditary via an autosomal
               recessive gene, especially for the beaded form
             </li>
-            <li>
+            <li className={morphologyLi}>
               <strong>Environmental Stress:</strong> Heat stress, scrotal
               insulation, or other disturbances in testicular function
             </li>
           </ul>
         </section>
 
-        <section>
-          <h2>Other Important Data</h2>
+        <section className={morphologySection}>
+          <h2 className={morphologyH2}>Other Important Data</h2>
 
-          <p>
+          <p className={morphologyP}>
             Knobbed acrosomes are considered an uncompensable defect in most
             cases as the affected sperm fail to penetrate the zona pellucida and
             thus cannot fertilize the ova. However, in certain situations, the
@@ -144,12 +154,12 @@ export default function KnobbedAcrosomes() {
           </p>
         </section>
 
-        <section>
-          <h2>Case Studies</h2>
+        <section className={morphologySection}>
+          <h2 className={morphologyH2}>Case Studies</h2>
 
-          <h3>Case Study: Impact of Knobbed Acrosomes on Fertility</h3>
+          <h3 className={morphologyH3}>Case Study: Impact of Knobbed Acrosomes on Fertility</h3>
 
-          <p>
+          <p className={morphologyP}>
             A study involving bulls with high percentages of knobbed acrosomes
             (65-85%) in single sire natural mating showed pregnancy rates
             ranging from 61-85%. Another study using frozen semen from these

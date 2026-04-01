@@ -8,8 +8,16 @@ import { IonIcon } from "@ionic/react";
 import { arrowForwardOutline } from "ionicons/icons";
 import Link from "next/link";
 
-// Styles
-import styles from "./page.module.css";
+import {
+  morphologyAbCardP,
+  morphologyH1,
+  morphologyH2,
+  morphologyP,
+  morphologySectionBlock,
+  iconLearnMore,
+  learnMoreRow,
+  learnMoreTitle,
+} from "../morphologyTailwind";
 
 export default function SwollenAcrosomesSummary() {
   const [isHydrated, setIsHydrated] = useState(false);
@@ -21,43 +29,37 @@ export default function SwollenAcrosomesSummary() {
   if (!isHydrated) return null;
 
   return (
-    <div className={styles.contentWrapper}>
-      <h1>Swollen Acrosomes</h1>
+    <div>
+      <h1 className={morphologyH1}>Swollen Acrosomes</h1>
 
-      <p>Aged sperm such as “rusty loads”.</p>
+      <p className={morphologyP}>Aged sperm such as “rusty loads”.</p>
 
-      <p>
+      <p className={morphologyP}>
         <strong>Fertility Impact: </strong>Generally considered compensable.
       </p>
 
-      <div className={styles.section}>
-        <h2>Swollen Acrosomes</h2>
+      <div className={morphologySectionBlock}>
+        <h2 className={morphologyH2}>Swollen Acrosomes</h2>
 
         <Link href="/Morphology/Swollen-Acrosomes">
-          <div className={styles.abButton}>
-            <p>
+          <div>
+            <p className={morphologyAbCardP}>
               Enlarged or deformed acrosome membranes, affecting enzyme release.
             </p>
 
-            <div className={styles.learnMore}>
-              <h3>Learn More About Swollen Acrosomes</h3>
+            <div className={learnMoreRow}>
+              <h3 className={learnMoreTitle}>
+                Learn More About Swollen Acrosomes
+              </h3>
 
-              <IonIcon
-                className={` text-blue-700`}
-                icon={arrowForwardOutline}
-                style={{
-                  fontSize: "30px",
-                  verticalAlign: "middle",
-                }}
-              />
+              <IonIcon className={iconLearnMore} icon={arrowForwardOutline} />
             </div>
           </div>
         </Link>
 
-        <h2>Ruffled/Incomplete Acrosomes</h2>
+        <h2 className={morphologyH2}>Ruffled/Incomplete Acrosomes</h2>
 
-        <p>
-          {" "}
+        <p className={morphologyP}>
           Irregular or incomplete acrosome formation that may impair
           fertilization capability.
         </p>

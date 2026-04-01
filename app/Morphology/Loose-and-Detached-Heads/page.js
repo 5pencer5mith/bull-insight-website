@@ -2,8 +2,18 @@
 import Image from "next/image";
 import Slider from "../../components/slider/Slider";
 
-// Styles
-import styles from "../page.module.css";
+import {
+  morphologyP,
+  morphologyH1WithMedia,
+  morphologyH2,
+  morphologyH3,
+  morphologyArticle,
+  morphologySection,
+  morphologyUl,
+  morphologyLi,
+  titleContainer,
+  sliderContainer,
+} from "../morphologyTailwind";
 
 // Images for the slider
 const images = [
@@ -51,9 +61,9 @@ const images = [
 
 export default function LooseAndDetachedHeads() {
   return (
-    <div className={styles.contentWrapper}>
-      <div className={styles.titleContainer}>
-        <h1 className={styles.title}>
+    <div>
+      <div className={titleContainer}>
+        <h1 className={morphologyH1WithMedia}>
           Loose and Detached Heads
           <Image
             src="/img/morphology/DetachedHeads/Detached.png"
@@ -64,15 +74,15 @@ export default function LooseAndDetachedHeads() {
         </h1>
       </div>
 
-      <div className={styles.sliderContainer}>
+      <div className={sliderContainer}>
         <Slider imageData={images} />
       </div>
 
-      <article>
-        <section>
-          <h2>Description</h2>
+      <article className={morphologyArticle}>
+        <section className={morphologySection}>
+          <h2 className={morphologyH2}>Description</h2>
 
-          <p>
+          <p className={morphologyP}>
             Loose or detached heads are characterized by the separation of the
             sperm head from the tail. This defect can arise due to various
             factors including testicular degeneration, inflammation, heat
@@ -80,10 +90,10 @@ export default function LooseAndDetachedHeads() {
           </p>
         </section>
 
-        <section>
-          <h2>Potential Effects on Fertility</h2>
+        <section className={morphologySection}>
+          <h2 className={morphologyH2}>Potential Effects on Fertility</h2>
 
-          <p>
+          <p className={morphologyP}>
             Loose or detached heads are generally considered a compensable
             defect, meaning that their presence can be mitigated by increasing
             the sperm count in the ejaculate. Bulls with 30-40% of sperm
@@ -95,44 +105,44 @@ export default function LooseAndDetachedHeads() {
           </p>
         </section>
 
-        <section>
-          <h2>Days from Insult to Identificaiton</h2>
+        <section className={morphologySection}>
+          <h2 className={morphologyH2}>Days from Insult to Identificaiton</h2>
 
-          <p>
+          <p className={morphologyP}>
             Detached heads can appear shortly after stress events or as a result
             of sperm accumulation. They are often observed in ejaculates where
             sperm have been stored for extended periods​​​​.
           </p>
         </section>
 
-        <section>
-          <h2>Causes</h2>
+        <section className={morphologySection}>
+          <h2 className={morphologyH2}>Causes</h2>
 
-          <p>Possible causes include:</p>
+          <p className={morphologyP}>Possible causes include:</p>
 
-          <ul>
-            <li>
+          <ul className={morphologyUl}>
+            <li className={morphologyLi}>
               <strong>Testicular Degeneration or Hypoplasia:</strong> Leading to
               structural weakness
             </li>
-            <li>
+            <li className={morphologyLi}>
               <strong>Inflammation:</strong> Of the ampullae or epididymis
             </li>
-            <li>
+            <li className={morphologyLi}>
               <strong>Heat Stress:</strong> Elevated temperatures can cause this
               defect
             </li>
-            <li>
+            <li className={morphologyLi}>
               <strong>Rusty Load:</strong> Accumulation of sperm in storage can
               result in this abnormality
             </li>
           </ul>
         </section>
 
-        <section>
-          <h2>Other Important Data</h2>
+        <section className={morphologySection}>
+          <h2 className={morphologyH2}>Other Important Data</h2>
 
-          <p>
+          <p className={morphologyP}>
             This defect is compensable, meaning that increasing the total sperm
             count can offset its negative effects on fertility. Sperm with
             detached heads cannot swim and thus cannot reach or fertilize the
@@ -140,12 +150,12 @@ export default function LooseAndDetachedHeads() {
           </p>
         </section>
 
-        <section>
-          <h2>Case Studies</h2>
+        <section className={morphologySection}>
+          <h2 className={morphologyH2}>Case Studies</h2>
 
-          <h3>Case Study: Impact of Detached Heads on Fertility</h3>
+          <h3 className={morphologyH3}>Case Study: Impact of Detached Heads on Fertility</h3>
 
-          <p>
+          <p className={morphologyP}>
             A study involving a bull with a high percentage of detached heads
             (up to 70%) demonstrated severely decreased fertility. This
             emphasizes the need to monitor and manage this defect to maintain
