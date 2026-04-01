@@ -1,0 +1,9 @@
+.pageWrapper {
+  color: #005999;
+  text-align: center;
+}
+
+.title {
+  padding-bottom: 25px;
+  border-bottom: #ccc 1px solid;
+}

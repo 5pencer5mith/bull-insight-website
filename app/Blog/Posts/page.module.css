@@ -1,0 +1,53 @@
+.postWrapper .title h1 {
+  font-size: 50px;
+  margin-bottom: 25px;
+  text-align: center;
+  color: #005999;
+}
+
+.postWrapper article h2 {
+  color: #005999;
+  margin-bottom: 10px;
+}
+
+.postWrapper article p,
+.postWrapper article li {
+  font-size: 20px;
+  line-height: 2rem;
+  color: black;
+  margin-bottom: 10px;
+}
+
+.postWrapper article p {
+  margin-bottom: 25px;
+}
+
+.postWrapper article ul {
+  padding-left: 50px;
+}
+
+.orderedListDiv {
+    padding-left: 50px;
+}
+
+.postWrapper .unorderedListDiv p {
+    margin: 0;
+    padding: 0;
+}
+
+.postWrapper article {
+    padding-top: 40px;
+}
+
+.postWrapper article section {
+    padding-bottom: 20px;
+}
+
+.postWrapper .backToHub h6 {
+    font-size: 18px;
+    color: #005999;
+}
+
+.postWrapper .backToHub h6:hover {
+    cursor: pointer;
+}

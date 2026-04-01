@@ -1,0 +1,2 @@
+/* Morphology routes use Tailwind via morphologyTailwind.js.
+   This file is kept so stale dev/webpack caches that still reference it resolve cleanly. */

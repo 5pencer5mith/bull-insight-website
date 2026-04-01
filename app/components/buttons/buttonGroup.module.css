@@ -1,0 +1,38 @@
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  padding: 20px;
+}
+
+.button1 a,
+.button2 a {
+  display: inline-block;
+  padding: 10px 20px;
+  color: #fff;
+  background-color: #005999;
+  border-radius: 5px;
+  font-size: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+.button1 a:hover,
+.button2 a:hover {
+  background-color: #0068b3;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .buttons {
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 20px; /* Adjust the gap between the buttons */
+  }
+
+  .button1 a,
+  .button2 a {
+    text-align: center;
+  }
+}
