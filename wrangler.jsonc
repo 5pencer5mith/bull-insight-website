@@ -1,0 +1,9 @@
+{
+  "name": "sperm-incyte-website",
+  "compatibility_date": "2026-04-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "main": ".open-next/worker.js",
+  "assets": {
+    "directory": ".open-next/assets"
+  }
+}
