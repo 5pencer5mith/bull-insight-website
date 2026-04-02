@@ -123,6 +123,7 @@ export default function home() {
                 </div>
               </Link>
 
+
               <Link href="/">
                 <div className="relative insights-block">
                   <div className="absolute inset-0 flex justify-center items-center z-0">
