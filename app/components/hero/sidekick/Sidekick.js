@@ -1,7 +1,4 @@
 // Sidekick component: A thin banner used on most pages
-// Components
-import Image from "next/image";
-
 
 export default function Sidekick({ pageTitle, subTitle }) {
   const words = pageTitle.trim().split(/\s+/).filter(Boolean);
@@ -19,7 +16,7 @@ export default function Sidekick({ pageTitle, subTitle }) {
           ) : (
             <>
               {firstWord}{" "}
-              <span className="font-bold text-blue-700">{secondWord}</span>
+              <span className="font-bold text-brand-primary">{secondWord}</span>
             </>
           )}
         </h1>

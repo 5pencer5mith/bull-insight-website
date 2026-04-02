@@ -29,7 +29,7 @@ export default function Header() {
 
   return (
     <>
-      <div className="relative z-50 flex flex-end bg-background-primary h-20 items-center p-4">
+      <div className="relative z-50 flex flex-end bg-background-primary h-20 items-center p-4 border-b border-border-primary">
         <div className="flex flex-1 items-center text-xl pl-4">
           <Link href="/">
             <span className="font-body text-2xl">Bull</span>
