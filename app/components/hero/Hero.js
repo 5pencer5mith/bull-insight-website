@@ -1,27 +1,46 @@
-// Components
 import Image from "next/image";
-
-// Styles
-import styles from "./hero.module.css";
 
 export default function Hero() {
   return (
-    <div className={styles.hero}>
-      <div className={styles.overlay}>
-        <div className={styles.content}>
-          <h1>Your Home for a Healthy Herd</h1>
+    <section className="relative z-10 w-full text-center">
+      <div className="flex h-[100svh] shrink-0 items-center justify-center bg-background-primary px-4">
+        <div className="max-w-4xl -translate-y-[min(7svh,4rem)] overflow-x-clip overflow-y-visible px-1 py-4 md:-translate-y-[min(5svh,3.5rem)] md:py-5">
+          <h1 className="hero-welcome-whip flex flex-col items-center gap-2 pb-1 font-display text-4xl leading-[1.18] tracking-tight text-stone-900 md:text-5xl md:leading-[1.15] lg:text-6xl lg:leading-[1.12]">
+            <span>Welcome to</span>
+            <span className="whitespace-nowrap font-body leading-none">
+              Bull
+              <span className="font-display font-bold text-brand-primary text-6xl md:text-7xl lg:text-8xl leading-[1.08]">
+                Insight
+              </span>
+            </span>
+          </h1>
         </div>
       </div>
-      <div className={styles.bgImage}>
-        <Image
-          src="/img/hero/cattle_grazing.jpg"
-          alt="grazing cattle"
-          fill
-          style={{ objectFit: "cover" }}
-          quality={100}
-          priority
-        />
+
+      <div className="relative h-[100svh] min-h-[28rem] w-full overflow-hidden">
+        <div aria-hidden className="absolute inset-0">
+          <Image
+            src="/img/hero/cattle-grazing-mountainside.jpg"
+            alt="cattle grazing in a field"
+            fill
+            className="object-cover object-[100%_75%]"
+            sizes="100vw"
+            priority
+          />
+        </div>
+
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="w-full bg-white/30 px-4 py-6 text-center backdrop-blur-sm md:py-8">
+            <h1 className="font-display text-3xl text-shadow-lg/20 text-white md:text-7xl">
+              Your Home for a{" "}
+              <span className="md:font-bold text-white md:text-blue-700">
+                Healthy
+              </span>{" "}
+              Herd
+            </h1>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   );
 }

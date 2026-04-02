@@ -10,12 +10,12 @@ export default function Sidekick({ pageTitle, subTitle }) {
   const isSingleWord = words.length === 1;
 
   return (
-    <div className="w-full bg-white shadow-xl">
+    <div className="w-full bg-brand-primary-tint border-b border-brand-primary/20">
       
-      <div className="h-20 text-2xl flex flex-col justify-center items-center md:text-3xl">
-        <h1 className="">
+      <div className="py-10 px-6 text-2xl flex flex-col justify-center items-center md:text-4xl">
+        <h1 className="font-display">
           {isSingleWord ? (
-            <span className="font-bold text-blue-700">{firstWord}</span>
+            <span className="font-bold text-brand-primary">{firstWord}</span>
           ) : (
             <>
               {firstWord}{" "}

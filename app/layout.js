@@ -28,12 +28,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${dmSans.variable} ${dmSerifDisplay.variable} font-body bg-background-primary min-h-screen`}>
-        <div className="shrink-0">
+      <body className={`${dmSans.variable} ${dmSerifDisplay.variable} font-body bg-background-primary min-h-screen flex flex-col`}>
+        <div className="sticky top-0 z-50 shrink-0">
           <Header />
         </div>
 
-        <div className="flex w-full flex-1 flex-col">{children}</div>
+        <div className="flex flex-1 flex-col w-full">{children}</div>
 
         <div className="shrink-0">
           <Footer />
