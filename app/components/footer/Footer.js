@@ -9,16 +9,15 @@ import Link from "next/link";
 export default function Footer() {
 
   return (
-    <footer className="bg-stone-100 text-center">
+    <footer className="bg-background-primary text-center border-t border-border-primary">
       <div className="text-xl p-6">
         <Link href="/">
-          <span className="">Bull-</span>
-          <span className="font-bold text-blue-700">Insight</span>
-          <span className="text-stone-900">.com</span>
+          <span className="font-body text-2xl">Bull</span>
+          <span className="font-bold text-brand-primary text-4xl font-display">Insight</span>
         </Link>
       </div>
 
-      <div className="">
+      <div className="text-text-muted">
 
         <div>
           <p className="text-xs">Find us on:</p>
@@ -30,7 +29,7 @@ export default function Footer() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <h6 className="text-xs hover:text-blue-700">
+            <h6 className="text-xs text-text-muted hover:text-blue-700">
               Facebook
             </h6>
           </Link>
@@ -39,7 +38,7 @@ export default function Footer() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <h6 className="text-xs hover:text-blue-700">
+            <h6 className="text-xs text-text-muted hover:text-blue-700">
               Youtube
             </h6>
           </Link>
@@ -48,7 +47,7 @@ export default function Footer() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <h6 className="text-xs hover:text-blue-700">
+            <h6 className="text-xs text-text-muted hover:text-blue-700">
               Instagram
             </h6>
           </Link>

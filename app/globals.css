@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 @theme {
-  --font-display: var(--font-display);
-  --font-body: var(--font-body);
+  --font-display: 'DM Serif Display', serif;
+  --font-body: 'DM Sans', sans-serif;
 
   --color-brand-primary: #1d4ed8;
   --color-brand-primary-hover: #1e40af;
@@ -16,14 +16,41 @@
 }
 
 @layer base {
-  h1 {
-    @apply text-stone-900
+  body {
+    color: var(--color-text-primary);
+    background-color: var(--color-background-primary);
+    letter-spacing: -0.02em;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    letter-spacing: -0.04em;
+    color: var(--color-text-primary);
   }
 }
 
 @layer components {
   .insights-block {
-    @apply h-64 bg-stone-100/50 rounded-lg p-4 shadow-lg cursor-pointer origin-center transition-transform duration-200 ease-out md:border-2 md:border-transparent md:hover:border-2 md:hover:border-blue-700 md:hover:scale-105 md:hover:z-10
+    @apply h-64 origin-center cursor-pointer bg-white rounded-lg border-2 border-solid border-border-primary p-6 transition-transform duration-300 ease-out leading-snug hover:z-10 hover:scale-105 md:hover:bg-brand-primary-tint
+  }
+
+  @keyframes hero-welcome-whip {
+    0% {
+      /* Extra vertical slack so descenders (e.g. “g” in Insight) survive the wipe at large sizes */
+      clip-path: inset(-0.42em 100% -0.58em 0);
+    }
+    100% {
+      clip-path: inset(-0.42em 0 -0.58em 0);
+    }
+  }
+
+  .hero-welcome-whip {
+    animation: hero-welcome-whip 1.2s cubic-bezier(0.4, 0, 0.2, 1) both;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-welcome-whip {
+      animation: none;
+      clip-path: none;
+    }
   }
 }
 
@@ -34,7 +61,6 @@ html {
 body {
   min-height: 100vh;
   max-width: 100vw;
-  font-size: 20px;
 }
 
 .container {

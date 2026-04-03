@@ -11,8 +11,10 @@ import { chevronDownOutline, chevronForwardOutline } from "ionicons/icons";
 
 const listWrapperClass = "max-[768px]:text-center";
 const listUlClass = "list-none";
-const listLiClass = "mb-2 hover:origin-center hover:scale-105";
-const listLinkBaseClass = "no-underline text-sm";
+const listLiClass = "mb-2";
+/** Matches main Header nav: centered underline grows on hover */
+const listLinkHoverClass =
+  "relative inline-block no-underline text-sm pb-1.5 transition-colors duration-300 after:pointer-events-none after:content-[''] after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-0 after:h-0.5 after:w-0 after:bg-blue-700 after:transition-all after:duration-300 hover:after:w-full";
 
 const theriogenology = [
   {
@@ -147,109 +149,110 @@ export default function SubNav() {
   };
 
   return (
-    <div className="border-r border-solid border-[#ccc]">
-      <div className="pr-[10px]">
-        <div
-          className="hidden max-[768px]:flex max-[768px]:cursor-pointer max-[768px]:flex-row max-[768px]:content-center max-[768px]:justify-center"
-          onClick={toggleMorphMenu}
-        >
-          <h4 className="hidden max-[768px]:flex max-[768px]:text-blue-700">
-            Morphology Menu
-          </h4>
-          {isMorphMenuOpen ? (
-            <IonIcon
-              className="hidden max-[768px]:flex max-[768px]:text-xl max-[768px]:text-blue-700 align-middle"
-              icon={chevronDownOutline}
-            />
-          ) : (
-            <IonIcon
-              className="hidden max-[768px]:flex max-[768px]:text-xl max-[768px]:text-blue-700 align-middle"
-              icon={chevronForwardOutline}
-            />
-          )}
-        </div>
-        <div
-          className={`block ${isMorphMenuOpen ? "max-[768px]:block" : "max-[768px]:hidden"}`}
-        >
-          <h1 className="mb-[10px] text-xl text-stone-900 max-[768px]:text-center">
-            By <span className="text-blue-700 font-bold">Category</span>:
-          </h1>
-          <div className="mb-[25px] rounded-[5px] bg-white p-[10px] border-solid border-blue-700 border-2">
-            <p className="m-0 p-0 pb-[5px] text-center text-xs text-stone-900">
-              Change <span className="text-blue-700 font-bold">View</span>
-            </p>
-            <div className="flex justify-center gap-x-4">
-              <div
-                onClick={handleTheriogenologyClick}
-                className={
-                  activeCategory ? "" : "border-b-2 border-solid border-blue-700"
-                }
-              >
-                <h5 className="cursor-pointer text-center text-xs text-stone-900">
-                  Society for Theriogenology
-                </h5>
-              </div>
-              <div
-                onClick={handleBullcheckClick}
-                className={
-                  !activeCategory ? "" : "border-b-2 border-solid border-blue-700"
-                }
-              >
-                <h5 className="cursor-pointer text-center text-xs text-stone-900">
-                  Astralian BULLCHECK
-                </h5>
-              </div>
+    <div className="">
+      <div
+        className="hidden max-[768px]:flex max-[768px]:cursor-pointer max-[768px]:flex-row max-[768px]:items-center max-[768px]:justify-center max-[768px]:gap-2"
+        onClick={toggleMorphMenu}
+      >
+        <h4 className="m-0 hidden max-[768px]:block max-[768px]:text-text-primary font-display">
+          Morphology Menu
+        </h4>
+        {isMorphMenuOpen ? (
+          <IonIcon
+            className="hidden max-[768px]:block max-[768px]:shrink-0 max-[768px]:text-xl max-[768px]:text-brand-primary"
+            icon={chevronDownOutline}
+          />
+        ) : (
+          <IonIcon
+            className="hidden max-[768px]:block max-[768px]:shrink-0 max-[768px]:text-xl max-[768px]:text-brand-primary"
+            icon={chevronForwardOutline}
+          />
+        )}
+      </div>
+
+      <div
+        className={`block ${isMorphMenuOpen ? "max-[768px]:block" : "max-[768px]:hidden"}`}
+      >
+        <div className="pb-4">
+          <p className="m-0 p-0 pb-[5px] text-center text-xs text-stone-900">
+            Change <span className="text-blue-700 font-bold">View</span>
+          </p>
+          <div className="flex justify-center gap-x-4">
+            <div
+              onClick={handleTheriogenologyClick}
+              className={
+                activeCategory ? "" : "border-b-2 border-solid border-blue-700"
+              }
+            >
+              <h5 className="cursor-pointer text-center text-xs text-stone-900">
+                Society for Theriogenology
+              </h5>
+            </div>
+            <div
+              onClick={handleBullcheckClick}
+              className={
+                !activeCategory ? "" : "border-b-2 border-solid border-blue-700"
+              }
+            >
+              <h5 className="cursor-pointer text-center text-xs text-stone-900">
+                Astralian BULLCHECK
+              </h5>
             </div>
           </div>
+        </div>
+
+        <h3 className="font-display text-xl text-text-primary max-[768px]:text-center">
+          By <span className="text-brand-primary font-bold">Category</span>:
+        </h3>
+
+        <div className={listWrapperClass}>
+          <ul className={listUlClass}>
+            {list.map((item, index) => (
+              <li
+                key={index}
+                className={`${listLiClass} ${
+                  pathname === item.link ? "text-brand-primary font-bold" : ""
+                }`}
+              >
+                <div>
+                  <Link
+                    href={item.link}
+                    className={`${listLinkHoverClass} ${pathname === item.link ? "text-white" : "text-brand-primary"}`}
+                  >
+                    {item.category}
+                  </Link>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="border-b border-border-primary"/>
+
+        <div className="block pt-2 max-[768px]:hidden">
           <div className={listWrapperClass}>
+            <h1 className="mb-[10px] text-xl text-text-primary font-display">
+              By <span className="text-brand-primary font-bold">Morphology</span>:
+            </h1>
             <ul className={listUlClass}>
-              {list.map((item, index) => (
+              {allAbnormalities.map((item, index) => (
                 <li
                   key={index}
                   className={`${listLiClass} ${
-                    pathname === item.link
-                      ? "text-blue-700 font-bold"
-                      : ""
+                    pathname === item.link ? "text-brand-primary font-bold" : ""
                   }`}
                 >
                   <div>
                     <Link
                       href={item.link}
-                      className={`${listLinkBaseClass} ${pathname === item.link ? "text-white" : "text-blue-700"}`}
+                      className={`${listLinkHoverClass} ${pathname === item.link ? "" : "text-brand-primary"}`}
                     >
-                      {item.category}
+                      {item.name}
                     </Link>
                   </div>
                 </li>
               ))}
             </ul>
-          </div>
-
-          <div className="block pt-5 max-[768px]:hidden">
-            <div className={listWrapperClass}>
-              <h1 className="mb-[10px] text-xl text-stone-900">By <span className="text-blue-700 font-bold">Morphology</span>:</h1>
-              <ul className={listUlClass}>
-                {allAbnormalities.map((item, index) => (
-                  <li
-                    key={index}
-                    className={`${listLiClass} ${
-                      pathname === item.link
-                        ? "text-blue-700 font-bold"
-                        : ""
-                    }`}
-                  >
-                    <div>
-                      <Link
-                        href={item.link}
-                        className={`${listLinkBaseClass} ${pathname === item.link ? "text-white" : "text-blue-700"}`}
-                      >
-                        {item.name}
-                      </Link>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            </div>
           </div>
         </div>
       </div>
