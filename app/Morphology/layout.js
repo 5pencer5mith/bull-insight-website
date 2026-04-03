@@ -4,22 +4,19 @@ import Sidekick from "../components/hero/sidekick/Sidekick";
 
 export default function MorphologyLayout({ children }) {
   return (
-    <div className="layoutWrapper">
-      <div className="sidekick">
-        <Sidekick pageTitle="Sperm Morphology" subTitle="Abnormalities" />
-      </div>
+    <>
+      <Sidekick pageTitle="Sperm Morphology" subTitle="Abnormalities" />
 
-      <div className="backgroundWrap">
-        <div className="abContentWrapper">
-          <div className="subNav">
+      <div className="mx-auto w-full max-w-7xl px-4 pb-12 pt-10 md:pb-16 md:pt-12">
+        <div className="flex flex-row gap-4">
+          <div className="flex-1 bg-white border-2 border-border-primary rounded-lg p-6 py-10">
             <MorphNav />
           </div>
-
-          <div className="ab-content">
+          <div className="flex-4 bg-white border-2 border-border-primary rounded-lg p-6 py-10">
             <main>{children}</main>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }

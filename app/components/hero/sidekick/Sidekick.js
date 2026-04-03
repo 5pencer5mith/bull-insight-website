@@ -5,12 +5,12 @@ export default function Sidekick({ pageTitle, subTitle }) {
   const firstWord = words[0] ?? "";
   const secondWord = words[1];
   const isSingleWord = words.length === 1;
+  const hasSubTitle = Boolean(subTitle && String(subTitle).trim());
 
   return (
-    <div className="w-full bg-brand-primary-tint border-b border-brand-primary/20">
-      
-      <div className="py-10 px-6 text-2xl flex flex-col justify-center items-center md:text-4xl">
-        <h1 className="font-display">
+    <div className="w-full border-b-2 border-brand-primary/20 bg-brand-primary-tint">
+      <div className="flex min-h-28 w-full flex-col items-center justify-center px-6 py-6 text-2xl md:min-h-32 md:py-7 md:text-4xl">
+        <h1 className="m-0 font-display leading-tight md:leading-tight">
           {isSingleWord ? (
             <span className="font-bold text-brand-primary">{firstWord}</span>
           ) : (
@@ -20,7 +20,9 @@ export default function Sidekick({ pageTitle, subTitle }) {
             </>
           )}
         </h1>
-        <h3 className="text-lg">{subTitle}</h3>
+        <div className="flex min-h-6 w-full items-center justify-center md:min-h-7">
+          {hasSubTitle ? <h3 className="m-0 text-lg text-text-muted">{subTitle}</h3> : null}
+        </div>
       </div>
     </div>
   );

@@ -22,7 +22,6 @@ export default function Header() {
 
   const toggleMenu = () => {
     setIsMobileMenuOpen((prev) => {
-      console.log("Menu state: ", !prev);
       return !prev;
     });
   };

@@ -9,7 +9,7 @@ import { Microscope, Cog, FileHeart } from "lucide-react";
 export default function SpermIncyte() {
   return (
     <PageWrapper>
-      <Sidekick pageTitle={"Sperm In-Cyte"} />
+      <Sidekick pageTitle={"Sperm In-Cyte"} subTitle={"Automated Semen Analysis"} />
 
       <div className="mx-auto w-full max-w-7xl space-y-16 px-4 pb-12 pt-10 md:space-y-20 md:pb-16 md:pt-12">
         <div className="relative w-full overflow-hidden rounded-lg border-2 border-border-primary bg-white px-6 py-8 md:px-10 md:py-10 lg:px-12">

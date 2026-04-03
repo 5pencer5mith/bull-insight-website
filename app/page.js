@@ -69,7 +69,7 @@ export default function home() {
             </div>
           </Link>
 
-          <Link href="/">
+          <Link href="Sperm-In-Cyte">
             <div className="relative insights-block">
               <div className="absolute inset-0 flex justify-center items-center z-0">
                 <Microscope className="w-36 h-36 text-brand-primary-tint" />
@@ -89,7 +89,7 @@ export default function home() {
             </div>
           </Link>
 
-          <Link href="/">
+          <Link href="/Morphology">
             <div className="relative insights-block">
               <div className="absolute inset-0 flex justify-center items-center z-0">
                 <BookOpen className="w-36 h-36 text-brand-primary-tint" />
@@ -109,7 +109,7 @@ export default function home() {
             </div>
           </Link>
 
-          <Link href="/">
+          <Link href="/Blog">
             <div className="relative insights-block">
               <div className="absolute inset-0 flex justify-center items-center z-0">
                 <Rss className="w-36 h-36 text-brand-primary-tint" />
@@ -166,47 +166,55 @@ export default function home() {
         </div>
       </div>
 
-      <section className="mb-12 flex min-h-[50svh] w-full flex-col justify-center bg-white py-10 md:mb-16 md:py-14 lg:mb-20 lg:py-16">
-        <div className="mx-auto flex w-full max-w-7xl flex-1 flex-col items-stretch justify-center gap-16 px-4 md:flex-row md:items-center md:gap-12 lg:gap-16">
+      <section className="mb-12 flex min-h-[50svh] w-full flex-col justify-center bg-white py-10 border-t-2 border-b-2 border-border-primary md:mb-16 md:py-14 lg:mb-20 lg:py-16">
+        <div className="mx-auto flex w-full max-w-7xl flex-1 flex-col items-stretch justify-center gap-16 px-4 md:flex-row md:gap-12 lg:gap-16">
           <div id="contact" className="w-full min-w-0 md:flex-1">
             <div className="w-full">
               <div className="relative flex flex-col gap-8 p-8">
-              <div className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center">
-                <Mail className="h-64 w-64 text-brand-primary-tint" />
-              </div>
+                <div className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center">
+                  <Mail
+                    size={256}
+                    className="shrink-0 text-brand-primary-tint"
+                    aria-hidden
+                  />
+                </div>
 
-              <div className="relative z-10 flex flex-col items-center gap-3 text-center md:gap-4">
-                <h2 className="m-0 font-display text-4xl md:text-6xl">
-                  Contact{" "}
-                  <span className="font-bold text-brand-primary">Us</span>
-                </h2>
-                <p className="m-0 text-lg md:text-2xl">
-                  We would love to hear from you!
-                </p>
-              </div>
+                <div className="relative z-10 flex flex-col items-center gap-3 text-center md:gap-4">
+                  <h2 className="m-0 font-display text-4xl md:text-6xl">
+                    Contact{" "}
+                    <span className="font-bold text-brand-primary">Us</span>
+                  </h2>
+                  <p className="m-0 text-lg md:text-2xl">
+                    We would love to hear from you!
+                  </p>
+                </div>
 
-              <div className="relative z-20 flex flex-wrap items-center justify-center gap-2 px-2">
-                <Send
-                  className="shrink-0 text-brand-primary"
-                  aria-hidden
-                  size={22}
-                />
-                <a
-                  href="mailto:glen@emeryanimalhealth.com"
-                  className="relative inline max-w-full break-words pb-0.5 text-center text-lg font-body leading-snug text-text-primary transition-colors duration-300 after:absolute after:bottom-0 after:left-1/2 after:h-0.5 after:w-0 after:-translate-x-1/2 after:bg-blue-700 after:transition-all after:duration-300 after:content-[''] hover:after:w-full"
-                >
-                  glen@emeryanimalhealth.com
-                </a>
+                <div className="relative z-20 flex flex-wrap items-center justify-center gap-2 px-2">
+                  <Send
+                    className="shrink-0 text-brand-primary"
+                    aria-hidden
+                    size={22}
+                  />
+                  <a
+                    href="mailto:glen@emeryanimalhealth.com"
+                    className="relative inline max-w-full break-words pb-0.5 text-center text-lg font-body leading-snug text-text-primary transition-colors duration-300 after:absolute after:bottom-0 after:left-1/2 after:h-0.5 after:w-0 after:-translate-x-1/2 after:bg-blue-700 after:transition-all after:duration-300 after:content-[''] hover:after:w-full"
+                  >
+                    glen@emeryanimalhealth.com
+                  </a>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
           <div id="donate" className="w-full min-w-0 md:flex-1">
             <div className="w-full">
               <div className="relative flex flex-col gap-8 p-8">
                 <div className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center">
-                  <Heart className="h-64 w-64 text-brand-primary-tint" />
+                  <Heart
+                    size={256}
+                    className="shrink-0 text-brand-primary-tint"
+                    aria-hidden
+                  />
                 </div>
 
                 <div className="relative z-10 flex flex-col items-center gap-3 text-center md:gap-4">
@@ -232,7 +240,6 @@ export default function home() {
           </div>
         </div>
       </section>
-
     </PageWrapper>
   );
 }
