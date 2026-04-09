@@ -74,7 +74,7 @@ export default function SpermIncyte() {
               />
             </div>
             <Link
-              href="/Sample-Analysis"
+              href="/Under-Construction"
               className="relative z-20 mx-auto block w-fit"
             >
               <div className="rounded-lg bg-brand-primary px-5 py-2 text-center font-body text-white md:hover:scale-105">

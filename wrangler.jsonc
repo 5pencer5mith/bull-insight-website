@@ -5,12 +5,23 @@
   "main": ".open-next/worker.js",
   "assets": {
     "directory": ".open-next/assets"
-  }
+  },
+  "routes": [
+    {
+      "pattern": "bull-insight.com",
+      "zone_name": "bull-insight.com"
+    },
+    {
+      "pattern": "bull-insight.com/*",
+      "zone_name": "bull-insight.com"
+    },
+    {
+      "pattern": "www.bull-insight.com",
+      "zone_name": "bull-insight.com"
+    },
+    {
+      "pattern": "www.bull-insight.com/*",
+      "zone_name": "bull-insight.com"
+    }
+  ]
 }
-
-// "routes": [
-//   {
-//     "pattern": "bull-insight.com/*",
-//     "zone_name": "bull-insight.com"
-//   }
-// ]

@@ -48,7 +48,7 @@ export default function home() {
         </div>
 
         <div className="grid w-full max-w-2xl grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8 md:max-w-none md:flex-1">
-          <Link href="/Sample-Analysis">
+          <Link href="/Under-Construction">
             <div className="relative insights-block">
               <div className="absolute inset-0 flex justify-center items-center z-0">
                 <Package className="w-36 h-36 text-brand-primary-tint" />
@@ -69,7 +69,7 @@ export default function home() {
             </div>
           </Link>
 
-          <Link href="Sperm-In-Cyte">
+          <Link href="/Sperm-In-Cyte">
             <div className="relative insights-block">
               <div className="absolute inset-0 flex justify-center items-center z-0">
                 <Microscope className="w-36 h-36 text-brand-primary-tint" />
@@ -228,7 +228,7 @@ export default function home() {
                 </div>
 
                 <Link
-                  href="/"
+                  href="/Under-Construction"
                   className="relative z-20 mx-auto block w-full max-w-xs md:w-1/4"
                 >
                   <div className="rounded-lg bg-brand-primary p-2 text-center text-white md:hover:scale-105">
