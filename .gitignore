@@ -43,3 +43,8 @@ next-env.d.ts
 
 .open-next/
 .wrangler/
+
+
+.env
+.env.local
+

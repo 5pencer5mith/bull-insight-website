@@ -1,5 +1,6 @@
 // Components
 import Image from "next/image";
+import { getPageBySlug } from "../../../lib/wordpress";
 // import Slider from '@/app/components/slider/Slider'
 // TODO: add images for the slider
 
@@ -22,7 +23,14 @@ import {
   sliderContainer,
 } from "../morphologyTailwind";
 
-export default function DecapitatedHead() {
+export default async function DecapitatedHead() {
+  let wpPage = null;
+  try {
+    wpPage = await getPageBySlug("decapitated-head");
+  } catch (error) {
+    console.error("WP page failed:", error)
+    wpPage = null;
+  }
   return (
     <div>
       <div className={titleContainer}>
@@ -41,86 +49,14 @@ export default function DecapitatedHead() {
         {/* <Slider imageData={images} /> */}
       </div>
 
-      <article className={morphologyArticle}>
-        <section className={morphologySection}>
-          <h2 className={morphologyH2}>Description</h2>
-
-          <p className={morphologyP}>
-            Decapitated head defect is characterized by the separation of the
-            sperm head from the tail, with the tail often displaying vigorous
-            motility. This defect can be distinguished from loose or detached
-            heads by the presence of the proximal droplet still attached to the
-            tail.
-          </p>
-        </section>
-
-        <section className={morphologySection}>
-          <h2 className={morphologyH2}>Potential Effects on Fertility</h2>
-
-          <p className={morphologyP}>
-            Decapitated heads are considered an uncompensable defect and
-            significantly reduce fertility. This condition often affects 80-100%
-            of sperm in the ejaculate, leading to sterility. The defect prevents
-            the affected sperm from reaching and fertilizing the ova​​​​.
-          </p>
-        </section>
-
-        <section className={morphologySection}>
-          <h2 className={morphologyH2}>Days from Insult to Identificaiton</h2>
-
-          <p className={morphologyP}>
-            Decapitated heads can appear shortly after stress events or due to
-            genetic factors. They are typically observed in ejaculates following
-            severe testicular degeneration or other significant disruptions in
-            spermatogenesis​​​​.
-          </p>
-        </section>
-
-        <section className={morphologySection}>
-          <h2 className={morphologyH2}>Causes</h2>
-
-          <p className={morphologyP}>Possible causes include:</p>
-
-          <ul className={morphologyUl}>
-            <li className={morphologyLi}>
-              <strong>Genetic Factors:</strong> Inherited conditions,
-              particularly noted in Guernsey and Hereford bulls
-            </li>
-            <li className={morphologyLi}>
-              <strong>Severe Environmental Stress:</strong> Heat stress or other
-              significant stressors
-            </li>
-            <li className={morphologyLi}>
-              <strong>Testicular Degeneration:</strong> Severe disruptions in
-              spermatogenesis leading to structural weaknesses
-            </li>
-          </ul>
-        </section>
-
-        <section className={morphologySection}>
-          <h2 className={morphologyH2}>Other Important Data</h2>
-
-          <p className={morphologyP}>
-            Decapitated heads are often seen in conjunction with other severe
-            sperm defects. The vigorous motility of the separated tails can help
-            differentiate this defect from other types of detached heads. Bulls
-            exhibiting this defect typically require immediate evaluation and
-            management to prevent significant impacts on fertility​​​​.
-          </p>
-        </section>
-
-        <section className={morphologySection}>
-          <h2 className={morphologyH2}>Case Studies</h2>
-
-          <h3 className={morphologyH3}>Case Study: Impact of Decapitated Heads on Fertility</h3>
-
-          <p className={morphologyP}>
-            A case study involving a Guernsey bull with 90% decapitated heads in
-            its ejaculate showed severe infertility. This emphasizes the
-            critical impact of this defect on overall fertility​​.
-          </p>
-        </section>
-      </article>
+      {wpPage?.content ? (
+        <article className={morphologyArticle}>
+          <div
+            className="max-w-none [&_a]:text-blue-700 [&_a]:underline [&_h2]:mt-4 [&_h2]:mb-3 [&_h2]:font-display [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:text-blue-700 [&_h3]:text-lg [&_h3]:font-semibold [&_h3]:text-stone-900 [&_h3]:font-display [&_img]:my-6 [&_img]:max-h-[480px] [&_img]:w-auto [&_img]:max-w-full [&_img]:rounded-lg [&_li]:mb-2.5 [&_li]:text-lg [&_li]:leading-relaxed [&_li]:text-stone-900 [&_li]:max-[768px]:text-sm [&_li_p]:m-0 [&_ol]:mt-3 [&_ol]:list-decimal [&_ol]:pl-12 [&_ol]:max-[768px]:pl-8 [&_p]:mt-0 [&_p]:mb-0 [&_p]:text-lg [&_p]:leading-snug [&_p]:text-stone-900 [&_p]:max-[768px]:text-sm [&_ul]:mt-3 [&_ul]:list-disc [&_ul]:pl-12 [&_ul]:max-[768px]:pl-8 [&_.wp-block-group]:pb-6"
+            dangerouslySetInnerHTML={{ __html: wpPage.content }}
+          />
+        </article>
+      ) : null}
     </div>
   );
 }

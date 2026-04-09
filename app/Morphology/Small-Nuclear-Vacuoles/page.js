@@ -1,7 +1,7 @@
 // Components
 // import Image from 'next/image';
 import Slider from "../../components/slider/Slider";
-
+import { getPageBySlug } from "../../../lib/wordpress";
 import {
   morphologyP,
   morphologyH1WithMedia,
@@ -34,7 +34,14 @@ const images = [
   },
 ];
 
-export default function SmallNuclearVacuoles() {
+export default async function SmallNuclearVacuoles() {
+  let wpPage = null;
+  try {
+    wpPage = await getPageBySlug("small-nuclear-vacuoles");
+  } catch (error) {
+    console.error("WP page failed:", error)
+    wpPage = null;
+  }
   return (
     <div>
       <div className={titleContainer}>
@@ -53,82 +60,16 @@ export default function SmallNuclearVacuoles() {
         <Slider imageData={images} />
       </div>
 
-      <article className={morphologyArticle}>
-        <section className={morphologySection}>
-          <h2 className={morphologyH2}>Description</h2>
+      {wpPage?.content ? (
+        <article className={morphologyArticle}>
+          <div
+            className="max-w-none [&_a]:text-blue-700 [&_a]:underline [&_h2]:mt-4 [&_h2]:mb-3 [&_h2]:font-display [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:text-blue-700 [&_h3]:text-lg [&_h3]:font-semibold [&_h3]:text-stone-900 [&_h3]:font-display [&_img]:my-6 [&_img]:max-h-[480px] [&_img]:w-auto [&_img]:max-w-full [&_img]:rounded-lg [&_li]:mb-2.5 [&_li]:text-lg [&_li]:leading-relaxed [&_li]:text-stone-900 [&_li]:max-[768px]:text-sm [&_li_p]:m-0 [&_ol]:mt-3 [&_ol]:list-decimal [&_ol]:pl-12 [&_ol]:max-[768px]:pl-8 [&_p]:mt-0 [&_p]:mb-0 [&_p]:text-lg [&_p]:leading-snug [&_p]:text-stone-900 [&_p]:max-[768px]:text-sm [&_ul]:mt-3 [&_ul]:list-disc [&_ul]:pl-12 [&_ul]:max-[768px]:pl-8 [&_.wp-block-group]:pb-6"
+            dangerouslySetInnerHTML={{ __html: wpPage.content }}
+          />
+        </article>
+      ) : null}
 
-          <p className={morphologyP}>
-            Small nuclear vacuoles are small, clear inclusions located within
-            the nucleus of the sperm. They can appear as single or multiple
-            vacuoles and are often seen in conjunction with other head defects.
-          </p>
-        </section>
-
-        <section className={morphologySection}>
-          <h2 className={morphologyH2}>Potential Effects on Fertility</h2>
-
-          <p className={morphologyP}>
-            Small nuclear vacuoles can significantly impact fertility. Sperm
-            with multiple nuclear vacuoles have a reduced ability to fertilize
-            ova, and high levels of this defect (greater than 20%) are
-            associated with decreased pregnancy rates​​​​.
-          </p>
-        </section>
-
-        <section className={morphologySection}>
-          <h2 className={morphologyH2}>Days from Insult to Identificaiton</h2>
-
-          <p className={morphologyP}>
-            Nuclear vacuoles can appear approximately 20-30 days following a
-            stress event such as ruminal acidosis or dexamethasone
-            treatment​​​​.
-          </p>
-        </section>
-
-        <section className={morphologySection}>
-          <h2 className={morphologyH2}>Causes</h2>
-
-          <p className={morphologyP}>Possible causes include:</p>
-
-          <ul className={morphologyUl}>
-            <li className={morphologyLi}>
-              <strong>Genetic Predisposition:</strong> Some bulls may have a
-              hereditary tendency to develop vacuoles
-            </li>
-            <li className={morphologyLi}>
-              <strong>Hormonal Imbalance:</strong> Disruptions in the hormonal
-              environment of the testis may lead to vacuole formation
-            </li>
-            <li className={morphologyLi}>
-              <strong>Environmental Stress:</strong> Extreme temperatures or
-              stress events
-            </li>
-          </ul>
-        </section>
-
-        <section className={morphologySection}>
-          <h2 className={morphologyH2}>Other Important Data</h2>
-
-          <p className={morphologyP}>
-            Nuclear vacuoles are more commonly observed in Bos indicus cross
-            bulls than in Bos taurus breeds. This abnormality can be transient,
-            with fluctuations in prevalence between ejaculates​​​​.
-          </p>
-        </section>
-
-        <section className={morphologySection}>
-          <h2 className={morphologyH2}>Case Studies</h2>
-
-          <h3 className={morphologyH3}>Case Study: Impact of Nuclear Vacuoles on Fertility</h3>
-
-          <p className={morphologyP}>
-            A study involving a bull with 62% vacuolated nuclei, including small
-            nuclear vacuoles, demonstrated severe infertility. These findings
-            highlight the significant impact of nuclear vacuoles on fertility,
-            particularly when present at high levels​​​​.
-          </p>
-        </section>
-      </article>
+      
     </div>
   );
 }
