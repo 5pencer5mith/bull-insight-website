@@ -1,7 +1,7 @@
 // Components
 import Image from "next/image";
 import Slider from "../../components/slider/Slider";
-
+import { getPageBySlug } from "../../../lib/wordpress";
 import {
   morphologyP,
   morphologyH1WithMedia,
@@ -59,7 +59,14 @@ const images = [
   },
 ];
 
-export default function ProximalCytoplasmicDroplets() {
+export default async function ProximalCytoplasmicDroplets() {
+  let wpPage = null;
+  try {
+    wpPage = await getPageBySlug("proximal-cytoplasmic-droplets");
+  } catch (error) {
+    console.error("WP page failed:", error)
+    wpPage = null;
+  }
   return (
     <div>
       <div className={titleContainer}>
@@ -78,87 +85,16 @@ export default function ProximalCytoplasmicDroplets() {
         <Slider imageData={images} />
       </div>
 
-      <article className={morphologyArticle}>
-        <section className={morphologySection}>
-          <h2 className={morphologyH2}>Description</h2>
+      {wpPage?.content ? (
+        <article className={morphologyArticle}>
+          <div
+            className="max-w-none [&_a]:text-blue-700 [&_a]:underline [&_h2]:mt-4 [&_h2]:mb-3 [&_h2]:font-display [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:text-blue-700 [&_h3]:text-lg [&_h3]:font-semibold [&_h3]:text-stone-900 [&_h3]:font-display [&_img]:my-6 [&_img]:max-h-[480px] [&_img]:w-auto [&_img]:max-w-full [&_img]:rounded-lg [&_li]:mb-2.5 [&_li]:text-lg [&_li]:leading-relaxed [&_li]:text-stone-900 [&_li]:max-[768px]:text-sm [&_li_p]:m-0 [&_ol]:mt-3 [&_ol]:list-decimal [&_ol]:pl-12 [&_ol]:max-[768px]:pl-8 [&_p]:mt-0 [&_p]:mb-0 [&_p]:text-lg [&_p]:leading-snug [&_p]:text-stone-900 [&_p]:max-[768px]:text-sm [&_ul]:mt-3 [&_ul]:list-disc [&_ul]:pl-12 [&_ul]:max-[768px]:pl-8 [&_.wp-block-group]:pb-6"
+            dangerouslySetInnerHTML={{ __html: wpPage.content }}
+          />
+        </article>
+      ) : null}
 
-          <p className={morphologyP}>
-            Proximal cytoplasmic droplets are small, round inclusions found near
-            the head of the sperm. They indicate a failure in the final
-            maturation stages during spermiogenesis.
-          </p>
-        </section>
-
-        <section className={morphologySection}>
-          <h2 className={morphologyH2}>Potential Effects on Fertility</h2>
-
-          <p className={morphologyP}>
-            The presence of proximal cytoplasmic droplets can significantly
-            affect fertility. Counts greater than 10-15% are associated with
-            decreased fertility, and levels above 20% indicate a high risk of
-            poor pregnancy rates. Bulls with more than 30% proximal droplets
-            show immature and reduced fertilization capability of the
-            spermatozoa.
-          </p>
-        </section>
-
-        <section className={morphologySection}>
-          <h2 className={morphologyH2}>Days from Insult to Identificaiton</h2>
-
-          <p className={morphologyP}>
-            Proximal cytoplasmic droplets typically appear 7-10 days following a
-            temperature or stress event and 15 days following ruminal acidosis.
-          </p>
-        </section>
-
-        <section className={morphologySection}>
-          <h2 className={morphologyH2}>Causes</h2>
-
-          <p className={morphologyP}>Possible causes include:</p>
-
-          <ul className={morphologyUl}>
-            <li className={morphologyLi}>
-              <strong>Testicular immaturity:</strong> Common in pubertal bulls
-            </li>
-            <li className={morphologyLi}>
-              <strong>Stress:</strong> Such as heat stress or physical exertion
-            </li>
-            <li className={morphologyLi}>
-              <strong>Nutritional deficiencies:</strong> Inadequate diet
-              affecting spermatogenesis
-            </li>
-            <li className={morphologyLi}>
-              <strong>Infections and illnesses:</strong> Conditions affecting
-              testicular or epididymal function
-            </li>
-          </ul>
-        </section>
-
-        <section className={morphologySection}>
-          <h2 className={morphologyH2}>Other Important Data</h2>
-
-          <p className={morphologyP}>
-            Proximal cytoplasmic droplets are considered an uncompensable
-            defect, meaning they cannot be compensated for by increasing sperm
-            count, as affected sperm fail to bind to the ova.
-          </p>
-        </section>
-
-        <section className={morphologySection}>
-          <h2 className={morphologyH2}>Case Studies</h2>
-
-          <h3 className={morphologyH3}>
-            Case Study: Impact of High Proximal Droplet Levels on Herd Fertility
-          </h3>
-
-          <p className={morphologyP}>
-            A study involving a Red Angus bull with 63-71% proximal droplets
-            showed a significant reduction in pregnancy rates compared to
-            control bulls. This indicates a strong association between high
-            levels of proximal droplets and infertility.
-          </p>
-        </section>
-      </article>
+      
     </div>
   );
 }

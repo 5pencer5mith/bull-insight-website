@@ -1,6 +1,7 @@
 // Components
 import Image from "next/image";
 import Slider from "../../components/slider/Slider";
+import { getPageBySlug } from "../../../lib/wordpress";
 
 import {
   morphologyP,
@@ -59,7 +60,15 @@ const images = [
   },
 ];
 
-export default function AbnormalCondensation() {
+export default async function AbnormalCondensation() {
+  let wpPage = null;
+  try {
+    wpPage = await getPageBySlug("abnormal-dna-condensation");
+  } catch (error) {
+    console.error("WP page failed:", error)
+    wpPage = null;
+  }
+
   return (
     <div>
       <div className={titleContainer}>
@@ -78,89 +87,14 @@ export default function AbnormalCondensation() {
         <Slider imageData={images} />
       </div>
 
-      <article className={morphologyArticle}>
-        <section className={morphologySection}>
-          <h2 className={morphologyH2}>Description</h2>
-
-          <p className={morphologyP}>
-            Abnormal DNA condensation is characterized by incomplete chromatin
-            packaging, where histones are not fully replaced by protamines
-            during spermiogenesis. This leads to less stable DNA and increased
-            susceptibility to denaturation.
-          </p>
-        </section>
-
-        <section className={morphologySection}>
-          <h2 className={morphologyH2}>Potential Effects on Fertility</h2>
-
-          <p className={morphologyP}>
-            Abnormal DNA condensation is a significant factor in reduced
-            fertility. Sperm with this defect show increased levels of DNA
-            fragmentation and poor chromatin integrity, leading to decreased
-            fertilization rates and embryo development. Bulls with more than 20%
-            of sperm showing abnormal DNA condensation are generally considered
-            subfertile or infertile​​​​​​.
-          </p>
-        </section>
-
-        <section className={morphologySection}>
-          <h2 className={morphologyH2}>Days from Insult to Identificaiton</h2>
-
-          <p className={morphologyP}>
-            This defect can be identified approximately 20-30 days following a
-            stress event or other insult that affects spermatogenesis​​.
-          </p>
-        </section>
-
-        <section className={morphologySection}>
-          <h2 className={morphologyH2}>Causes</h2>
-
-          <p className={morphologyP}>Possible causes include:</p>
-
-          <ul className={morphologyUl}>
-            <li className={morphologyLi}>
-              <strong>Genetic Factors:</strong> Some bulls may have a hereditary
-              predisposition to this defect
-            </li>
-            <li className={morphologyLi}>
-              <strong>Environmental Stress:</strong> Heat stress, nutritional
-              deficiencies, and illness
-            </li>
-            <li className={morphologyLi}>
-              <strong>Hormonal Imbalance:</strong> Disruptions in hormonal
-              regulation of the testes can lead to abnormal DNA condensation
-            </li>
-          </ul>
-        </section>
-
-        <section className={morphologySection}>
-          <h2 className={morphologyH2}>Other Important Data</h2>
-
-          <p className={morphologyP}>
-            Abnormal DNA condensation cannot be detected by light microscopy
-            with routine staining techniques. It can be identified using
-            specialized methods such as the sperm chromatin structure assay
-            (SCSA) and Feulgen staining. The Feulgen method correlates well with
-            SCSA and allows for detailed examination of chromatin integrity
-            under high magnification​​​​.
-          </p>
-        </section>
-
-        <section className={morphologySection}>
-          <h2 className={morphologyH2}>Case Studies</h2>
-
-          <h3 className={morphologyH3}>Case Study: Impact of Abnormal DNA Condensation on Fertility</h3>
-
-          <p className={morphologyP}>
-            A study involving bulls with varying levels of abnormal DNA
-            condensation (2-75%) demonstrated a clear correlation between
-            increased levels of this defect and reduced fertility. In one case,
-            a bull with 100% abnormal chromatin condensation showed complete
-            infertility, highlighting the severe impact of this defect on
-            reproductive success​​​​.
-          </p>
-        </section>
-      </article>
+      {wpPage?.content ? (
+        <article className={morphologyArticle}>
+          <div
+            className="max-w-none [&_a]:text-blue-700 [&_a]:underline [&_h2]:mt-4 [&_h2]:mb-3 [&_h2]:font-display [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:text-blue-700 [&_h3]:text-lg [&_h3]:font-semibold [&_h3]:text-stone-900 [&_h3]:font-display [&_img]:my-6 [&_img]:max-h-[480px] [&_img]:w-auto [&_img]:max-w-full [&_img]:rounded-lg [&_li]:mb-2.5 [&_li]:text-lg [&_li]:leading-relaxed [&_li]:text-stone-900 [&_li]:max-[768px]:text-sm [&_li_p]:m-0 [&_ol]:mt-3 [&_ol]:list-decimal [&_ol]:pl-12 [&_ol]:max-[768px]:pl-8 [&_p]:mt-0 [&_p]:mb-0 [&_p]:text-lg [&_p]:leading-snug [&_p]:text-stone-900 [&_p]:max-[768px]:text-sm [&_ul]:mt-3 [&_ul]:list-disc [&_ul]:pl-12 [&_ul]:max-[768px]:pl-8 [&_.wp-block-group]:pb-6"
+            dangerouslySetInnerHTML={{ __html: wpPage.content }}
+          />
+        </article>
+      ) : null}
     </div>
   );
 }

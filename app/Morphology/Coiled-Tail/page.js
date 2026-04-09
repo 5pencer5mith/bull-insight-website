@@ -1,6 +1,7 @@
 // Components
 import Image from "next/image";
 import Slider from "../../components/slider/Slider";
+import { getPageBySlug } from "../../../lib/wordpress";
 
 import {
   morphologyP,
@@ -59,7 +60,14 @@ const images = [
   },
 ];
 
-export default function CoiledTail() {
+export default async function CoiledTail() {
+  let wpPage = null;
+  try {
+    wpPage = await getPageBySlug("coiled-tail");
+  } catch (error) {
+    console.error("WP page failed:", error)
+    wpPage = null;
+  }
   return (
     <div>
       <div className={titleContainer}>
@@ -78,85 +86,14 @@ export default function CoiledTail() {
         <Slider imageData={images} />
       </div>
 
-      <article className={morphologyArticle}>
-        <section className={morphologySection}>
-          <h2 className={morphologyH2}>Description</h2>
-
-          <p className={morphologyP}>
-            Coiled tails are characterized by the tail of the sperm forming a
-            loop or coil. This defect can involve the principal piece or the
-            terminal segment of the tail.
-          </p>
-        </section>
-
-        <section className={morphologySection}>
-          <h2 className={morphologyH2}>Potential Effects on Fertility</h2>
-
-          <p className={morphologyP}>
-            Coiled tails are generally considered a compensable defect, meaning
-            that their presence can be mitigated by increasing the sperm count
-            in the ejaculate. Sperm with coiled tails have impaired motility and
-            cannot reach the site of fertilization. Bulls with up to 30% of
-            sperm exhibiting this defect can still maintain acceptable fertility
-            levels if the remaining sperm are normal​​​​​​.
-          </p>
-        </section>
-
-        <section className={morphologySection}>
-          <h2 className={morphologyH2}>Days from Insult to Identificaiton</h2>
-
-          <p className={morphologyP}>
-            Coiled tails can appear shortly after stress events or environmental
-            factors such as heat stress or exposure to cold shock. They can also
-            be seen following prolonged storage of sperm in the epididymis​​​​.
-          </p>
-        </section>
-
-        <section className={morphologySection}>
-          <h2 className={morphologyH2}>Causes</h2>
-
-          <p className={morphologyP}>Possible causes include:</p>
-
-          <ul className={morphologyUl}>
-            <li className={morphologyLi}>
-              <strong>Environmental Stress:</strong> Such as heat stress or cold
-              shock
-            </li>
-            <li className={morphologyLi}>
-              <strong>Handling Errors:</strong> Improper handling or exposure to
-              hypotonic solutions during semen processing
-            </li>
-            <li className={morphologyLi}>
-              <strong>Prolonged Storage:</strong> Accumulation of sperm in the
-              epididymis over time
-            </li>
-          </ul>
-        </section>
-
-        <section className={morphologySection}>
-          <h2 className={morphologyH2}>Other Important Data</h2>
-
-          <p className={morphologyP}>
-            Coiled tails can also be associated with other tail defects and may
-            indicate underlying issues in spermiogenesis. It is essential to
-            monitor and manage bulls exhibiting this defect closely to maintain
-            optimal fertility​​​​.
-          </p>
-        </section>
-
-        <section className={morphologySection}>
-          <h2 className={morphologyH2}>Case Studies</h2>
-
-          <h3 className={morphologyH3}>Case Study: Impact of Coiled Tails on Fertility</h3>
-
-          <p className={morphologyP}>
-            A study involving bulls with high levels of coiled tails (more than
-            30%) demonstrated reduced fertility. However, bulls with up to 25%
-            of this defect did not show a significant impact on fertility,
-            emphasizing its compensable nature​​​​.
-          </p>
-        </section>
-      </article>
+      {wpPage?.content ? (
+        <article className={morphologyArticle}>
+          <div
+            className="max-w-none [&_a]:text-blue-700 [&_a]:underline [&_h2]:mt-4 [&_h2]:mb-3 [&_h2]:font-display [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:text-blue-700 [&_h3]:text-lg [&_h3]:font-semibold [&_h3]:text-stone-900 [&_h3]:font-display [&_img]:my-6 [&_img]:max-h-[480px] [&_img]:w-auto [&_img]:max-w-full [&_img]:rounded-lg [&_li]:mb-2.5 [&_li]:text-lg [&_li]:leading-relaxed [&_li]:text-stone-900 [&_li]:max-[768px]:text-sm [&_li_p]:m-0 [&_ol]:mt-3 [&_ol]:list-decimal [&_ol]:pl-12 [&_ol]:max-[768px]:pl-8 [&_p]:mt-0 [&_p]:mb-0 [&_p]:text-lg [&_p]:leading-snug [&_p]:text-stone-900 [&_p]:max-[768px]:text-sm [&_ul]:mt-3 [&_ul]:list-disc [&_ul]:pl-12 [&_ul]:max-[768px]:pl-8 [&_.wp-block-group]:pb-6"
+            dangerouslySetInnerHTML={{ __html: wpPage.content }}
+          />
+        </article>
+      ) : null}
     </div>
   );
 }

@@ -1,7 +1,7 @@
 // Components
 import Image from "next/image";
 import Slider from "../../components/slider/Slider";
-
+import { getPageBySlug } from "../../../lib/wordpress";
 import {
   morphologyP,
   morphologyH1WithMedia,
@@ -59,7 +59,14 @@ const images = [
   },
 ];
 
-export default function DistalMidpeiceReflex() {
+export default async function DistalMidpeiceReflex() {
+  let wpPage = null;
+  try {
+    wpPage = await getPageBySlug("distal-midpiece-reflex");
+  } catch (error) {
+    console.error("WP page failed:", error)
+    wpPage = null;
+  }
   return (
     <div>
       <div className={titleContainer}>
@@ -78,84 +85,14 @@ export default function DistalMidpeiceReflex() {
         <Slider imageData={images} />
       </div>
 
-      <article className={morphologyArticle}>
-        <section className={morphologySection}>
-          <h2 className={morphologyH2}>Description</h2>
-
-          <p className={morphologyP}>
-            Distal mid-piece reflex (DMR) is characterized by a sharp hairpin
-            bend in the distal mid-piece of the sperm. This defect is often
-            accompanied by a cytoplasmic droplet at the bend.
-          </p>
-        </section>
-
-        <section className={morphologySection}>
-          <h2 className={morphologyH2}>Potential Effects on Fertility</h2>
-
-          <p className={morphologyP}>
-            Distal mid-piece reflex is considered a compensable defect as the
-            affected sperm display reverse motility and are unable to penetrate
-            the zona pellucida. Up to 30% of this defect in an ejaculate is
-            tolerated with no significant impact on fertility if the remaining
-            sperm are normal. However, high levels of this defect (greater than
-            30%) can significantly reduce fertility​​​​​​.
-          </p>
-        </section>
-
-        <section className={morphologySection}>
-          <h2 className={morphologyH2}>Days from Insult to Identificaiton</h2>
-
-          <p className={morphologyP}>
-            Distal mid-piece reflex can appear 4-11 days after a stress event
-            such as dexamethasone treatment or within 16 days after an acidotic
-            event​​​​.
-          </p>
-        </section>
-
-        <section className={morphologySection}>
-          <h2 className={morphologyH2}>Causes</h2>
-
-          <p className={morphologyP}>Possible causes include:</p>
-
-          <ul className={morphologyUl}>
-            <li className={morphologyLi}>
-              <strong>Environmental Stress:</strong> Heat stress, cold shock, or
-              other stress events
-            </li>
-            <li className={morphologyLi}>
-              <strong>Hypotonic Solutions:</strong> Prolonged contact with
-              hypotonic solutions such as Nigrosin-Eosin stain
-            </li>
-            <li className={morphologyLi}>
-              <strong>Genetic Predisposition:</strong> Some bulls have a
-              hereditary predisposition to this defect
-            </li>
-          </ul>
-        </section>
-
-        <section className={morphologySection}>
-          <h2 className={morphologyH2}>Other Important Data</h2>
-
-          <p className={morphologyP}>
-            Distal mid-piece reflex is often transient and may fluctuate in
-            prevalence between ejaculates. It is the most common tail defect
-            seen in bull ejaculates and is usually of epididymal origin​​​​.
-          </p>
-        </section>
-
-        <section className={morphologySection}>
-          <h2 className={morphologyH2}>Case Studies</h2>
-
-          <h3 className={morphologyH3}>Case Study: Impact of Distal Mid-Piece Reflex on Fertility</h3>
-
-          <p className={morphologyP}>
-            A study involving bulls with high levels of distal mid-piece reflex
-            (greater than 30%) demonstrated reduced fertility. However, in bulls
-            with up to 25% of this defect, fertility was not significantly
-            impacted, emphasizing the compensable nature of this abnormality
-          </p>
-        </section>
-      </article>
+      {wpPage?.content ? (
+        <article className={morphologyArticle}>
+          <div
+            className="max-w-none [&_a]:text-blue-700 [&_a]:underline [&_h2]:mt-4 [&_h2]:mb-3 [&_h2]:font-display [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:text-blue-700 [&_h3]:text-lg [&_h3]:font-semibold [&_h3]:text-stone-900 [&_h3]:font-display [&_img]:my-6 [&_img]:max-h-[480px] [&_img]:w-auto [&_img]:max-w-full [&_img]:rounded-lg [&_li]:mb-2.5 [&_li]:text-lg [&_li]:leading-relaxed [&_li]:text-stone-900 [&_li]:max-[768px]:text-sm [&_li_p]:m-0 [&_ol]:mt-3 [&_ol]:list-decimal [&_ol]:pl-12 [&_ol]:max-[768px]:pl-8 [&_p]:mt-0 [&_p]:mb-0 [&_p]:text-lg [&_p]:leading-snug [&_p]:text-stone-900 [&_p]:max-[768px]:text-sm [&_ul]:mt-3 [&_ul]:list-disc [&_ul]:pl-12 [&_ul]:max-[768px]:pl-8 [&_.wp-block-group]:pb-6"
+            dangerouslySetInnerHTML={{ __html: wpPage.content }}
+          />
+        </article>
+      ) : null}
     </div>
   );
 }

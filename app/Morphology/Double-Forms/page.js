@@ -1,6 +1,7 @@
 // Components
 import Image from "next/image";
 import Slider from "../../components/slider/Slider";
+import { getPageBySlug } from "../../../lib/wordpress";
 
 import {
   morphologyP,
@@ -54,7 +55,14 @@ const images = [
   },
 ];
 
-export default function DoubleForms() {
+export default async function DoubleForms() {
+  let wpPage = null;
+  try {
+    wpPage = await getPageBySlug("double-forms");
+  } catch (error) {
+    console.error("WP page failed:", error)
+    wpPage = null;
+  }
   return (
     <div>
       <div className={titleContainer}>
@@ -73,83 +81,14 @@ export default function DoubleForms() {
         <Slider imageData={images} />
       </div>
 
-      <article className={morphologyArticle}>
-        <section className={morphologySection}>
-          <h2 className={morphologyH2}>Description</h2>
-
-          <p className={morphologyP}>
-            Double forms are characterized by sperm with two heads, two tails,
-            or both. These forms can include multinuclear sperm or
-            multiflagellar sperm, resulting in a multilamellar appearance.
-          </p>
-        </section>
-
-        <section className={morphologySection}>
-          <h2 className={morphologyH2}>Potential Effects on Fertility</h2>
-
-          <p className={morphologyP}>
-            Double forms are a serious defect and significantly impair
-            fertility. They are considered an uncompensable defect because the
-            affected sperm are usually non-functional. High levels of double
-            forms (greater than 10%) can indicate a severe disruption in
-            spermatogenesis and should be addressed promptly​​​​.
-          </p>
-        </section>
-
-        <section className={morphologySection}>
-          <h2 className={morphologyH2}>Days from Insult to Identificaiton</h2>
-
-          <p className={morphologyP}>
-            Double forms can appear approximately 20-30 days following a severe
-            stress event or genetic disturbance affecting spermatogenesis​​​​.
-          </p>
-        </section>
-
-        <section className={morphologySection}>
-          <h2 className={morphologyH2}>Causes</h2>
-
-          <p className={morphologyP}>Possible causes include:</p>
-
-          <ul className={morphologyUl}>
-            <li className={morphologyLi}>
-              <strong>Genetic Factors:</strong> Some bulls may have a hereditary
-              predisposition to develop this defect
-            </li>
-            <li className={morphologyLi}>
-              <strong>Severe Environmental Stress:</strong> Heat stress, cold
-              shock, or other significant stressors
-            </li>
-            <li className={morphologyLi}>
-              <strong>Disturbances in Spermatogenesis:</strong> Severe
-              disruptions during sperm development and maturation
-            </li>
-          </ul>
-        </section>
-
-        <section className={morphologySection}>
-          <h2 className={morphologyH2}>Other Important Data</h2>
-
-          <p className={morphologyP}>
-            Double forms are indicative of a severe disturbance in
-            spermatogenesis and are often seen in conjunction with other serious
-            sperm defects. These sperm are generally non-functional and unable
-            to fertilize ova​​​​.
-          </p>
-        </section>
-
-        <section className={morphologySection}>
-          <h2 className={morphologyH2}>Case Studies</h2>
-
-          <h3 className={morphologyH3}>Case Study: Impact of Double Forms on Fertility</h3>
-
-          <p className={morphologyP}>
-            A case study involving a bull with high percentages of double forms
-            (greater than 10%) showed severe infertility. The presence of these
-            defects highlighted the critical impact on overall fertility and the
-            need for thorough management and intervention​​​​.
-          </p>
-        </section>
-      </article>
+      {wpPage?.content ? (
+        <article className={morphologyArticle}>
+          <div
+            className="max-w-none [&_a]:text-blue-700 [&_a]:underline [&_h2]:mt-4 [&_h2]:mb-3 [&_h2]:font-display [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:text-blue-700 [&_h3]:text-lg [&_h3]:font-semibold [&_h3]:text-stone-900 [&_h3]:font-display [&_img]:my-6 [&_img]:max-h-[480px] [&_img]:w-auto [&_img]:max-w-full [&_img]:rounded-lg [&_li]:mb-2.5 [&_li]:text-lg [&_li]:leading-relaxed [&_li]:text-stone-900 [&_li]:max-[768px]:text-sm [&_li_p]:m-0 [&_ol]:mt-3 [&_ol]:list-decimal [&_ol]:pl-12 [&_ol]:max-[768px]:pl-8 [&_p]:mt-0 [&_p]:mb-0 [&_p]:text-lg [&_p]:leading-snug [&_p]:text-stone-900 [&_p]:max-[768px]:text-sm [&_ul]:mt-3 [&_ul]:list-disc [&_ul]:pl-12 [&_ul]:max-[768px]:pl-8 [&_.wp-block-group]:pb-6"
+            dangerouslySetInnerHTML={{ __html: wpPage.content }}
+          />
+        </article>
+      ) : null}
     </div>
   );
 }
