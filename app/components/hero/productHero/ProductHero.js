@@ -9,7 +9,9 @@ export default function ProductHero() {
     <div className={styles.hero}>
       <div className={styles.overlay}>
         <div className={styles.content}>
-          <h1>Sperm In-Cyte</h1>
+          <h1 className="font-display">
+            Sperm <span className="font-bold">InCyte</span>
+          </h1>
         </div>
       </div>
       <Image

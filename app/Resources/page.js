@@ -7,7 +7,7 @@ export default function Resources() {
       <div className="mx-auto w-full max-w-7xl space-y-16 px-4 pb-12 pt-10 md:space-y-20 md:pb-16 md:pt-12">
         <div className="relative w-full overflow-hidden rounded-lg border-2 border-border-primary bg-white px-6 py-8 md:px-10 md:py-10 lg:px-12">
           <div className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center">
-            <BookOpen className="h-30 w-30 text-brand-primary-tint md:h-40 md:w-40" />
+            <BookOpen className="h-30 w-30 text-tan-light md:h-40 md:w-40" />
           </div>
 
           <div className="relative z-10 flex flex-col gap-4 text-center">

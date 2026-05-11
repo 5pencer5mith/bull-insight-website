@@ -8,9 +8,9 @@ export default function Hero() {
           <h1 className="hero-welcome-whip flex flex-col items-center gap-2 pb-1 font-display text-4xl leading-[1.18] tracking-tight text-stone-900 md:text-5xl md:leading-[1.15] lg:text-6xl lg:leading-[1.12]">
             <span>Welcome to</span>
             <span className="whitespace-nowrap font-body leading-none">
-              Bull
+              Bull{" "}
               <span className="font-display font-bold text-brand-primary text-6xl md:text-7xl lg:text-8xl leading-[1.08]">
-                Insight
+                InSight
               </span>
             </span>
           </h1>
@@ -30,14 +30,14 @@ export default function Hero() {
         </div>
 
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="w-full bg-white/30 px-4 py-6 text-center backdrop-blur-sm md:py-8">
+          <div className="w-full bg-background-cream/50 px-4 py-6 text-center backdrop-blur-sm md:py-8">
             <h1 className="font-display text-3xl text-shadow-lg/20 text-white md:text-7xl">
-              Your Home for a{" "}
-              <span className="md:font-bold text-white md:text-blue-700">
-                Healthy
-              </span>{" "}
-              Herd
+              Breeding{" "}
+              Forward
             </h1>
+            <p className="mt-2 text-base font-body text-white md:text-xl">
+              Reproductive medicine for modern cattle practice
+            </p>
           </div>
         </div>
       </div>

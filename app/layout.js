@@ -1,5 +1,5 @@
-// Utility
-import { DM_Sans, DM_Serif_Display } from "next/font/google";
+// Utility — InSire web stack (brand-consistency.md)
+import { DM_Mono, Playfair_Display, Source_Serif_4 } from "next/font/google";
 
 // Components
 import Header from "./components/header/Header";
@@ -8,27 +8,35 @@ import Footer from "./components/footer/Footer";
 // Styles
 import "./globals.css";
 
-const dmSans = DM_Sans({
+const sourceSerif4 = Source_Serif_4({
   subsets: ["latin"],
-  weight: ["400", "500", "700"],
-  variable: "--font-body"
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-body",
 });
 
-const dmSerifDisplay = DM_Serif_Display({
+const playfairDisplay = Playfair_Display({
   subsets: ["latin"],
-  weight: ["400"],
-  variable: "--font-display"
+  weight: ["400", "600", "700", "800"],
+  variable: "--font-display",
+});
+
+const dmMono = DM_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  variable: "--font-mono",
 });
 
 export const metadata = {
-  title: "Bull Insight",
-  description: "Your Home for a Healthy Herd",
+  title: "Bull InSight",
+  description: "Breeding Forward",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${dmSans.variable} ${dmSerifDisplay.variable} font-body bg-background-primary min-h-screen flex flex-col`}>
+      <body
+        className={`${sourceSerif4.variable} ${playfairDisplay.variable} ${dmMono.variable} font-body bg-background-primary flex min-h-screen flex-col`}
+      >
         <div className="sticky top-0 z-50 shrink-0">
           <Header />
         </div>

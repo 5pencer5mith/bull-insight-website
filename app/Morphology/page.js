@@ -8,7 +8,7 @@ export default function Morphology() {
   return (
     <div>
       <h1 className={morphologyH1}>
-        Welcome to the Sperm <span className="text-blue-700 font-bold">Morphology</span> Hub
+        Welcome to the Sperm <span className="text-brand-primary font-bold">Morphology</span> Hub
       </h1>
 
       <div className="max-[768px]:hidden">

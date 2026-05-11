@@ -14,7 +14,7 @@ const listUlClass = "list-none";
 const listLiClass = "mb-2";
 /** Matches main Header nav: centered underline grows on hover */
 const listLinkHoverClass =
-  "relative inline-block no-underline text-sm pb-1.5 transition-colors duration-300 after:pointer-events-none after:content-[''] after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-0 after:h-0.5 after:w-0 after:bg-blue-700 after:transition-all after:duration-300 hover:after:w-full";
+  "relative inline-block no-underline text-sm pb-1.5 transition-colors duration-300 after:pointer-events-none after:content-[''] after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-0 after:h-0.5 after:w-0 after:bg-brand-primary after:transition-all after:duration-300 hover:after:w-full";
 
 const theriogenology = [
   {
@@ -175,13 +175,13 @@ export default function SubNav() {
       >
         <div className="pb-4">
           <p className="m-0 p-0 pb-[5px] text-center text-xs text-stone-900">
-            Change <span className="text-blue-700 font-bold">View</span>
+            Change <span className="text-brand-primary font-bold">View</span>
           </p>
           <div className="flex justify-center gap-x-4">
             <div
               onClick={handleTheriogenologyClick}
               className={
-                activeCategory ? "" : "border-b-2 border-solid border-blue-700"
+                activeCategory ? "" : "border-b-2 border-solid border-brand-primary"
               }
             >
               <h5 className="cursor-pointer text-center text-xs text-stone-900">
@@ -191,7 +191,7 @@ export default function SubNav() {
             <div
               onClick={handleBullcheckClick}
               className={
-                !activeCategory ? "" : "border-b-2 border-solid border-blue-700"
+                !activeCategory ? "" : "border-b-2 border-solid border-brand-primary"
               }
             >
               <h5 className="cursor-pointer text-center text-xs text-stone-900">

@@ -35,14 +35,14 @@ export default async function Blog() {
   return (
     <PageWrapper>
       <Sidekick
-        pageTitle="Insight Blog"
+        pageTitle="InSight Blog"
         subTitle="Stay up to date with the latest insights!"
       />
 
       <div className="mx-auto w-full max-w-7xl space-y-16 px-4 pb-12 pt-10 md:space-y-20 md:pb-16 md:pt-12">
         <div className="relative w-full overflow-hidden rounded-lg border-2 border-border-primary bg-white px-6 py-8 md:px-10 md:py-10 lg:px-12">
           <div className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center">
-            <Rss className="h-40 w-40 text-brand-primary-tint md:h-52 md:w-52" />
+            <Rss className="h-40 w-40 text-tan-light md:h-52 md:w-52" />
           </div>
 
           <div className="relative z-10 flex flex-col gap-4 text-center">
@@ -95,7 +95,7 @@ export default async function Blog() {
                           ) : (
                             <div className="flex h-full min-h-[140px] items-center justify-center">
                               <Rss
-                                className="h-16 w-16 text-brand-primary/30 md:h-20 md:w-20"
+                                className="h-16 w-16 text-tan-light md:h-20 md:w-20"
                                 aria-hidden
                               />
                             </div>
