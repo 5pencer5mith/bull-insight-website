@@ -11,10 +11,8 @@ import {
   BookOpen,
   Rss,
   Phone,
-  Send,
   Building2,
-  Heart,
-  Mail,
+  Handshake,
 } from "lucide-react";
 
 export default function home() {
@@ -28,9 +26,10 @@ export default function home() {
           <span className="font-bold text-brand-primary text-4xl md:text-6xl">
             goal
           </span>{" "}
-          is to provide effective resources and information, and to promote best
-          practices that ensure the well-being and health of cattle herds
-          worldwide.
+          is to support cattle reproductive medicine: morphology education,
+          vet-centered diagnostics, and tools that fit real chute-side practice—so
+          breeding soundness translates into clearer decisions and stronger calf
+          crops.
         </h2>
 
         <div className="flex items-center justify-center">
@@ -48,10 +47,10 @@ export default function home() {
         </div>
 
         <div className="grid w-full max-w-2xl grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8 md:max-w-none md:flex-1">
-          <Link href="/Under-Construction">
+          <Link href="/Sample-Analysis">
             <div className="relative insights-block">
               <div className="absolute inset-0 flex justify-center items-center z-0">
-                <Package className="w-36 h-36 text-brand-primary-tint" />
+                <Package className="w-36 h-36 text-tan-light" />
               </div>
 
               <div className="relative z-10">
@@ -60,9 +59,11 @@ export default function home() {
                 </h3>
                 <div className="pt-2">
                   <p className="text-lg text-center font-body leading-snug">
-                    Order a sample analysis kit, collect a semen sample from
-                    your bull, and send it back to us for a complete and
-                    accurate analysis.
+                    A complete morphology analysis of your bull&apos;s semen
+                    sample, ordered through your veterinarian. We work with
+                    veterinary clinics to provide AI-assisted Complete
+                    Differential Spermiograms - the deeper picture beyond
+                    pass/fail.
                   </p>
                 </div>
               </div>
@@ -72,17 +73,17 @@ export default function home() {
           <Link href="/Sperm-In-Cyte">
             <div className="relative insights-block">
               <div className="absolute inset-0 flex justify-center items-center z-0">
-                <Microscope className="w-36 h-36 text-brand-primary-tint" />
+                <Microscope className="w-36 h-36 text-tan-light" />
               </div>
 
               <div className="relative z-10">
                 <h3 className="text-center text-xl font-bold font-display">
-                  Sperm In-Cyte Technology
+                  Sperm InCyte Technology
                 </h3>
                 <div className="pt-2">
                   <p className="text-lg text-center font-body leading-snug">
-                    Learn about an advanced bull semen analysis tool powered by
-                    artificial intelligence.
+                    Semen analysis with AI-assisted computer vision—built for
+                    repeatable reads alongside your breeding soundness workflow.
                   </p>
                 </div>
               </div>
@@ -92,7 +93,7 @@ export default function home() {
           <Link href="/Morphology">
             <div className="relative insights-block">
               <div className="absolute inset-0 flex justify-center items-center z-0">
-                <BookOpen className="w-36 h-36 text-brand-primary-tint" />
+                <BookOpen className="w-36 h-36 text-tan-light" />
               </div>
 
               <div className="relative z-10">
@@ -112,7 +113,7 @@ export default function home() {
           <Link href="/Blog">
             <div className="relative insights-block">
               <div className="absolute inset-0 flex justify-center items-center z-0">
-                <Rss className="w-36 h-36 text-brand-primary-tint" />
+                <Rss className="w-36 h-36 text-tan-light" />
               </div>
 
               <div className="relative z-10">
@@ -138,18 +139,21 @@ export default function home() {
                 About <span className="font-bold text-brand-primary">Us</span>
               </h2>
               <p className="m-0 text-lg font-body leading-snug md:text-xl">
-                Bull
+                Bull{" "}
                 <span className="font-bold font-display text-2xl text-brand-primary">
-                  Insight
+                  InSight
                 </span>{" "}
-                is transforming cattle breeding through advanced technology,
-                education, and research. We aim to enhance herd fertility by
-                providing accurate reproductive insights, practical knowledge,
-                and cutting-edge tools powered by artificial intelligence. This
-                project—and the products it inspires—are developed with
-                expertise and driven by the lifelong passion of Dr. Glen Jensen,
-                whose commitment to reproductive science and cattle health
-                guides everything we do.
+                is reproductive medicine for cattle, built by a working
+                veterinarian. We help veterinarians and producers see what a
+                standard breeding soundness exam can&apos;t - using AI-assisted
+                morphology analysis, the Complete Differential Spermiogram, and
+                chute-side tools designed for the way veterinary practice
+                actually runs. The goal isn&apos;t just better data. It&apos;s
+                better calf crops.
+              </p>
+              <p className="m-0 text-base font-body leading-snug text-text-muted md:text-lg">
+                Built and led by Dr. Glen Jensen, DVM - Emery Animal Health,
+                Castle Dale and Price, Utah.
               </p>
             </div>
           </div>
@@ -166,77 +170,42 @@ export default function home() {
         </div>
       </div>
 
-      <section className="mb-12 flex min-h-[50svh] w-full flex-col justify-center bg-white py-10 border-t-2 border-b-2 border-border-primary md:mb-16 md:py-14 lg:mb-20 lg:py-16">
-        <div className="mx-auto flex w-full max-w-7xl flex-1 flex-col items-stretch justify-center gap-16 px-4 md:flex-row md:gap-12 lg:gap-16">
-          <div id="contact" className="w-full min-w-0 md:flex-1">
-            <div className="w-full">
-              <div className="relative flex flex-col gap-8 p-8">
-                <div className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center">
-                  <Mail
-                    size={256}
-                    className="shrink-0 text-brand-primary-tint"
-                    aria-hidden
-                  />
-                </div>
-
-                <div className="relative z-10 flex flex-col items-center gap-3 text-center md:gap-4">
-                  <h2 className="m-0 font-display text-4xl md:text-6xl">
-                    Contact{" "}
-                    <span className="font-bold text-brand-primary">Us</span>
-                  </h2>
-                  <p className="m-0 text-lg md:text-2xl">
-                    We would love to hear from you!
-                  </p>
-                </div>
-
-                <div className="relative z-20 flex flex-wrap items-center justify-center gap-2 px-2">
-                  <Send
-                    className="shrink-0 text-brand-primary"
-                    aria-hidden
-                    size={22}
-                  />
-                  <a
-                    href="mailto:glen@emeryanimalhealth.com"
-                    className="relative inline max-w-full break-words pb-0.5 text-center text-lg font-body leading-snug text-text-primary transition-colors duration-300 after:absolute after:bottom-0 after:left-1/2 after:h-0.5 after:w-0 after:-translate-x-1/2 after:bg-blue-700 after:transition-all after:duration-300 after:content-[''] hover:after:w-full"
-                  >
-                    glen@emeryanimalhealth.com
-                  </a>
-                </div>
-              </div>
+      <section
+        id="pilot"
+        className="mb-12 flex min-h-[50svh] w-full flex-col items-center justify-center bg-background-card py-8 border-t-2 border-b-2 border-border-primary md:mb-16 md:py-10 lg:mb-20 lg:py-12"
+      >
+        <div className="mx-auto flex w-full max-w-2xl flex-col items-center gap-y-4 px-4 text-center">
+          <div className="relative isolate flex flex-col items-center justify-center px-4 py-2">
+            <div className="pointer-events-none absolute inset-0 -z-10 flex items-center justify-center">
+              <Handshake
+                size={200}
+                strokeWidth={1}
+                className="shrink-0 text-tan-light"
+                aria-hidden
+              />
             </div>
+            <h2 className="relative z-10 m-0 text-center font-display text-4xl md:text-6xl">
+              Pilot{" "}
+              <span className="font-bold text-brand-primary">With Us</span>
+            </h2>
           </div>
 
-          <div id="donate" className="w-full min-w-0 md:flex-1">
-            <div className="w-full">
-              <div className="relative flex flex-col gap-8 p-8">
-                <div className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center">
-                  <Heart
-                    size={256}
-                    className="shrink-0 text-brand-primary-tint"
-                    aria-hidden
-                  />
-                </div>
+          <p className="relative z-10 m-0 max-w-prose text-balance text-base leading-snug md:text-xl">
+            We&apos;re partnering with veterinary clinics to bring AI-assisted
+            reproductive medicine into everyday practice. If your clinic runs
+            BSEs and you&apos;d like early access to Bull InSight and Sperm
+            InCyte, we&apos;d like to talk.
+          </p>
 
-                <div className="relative z-10 flex flex-col items-center gap-3 text-center md:gap-4">
-                  <h2 className="m-0 font-display text-4xl md:text-6xl">
-                    Support{" "}
-                    <span className="font-bold text-brand-primary">Us</span>
-                  </h2>
-                  <p className="m-0 text-lg md:text-2xl">
-                    Let&apos;s keep our herds healthy!
-                  </p>
-                </div>
-
-                <Link
-                  href="/Under-Construction"
-                  className="relative z-20 mx-auto block w-full max-w-xs md:w-1/4"
-                >
-                  <div className="rounded-lg bg-brand-primary p-2 text-center text-white md:hover:scale-105">
-                    Donate Now
-                  </div>
-                </Link>
+          <div className="relative z-10 flex justify-center px-2 pt-1">
+            <a
+              href="mailto:glen@emeryanimalhealth.com?subject=Pilot%20Inquiry"
+              className="block w-full max-w-xs md:w-auto md:min-w-[12rem]"
+            >
+              <div className="rounded-lg bg-brand-primary p-2 text-center text-white md:hover:scale-105">
+                Pilot With Us →
               </div>
-            </div>
+            </a>
           </div>
         </div>
       </section>

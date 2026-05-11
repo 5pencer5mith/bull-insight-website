@@ -33,7 +33,7 @@ export default async function BlogPostPage({ params }) {
   return (
     <PageWrapper>
       <Sidekick
-        pageTitle="Insight Blog"
+        pageTitle="InSight Blog"
         subTitle="Stay up to date with the latest insights!"
       />
 

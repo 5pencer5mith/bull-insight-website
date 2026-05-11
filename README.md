@@ -1,1 +1,1 @@
-Bull Insight Website
+Bull InSight Website

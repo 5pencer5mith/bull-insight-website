@@ -10,7 +10,7 @@ import { Menu, X } from "lucide-react";
 
 const links = [
   { name: "Home", href: "/" },
-  { name: "Sperm In-Cyte", href: "/Sperm-In-Cyte" },
+  { name: "Sperm InCyte", href: "/Sperm-In-Cyte" },
   { name: "Morphology", href: "/Morphology" },
   { name: "Resources", href: "/Resources" },
   { name: "Blog", href: "/Blog" },
@@ -31,8 +31,8 @@ export default function Header() {
       <div className="relative z-50 flex flex-end bg-background-primary h-20 items-center p-4 border-b border-border-primary">
         <div className="flex flex-1 items-center text-xl pl-4">
           <Link href="/">
-            <span className="font-body text-2xl">Bull</span>
-            <span className="font-bold text-brand-primary text-4xl font-display">Insight</span>
+            <span className="font-body text-2xl">Bull</span>{" "}
+            <span className="font-bold text-brand-primary text-4xl font-display">InSight</span>
           </Link>
         </div>
         
@@ -56,7 +56,7 @@ export default function Header() {
           <ul className="p-4">
             {links.map((link, index) => (
               <Link href={link.href} key={index}>
-                <li className="relative inline px-4 py-2.5 text-text-primary transition-colors duration-300 after:content-[''] after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-1 after:h-0.5 after:w-0 after:bg-blue-700 after:transition-all after:duration-300 hover:after:w-[calc(100%-2rem)]">
+                <li className="relative inline px-4 py-2.5 text-text-primary transition-colors duration-300 after:content-[''] after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-1 after:h-0.5 after:w-0 after:bg-brand-primary after:transition-all after:duration-300 hover:after:w-[calc(100%-2rem)]">
                   {link.name}
                 </li>
               </Link>
@@ -65,7 +65,7 @@ export default function Header() {
         </nav>
       </div>
 
-      {/* <div className="h-1 w-full bg-blue-100 sticky top-16 z-50" /> */}
+      {/* <div className="h-1 w-full bg-semantic-amber-light sticky top-16 z-50" /> */}
 
       <div
         className={`fixed top-20 z-40 w-full h-75 bg-white/60 rounded-bl-lg rounded-br-lg backdrop-blur-[20px] backdrop-opacity-75 shadow-lg transform transition-transform duration-700 ease-in-out ${isMobileMenuOpen ? "" : "-translate-y-95"}`}
